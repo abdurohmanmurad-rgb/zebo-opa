@@ -26,6 +26,56 @@
       .app-card {
         background: linear-gradient(180deg, #f7fcff 0%, #e8f5ff 100%);
       }
+
+      /* Bonus blok — yengil tebranish (wobble) */
+      @keyframes wobble {
+        0%, 100% { transform: rotate(0deg); }
+        20% { transform: rotate(-2.5deg); }
+        40% { transform: rotate(2deg); }
+        60% { transform: rotate(-1.5deg); }
+        80% { transform: rotate(1deg); }
+      }
+      .animate-wobble { animation: wobble 2.2s ease-in-out infinite; }
+
+      /* ===== THANK YOU PAGE ===== */
+      .ty-wrap {
+        min-height: 100vh;
+        max-width: 28rem;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+        padding: 24px 20px;
+        background: #ffffff;
+        text-align: center;
+      }
+      .ty-steps { display: flex; align-items: center; justify-content: center; }
+      .ty-circle {
+        width: 46px; height: 46px; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-weight: 800; font-size: 22px; flex: 0 0 auto;
+      }
+      .ty-circle.done { background: #00b430; color: #fff; }
+      .ty-circle.todo { background: #fff; color: #111; border: 3px solid #00b430; }
+      .ty-line { width: 40px; height: 3px; background: #111; }
+      .ty-title {
+        font-weight: 900; font-size: 22px; line-height: 1.3;
+        text-transform: uppercase; color: #111; max-width: 360px;
+      }
+      .ty-arrows { display: flex; align-items: flex-end; justify-content: center; gap: 7px; }
+      .ty-arrows span { color: #00b430; font-size: 32px; line-height: 1; font-weight: 900; }
+      .tg-button {
+        display: flex; align-items: center; justify-content: center; gap: 10px;
+        width: 100%; max-width: 360px; height: 64px;
+        background: #229ed9; color: #fff;
+        border: none; cursor: pointer;
+        border-radius: 40px;
+        font-weight: 800; font-size: 22px; text-transform: uppercase;
+        text-decoration: none;
+        box-shadow: 0 12px 26px rgba(34, 158, 217, 0.45);
+      }
     </style>
     <style>
 /*! tailwindcss v4.1.12 | MIT License | https://tailwindcss.com */
@@ -33,6 +83,8 @@
 </style>
   </head>
   <body>
+    <!-- ============ MAIN SCREEN ============ -->
+    <div id="mainScreen">
     <div
       class="app-card max-w-md w-full mx-auto shadow-2xl min-h-screen flex flex-col gap-6 px-3"
     >
@@ -110,11 +162,14 @@
           </div>
         </div>
 
-        <div class="flex items-center gap-3 pt-3">
+        <div
+          class="flex items-center gap-3 p-3 rounded-2xl animate-wobble"
+          style="border:2px dashed #00AD00;background:#f0fff5;"
+        >
           <span class="size-12 shrink-0 gift-icon" style="font-size:42px;line-height:48px;text-align:center">🎁</span>
 
           <p class="text-xs">
-            <b>SOVG'A — Bonus:</b> Uy sharoitida kalsiy tayyorlash darsligi
+            <b>SOVG'A: Bonus —</b> Uy sharoitida kalsiy tayyorlash darsligi
           </p>
         </div>
       </div>
@@ -182,6 +237,43 @@
         </div>
       </form>
     </div>
+    </div>
+    <!-- ============ /MAIN SCREEN ============ -->
+
+    <!-- ============ THANK YOU SCREEN ============ -->
+    <div id="thankYouScreen" class="ty-wrap" style="display: none">
+      <!-- 3 bosqichli progress -->
+      <div class="ty-steps">
+        <div class="ty-circle done">✓</div>
+        <div class="ty-line"></div>
+        <div class="ty-circle done">✓</div>
+        <div class="ty-line"></div>
+        <div class="ty-circle todo">3</div>
+      </div>
+
+      <!-- Sarlavha -->
+      <div class="ty-title">
+        Bepul masterklassda qatnashish uchun Telegram kanalga obuna bo'ling
+      </div>
+
+      <!-- 5 ta pastga strelka -->
+      <div class="ty-arrows">
+        <span style="transform: translateY(0px)">↓</span>
+        <span style="transform: translateY(7px)">↓</span>
+        <span style="transform: translateY(-3px)">↓</span>
+        <span style="transform: translateY(9px)">↓</span>
+        <span style="transform: translateY(2px)">↓</span>
+      </div>
+
+      <!-- Telegram obuna tugmasi -->
+      <a href="TELEGRAM_LINK_SHU_YERGA" class="tg-button animate-shakeX">
+        <span>OBUNA BO'LISH</span>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
+          <path d="M21.94 3.5 2.9 10.84c-1.3.52-1.29 1.25-.24 1.57l4.88 1.52 1.88 5.78c.23.63.41.87.84.87.33 0 .51-.15.74-.36l2.36-2.29 4.91 3.63c.9.5 1.55.24 1.78-.84l3.2-15.07c.33-1.49-.6-2.16-1.97-1.68z"/>
+        </svg>
+      </a>
+    </div>
+    <!-- ============ /THANK YOU SCREEN ============ -->
 
     <script>
       (function () {
@@ -219,33 +311,48 @@
           this.value = o;
         });
 
+        // ===== Google Sheets manzili (Apps Script Web App) =====
+        // Pastdagi qiymatni o'z Apps Script URL'ingizga almashtiring:
+        var GOOGLE_SCRIPT_URL = "GOOGLE_SCRIPT_URL_SHU_YERGA";
+
         // ===== Formani yuborish =====
         var alertBox = document.querySelector("[data-form-alert]");
         document
           .querySelector("[data-form]")
           .addEventListener("submit", function (e) {
             e.preventDefault();
-            var d = phone.value.replace(/\D/g, "");
-            if (d.length < 9) {
+            var digits = phone.value.replace(/\D/g, "");
+            // Validatsiya: bo'sh yoki to'liqsiz bo'lsa yubormaymiz
+            if (digits.length < 9) {
               alertBox.textContent =
                 "Iltimos, to'liq telefon raqamingizni kiriting.";
               alertBox.classList.remove("hidden");
               return;
             }
-            alertBox.classList.remove(
-              "hidden",
-              "text-rose-800",
-              "bg-rose-50",
-              "border-rose-300"
-            );
-            alertBox.style.color = "#065f46";
-            alertBox.style.background = "#ecfdf5";
-            alertBox.style.borderColor = "#6ee7b7";
-            alertBox.textContent =
-              "✅ Rahmat! Siz ro'yxatdan o'tdingiz. Masterklass havolasi yuboriladi.";
-            this.querySelector("[data-form-button]").textContent =
-              "✓ QABUL QILINDI";
+
+            var fullPhone = prefix.textContent + digits;
+            var btn = this.querySelector("[data-form-button]");
+            btn.textContent = "YUBORILMOQDA...";
+
+            // Telefon raqamni Google Sheets'ga yozish
+            if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL.indexOf("http") === 0) {
+              fetch(GOOGLE_SCRIPT_URL, {
+                method: "POST",
+                mode: "no-cors",
+                body: JSON.stringify({ phone: fullPhone }),
+              }).catch(function () {});
+            }
+
+            // Thank-you sahifasini ko'rsatish (sahifa qayta yuklanmaydi)
+            showThankYou();
           });
+
+        function showThankYou() {
+          document.getElementById("mainScreen").style.display = "none";
+          var ty = document.getElementById("thankYouScreen");
+          ty.style.display = "flex";
+          window.scrollTo(0, 0);
+        }
 
         // ===== Taymer (daqiqa : soniya) =====
         var mEl = document.querySelector("[data-minutes]");
