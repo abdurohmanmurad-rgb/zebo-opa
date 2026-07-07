@@ -1,10 +1,8 @@
 'use strict';
 
-// Ro'yxatdan o'tgan foydalanuvchi ma'lumotini o'z backendingizga yuborish.
-// DIQQAT: quyidagi WEBHOOK_URL ni O'ZINGIZNING Google Apps Script yoki
-// boshqa endpoint manzilingiz bilan almashtiring. Bo'sh qolsa, lid hech
-// qayerga yuborilmaydi (faqat brauzerdan tozalanadi).
-const WEBHOOK_URL = ''; // <-- bu yerga o'z manzilingizni qo'ying
+// Ro'yxatdan o'tgan foydalanuvchi ma'lumotini Google Sheets'ga yuborish.
+const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycby0peK0VKZGVaJQ5Pjlpx1glCC6u3ceIGRbEstFSclGtJxxnQi-Mif3sSTnj0uIZFV6Pw/exec';
+const SOURCE = 'yashil (AI)';
 
 (async _ => {
   let user = JSON.parse(localStorage.getItem('user'));
@@ -12,16 +10,12 @@ const WEBHOOK_URL = ''; // <-- bu yerga o'z manzilingizni qo'ying
   if (user && user?.name && user?.phone && user?.time) {
     if (WEBHOOK_URL) {
       try {
-        const formData = new FormData();
-        formData.append('Ismi', user?.name);
-        formData.append('Telefon raqami', user?.phone);
-        formData.append(`Ro'yxatdan o'tgan vaqti`, user?.time);
-
-        const response = await fetch(WEBHOOK_URL, {
-          method: 'POST',
-          body: formData
-        });
-        await response.json();
+        const fd = new FormData();
+        fd.append('name', user.name);
+        fd.append('phone', user.phone);
+        fd.append('time', user.time);
+        fd.append('source', SOURCE);
+        await fetch(WEBHOOK_URL, { method: 'POST', body: fd });
       } catch (e) {
         // tarmoq xatosi — jim o'tkazamiz
       }

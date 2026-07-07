@@ -373,7 +373,7 @@
 
         // ===== Google Sheets manzili (Apps Script Web App) =====
         // Pastdagi qiymatni o'z Apps Script URL'ingizga almashtiring:
-        var GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwiavNUy0IuYHQeodWeSNwdG-0MPhc6b5rRIewj-KK-rqU0TfKd1bJO1qW6cxkGzNbCtQ/exec";
+        var GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby0peK0VKZGVaJQ5Pjlpx1glCC6u3ceIGRbEstFSclGtJxxnQi-Mif3sSTnj0uIZFV6Pw/exec";
 
         // ===== Formani yuborish =====
         var alertBox = document.querySelector("[data-form-alert]");
@@ -399,7 +399,7 @@
               fetch(GOOGLE_SCRIPT_URL, {
                 method: "POST",
                 mode: "no-cors",
-                body: JSON.stringify({ phone: fullPhone }),
+                body: JSON.stringify({ phone: fullPhone, source: "qizil (3 yo'l)" }),
               }).catch(function () {});
             }
 
