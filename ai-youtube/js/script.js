@@ -87,8 +87,12 @@ try {
       submitButton.setAttribute('disabled', true);
       submitButton.textContent = 'Yuborilmoqda...'
 
+      var _q = new URLSearchParams(location.search);
       localStorage.setItem('user', JSON.stringify({
-        name, phone: '+998' + phone, time: new Date().toLocaleString()
+        name, phone: '+998' + phone, time: new Date().toLocaleString(),
+        utm_source: _q.get('utm_source') || '', utm_medium: _q.get('utm_medium') || '',
+        utm_campaign: _q.get('utm_campaign') || '', utm_content: _q.get('utm_content') || '',
+        utm_term: _q.get('utm_term') || ''
       }))
 
       submitButton.removeAttribute('disabled');

@@ -396,10 +396,16 @@
 
             // Telefon raqamni Google Sheets'ga yozish
             if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL.indexOf("http") === 0) {
+              var _q = new URLSearchParams(location.search);
               fetch(GOOGLE_SCRIPT_URL, {
                 method: "POST",
                 mode: "no-cors",
-                body: JSON.stringify({ phone: fullPhone, source: "qizil (3 yo'l)" }),
+                body: JSON.stringify({
+                  phone: fullPhone, source: "qizil (3 yo'l)",
+                  utm_source: _q.get("utm_source") || "", utm_medium: _q.get("utm_medium") || "",
+                  utm_campaign: _q.get("utm_campaign") || "", utm_content: _q.get("utm_content") || "",
+                  utm_term: _q.get("utm_term") || ""
+                }),
               }).catch(function () {});
             }
 
