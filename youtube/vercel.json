@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/thankyoupage", "destination": "/index.html" }
+  ]
+}
