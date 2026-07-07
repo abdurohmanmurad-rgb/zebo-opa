@@ -1,7 +1,7 @@
 'use strict';
 
 // Ro'yxatdan o'tgan foydalanuvchi ma'lumotini Google Sheets'ga yuborish.
-const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycby0peK0VKZGVaJQ5Pjlpx1glCC6u3ceIGRbEstFSclGtJxxnQi-Mif3sSTnj0uIZFV6Pw/exec';
+const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzDGWvTs9PTNMFvVnljMPHeKFowu4AMrYzH80C9rBRET-xoqDVOiQ14IVfqEKURXoHJbw/exec';
 const SOURCE = 'yashil (AI)';
 
 (async _ => {
