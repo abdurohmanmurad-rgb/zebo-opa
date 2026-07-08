@@ -409,6 +409,8 @@
               }).catch(function () {});
             }
 
+            // Facebook Pixel — Lead event (formani to'ldirganда)
+            try { if (window.fbq) fbq('track', 'Lead'); } catch (e) {}
             // Thank-you sahifasini ko'rsatish (sahifa qayta yuklanmaydi)
             showThankYou();
           });
