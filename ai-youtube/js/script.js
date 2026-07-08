@@ -98,7 +98,6 @@ try {
       submitButton.removeAttribute('disabled');
       submitButton.textContent = "Ro'yxatdan o'tish";
       closeModal();
-      try { if (window.fbq) fbq('track', 'Lead'); } catch (e) {}
       window.location.href = `rahmat.html`
     }
   })
