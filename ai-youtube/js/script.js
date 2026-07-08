@@ -42,6 +42,7 @@ try {
 
   registerButtons.forEach(async button => {
     button.addEventListener('click', async () => {
+      try { if (window.fbq) fbq('track', 'InitiateCheckout'); } catch (e) {}
       modalBackdrop.classList.remove('hidden');
     })
   })
