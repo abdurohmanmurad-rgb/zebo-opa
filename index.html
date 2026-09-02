@@ -438,10 +438,10 @@
         // ===== Taymer (daqiqa : soniya) =====
         var mEl = document.querySelector("[data-minutes]");
         var sEl = document.querySelector("[data-seconds]");
-        var total = 15 * 60;
+        var total = 1 * 60;
         function pad(n) { return (n < 10 ? "0" : "") + n; }
         function tick() {
-          if (total < 0) total = 15 * 60;
+          if (total < 0) total = 1 * 60;
           mEl.textContent = pad(Math.floor(total / 60));
           sEl.textContent = pad(total % 60);
           total--;
