@@ -164,6 +164,11 @@ if (document.readyState === 'complete') { zbLoadPixel(); } else { window.addEven
           </div>
         </div>
 
+        <div data-live-visitors hidden style="text-align:center;padding:11px 14px;border:1px solid #86d9a3;border-radius:999px;background:#effcf3;color:#166534;font-size:15px" title="Oxirgi 60 soniyada faol bo‘lgan brauzerlar soni">
+          <span aria-hidden="true" style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#16a34a;margin-right:7px"></span>
+          Hozir saytda <strong data-live-count></strong> kishi bor
+        </div>
+
         <button class="main-button gap-3 animate-shakeX" data-main-button>
           <span>BEPUL QATNASHISH</span>
           <svg aria-hidden="true" class="size-7 shrink-0" viewBox="0 0 28 28" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="12"/><path d="M12 9l5 5-5 5"/></svg>
@@ -466,5 +471,6 @@ if (document.readyState === 'complete') { zbLoadPixel(); } else { window.addEven
         setInterval(tick, 1000);
       })();
     </script>
+    <script src="/presence.js" defer></script>
   </body>
 </html>
