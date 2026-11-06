@@ -15,8 +15,8 @@ module.exports = async function handler(req, res) {
   if (!body || !/^[a-f0-9-]{36}$/.test(body.visitorId || '')) {
     return res.status(400).json({ error: 'invalid_visitor' });
   }
-  const url = process.env.UPSTASH_REDIS_REST_URL;
-  const token = process.env.UPSTASH_REDIS_REST_TOKEN;
+  const url = process.env.UPSTASH_REDIS_REST_URL || process.env.KV_REST_API_URL;
+  const token = process.env.UPSTASH_REDIS_REST_TOKEN || process.env.KV_REST_API_TOKEN;
   if (!url || !token) return res.status(503).json({ error: 'not_configured' });
   try {
     const now = Date.now();
