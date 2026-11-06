@@ -23,6 +23,14 @@
     />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" /></noscript>
     <style>
+      @keyframes live-dot-pulse {
+        0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(22,163,74,.25); }
+        50% { opacity: .25; box-shadow: 0 0 0 5px rgba(22,163,74,0); }
+      }
+      .live-dot { animation: live-dot-pulse 2s ease-in-out infinite; }
+      @media (prefers-reduced-motion: reduce) {
+        .live-dot { animation: none; }
+      }
       .staatliches {
         font-family: "Staatliches", sans-serif;
         letter-spacing: 0.5px;
@@ -165,8 +173,8 @@ if (document.readyState === 'complete') { zbLoadPixel(); } else { window.addEven
         </div>
 
         <div data-live-visitors hidden style="text-align:center;padding:11px 14px;border:1px solid #86d9a3;border-radius:999px;background:#effcf3;color:#166534;font-size:15px" title="Oxirgi 60 soniyada faol bo‘lgan brauzerlar soni">
-          <span aria-hidden="true" style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#16a34a;margin-right:7px"></span>
-          Hozir saytda <strong data-live-count></strong> kishi bor
+          <span aria-hidden="true" class="live-dot" style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#16a34a;margin-right:7px"></span>
+          Hozir <strong data-live-count></strong> kishi ro‘yxatdan o‘tyapti
         </div>
 
         <button class="main-button gap-3 animate-shakeX" data-main-button>
