@@ -428,13 +428,14 @@ if (document.readyState === 'complete') { zbLoadPixel(); } else { window.addEven
               }).catch(function () {});
             }
 
-            // Facebook Pixel: lead konversiyasini yuborish
-            if (typeof fbq === "function") {
-              fbq("track", "Lead");
-            }
-
-            // Thank-you sahifasini ko'rsatish (sahifa qayta yuklanmaydi)
-            showThankYou();
+            // Lead endi BU YERDA EMAS. Raqam qoldirgan (thank-you sahifasiga
+            // o'tgan) odam Lead deb sanaladi: haqiqiy thankyoupage.html ochilganda
+            // kod Lead'ni dedup (eventID) bilan yuboradi. Telefon raqamni URL orqali
+            // uzatamiz. Sheets fetch ketishiga 300ms kutib, keyin HAQIQIY sahifaga
+            // o'tamiz (pushState emas).
+            setTimeout(function () {
+              window.location.href = "thankyoupage?ph=" + encodeURIComponent(fullPhone);
+            }, 300);
           });
 
         function showThankYou(push) {
