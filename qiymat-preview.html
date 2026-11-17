@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qiymat bloki — namuna (tasdiqlash uchun)</title>
+<meta name="robots" content="noindex">
+<style>
+:root{
+  --ind:oklch(0.33 0.12 283); --ind-d:oklch(0.25 0.10 283); --ind-l:oklch(0.45 0.14 283);
+  --lav:oklch(0.95 0.025 280); --lav-2:oklch(0.90 0.045 280);
+  --red:oklch(0.60 0.22 25); --green:oklch(0.64 0.19 145); --green-d:oklch(0.52 0.16 145);
+  --gold:oklch(0.84 0.15 85); --ink:oklch(0.27 0.015 283); --muted:oklch(0.48 0.02 283); --line:oklch(0.89 0.02 283);
+  --sf:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sf);color:var(--ink);background:var(--lav);line-height:1.5;-webkit-font-smoothing:antialiased}
+.page{max-width:580px;margin:0 auto;padding:16px 12px 40px}
+.note{background:oklch(0.96 0.06 85);border:1px solid oklch(0.85 0.1 85);color:oklch(0.38 0.08 70);border-radius:12px;padding:10px 12px;font-size:13.5px;margin-bottom:14px}
+
+/* Expert Secrets uslubidagi "Hammasini ko'rsataman" qutisi */
+.stack{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 18px 40px oklch(0.3 0.1 283 / .15)}
+.stack__top{background:linear-gradient(170deg,var(--ind-d),oklch(0.18 0.07 283));color:#fff;text-align:center;padding:20px 14px 22px;border-bottom:6px solid var(--ind-l)}
+.collage{position:relative;height:150px;margin:0 auto 14px;max-width:360px}
+.collage img{position:absolute;border-radius:10px;border:3px solid #fff;box-shadow:0 8px 18px oklch(0 0 0 / .4);object-fit:cover}
+.c1{left:0;top:30px;width:40%;transform:rotate(-7deg)}
+.c2{right:0;top:30px;width:40%;transform:rotate(7deg)}
+.c3{left:22%;top:0;width:56%;z-index:2}
+.c4{left:50%;bottom:-6px;width:84px;height:84px;margin-left:-42px;border-radius:50% !important;border-color:var(--gold) !important;z-index:3}
+.stack__h{font-weight:900;font-size:27px;line-height:1.12;letter-spacing:-.5px}
+.stack__h span{color:var(--gold)}
+.stack__s{font-size:16.5px;font-weight:600;opacity:.92;margin-top:6px}
+
+.list{list-style:none;padding:16px 16px 6px}
+.list li{display:grid;grid-template-columns:24px 1fr auto;gap:8px;align-items:start;padding:11px 0;border-bottom:1px dashed var(--line);font-size:16.5px;line-height:1.35}
+.list li:last-child{border-bottom:0}
+.list li::before{content:"✔";color:var(--ind-l);font-weight:900;font-size:17px;line-height:1.35}
+.list b{font-weight:700}
+.list small{display:block;font-size:13px;color:var(--muted);font-weight:500;margin-top:2px}
+.list .v{color:var(--red);font-weight:800;white-space:nowrap;font-size:15.5px}
+.list .vip{background:oklch(0.97 0.05 85);margin:0 -16px;padding:12px 16px;border-bottom:0;border-left:4px solid var(--gold)}
+.grp{font-size:12px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);padding:14px 16px 0}
+
+.total{text-align:center;padding:10px 14px 0}
+.total__l{font-weight:900;font-size:26px;color:var(--red);letter-spacing:-.6px}
+.total__l s{text-decoration-thickness:3px}
+.today{font-weight:800;font-size:20px;margin-top:10px;line-height:1.3}
+.big{font-weight:900;font-size:58px;line-height:1;letter-spacing:-2.5px;color:var(--green);margin-top:6px;white-space:nowrap}
+.big small{font-size:24px;letter-spacing:-.5px}
+.per{display:inline-flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+.per span{background:var(--lav);border-radius:30px;padding:5px 12px;font-size:14.5px;font-weight:700;color:var(--ind)}
+.cond{margin:16px 14px 0;background:oklch(0.96 0.05 145);border:2px solid oklch(0.82 0.1 145);border-radius:16px;padding:12px 14px;font-size:16px;line-height:1.45;text-align:left}
+.cond b{color:var(--green-d)}
+.cond ol{margin:6px 0 0 20px;display:grid;gap:4px}
+.after{text-align:center;font-size:14.5px;color:var(--muted);margin:12px 14px 0}
+.after b{color:var(--red)}
+.cta{padding:16px 14px 20px}
+.btn{display:block;width:100%;border:0;cursor:pointer;font-family:var(--sf);font-weight:800;text-transform:uppercase;color:#fff;background:linear-gradient(180deg,var(--red),oklch(0.52 0.21 25));border-radius:16px;padding:20px 14px;font-size:19px;line-height:1.3;box-shadow:0 7px 0 oklch(0.42 0.18 25)}
+.btn small{display:block;font-size:13.5px;font-weight:600;text-transform:none;opacity:.92;margin-top:3px}
+.btn:active{transform:translateY(5px);box-shadow:0 2px 0 oklch(0.42 0.18 25)}
+.safe{text-align:center;font-size:13px;color:var(--muted);margin-top:12px}
+@media (max-width:380px){.big{font-size:48px}.stack__h{font-size:24px}.list li{font-size:15.5px}}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="note">⚠️ <b>Namuna — saytga hali qo'shilmagan.</b> Qizil qiymatlar (Stop Autizm 9 mln'dan tashqari) taklif. Zebo opa tasdiqlaganidan keyin qo'yiladi.</div>
+
+  <section class="stack" aria-labelledby="st-h">
+    <div class="stack__top">
+      <div class="collage" aria-hidden="true">
+        <img class="c1" src="/img/b/gift-aqliy.jpg" alt="">
+        <img class="c2" src="/img/b/gift-kalsiy.jpg" alt="">
+        <img class="c3" src="/img/b/gift-nutq.jpg" alt="">
+        <img class="c4" src="/img/c/zebo-avatar.jpg" alt="">
+      </div>
+      <h2 class="stack__h" id="st-h">Keling, sizga <span>nimalarni qo'lga kiritayotganingizni</span> to'liq ko'rsatay</h2>
+      <p class="stack__s">"Stop Autizm" dasturiga yozilganingizda olasiz:</p>
+    </div>
+
+    <ul class="list">
+      <li><span><b>"Stop Autizm" 3 oylik individual dasturi</b><small>6 bosqich · 15+ video dars · oflayn ko'rik va nazorat</small></span><span class="v">9 000 000 so'm</span></li>
+      <li class="vip"><span><b>⭐ 24/7 oilaviy shaxsiy nevropatolog</b><small>27 yillik tajribali Zebiniso Yadgarova 3 oy davomida doim aloqada</small></span><span class="v">3 000 000 so'm</span></li>
+      <li><span><b>Oyiga 4 marta jonli suhbat</b><small>Zebo opa bilan savol-javob</small></span><span class="v">1 200 000 so'm</span></li>
+      <li><span><b>Sirli nevromassaj kursi</b><small>5 ta video dars</small></span><span class="v">1 500 000 so'm</span></li>
+      <li><span><b>ABA va sensor integratsiya kitoblari</b><small>Uyda mashg'ulot uchun metodik qo'llanmalar</small></span><span class="v">500 000 so'm</span></li>
+      <li><span><b>Hali sotuvga chiqmagan shaxsiy qo'llanmalar</b></span><span class="v">500 000 so'm</span></li>
+    </ul>
+    <div class="grp">+ Konsultatsiyaga kelganingizda</div>
+    <ul class="list">
+      <li><span><b>Nevromassaj orqali nutqni chiqarish darsi</b></span><span class="v">300 000 so'm</span></li>
+      <li><span><b>Aqliy rivojlanishda ortda qolishning 10 belgisi darsi</b></span><span class="v">300 000 so'm</span></li>
+      <li><span><b>Uy sharoitida tabiiy kalsiy qo'llanmasi</b></span><span class="v">200 000 so'm</span></li>
+      <li><span><b>Onalar jamiyati — yopiq chat</b><small>Siz yolg'iz emassiz</small></span><span class="v">bebaho</span></li>
+    </ul>
+
+    <div class="total">
+      <div class="total__l">Umumiy qiymati: <s>16 500 000 so'm</s></div>
+      <div class="today">Bugun raqamingizni qoldirib, <u>10 kun ichida</u> konsultatsiyaga kelsangiz — hammasi:</div>
+      <div class="big">6 000 000 <small>so'm</small></div>
+      <div class="per"><span>📅 oyiga 2 000 000</span><span>☕ kuniga 66 000</span><span>💳 bo'lib to'lash</span></div>
+    </div>
+
+    <div class="cond">
+      <b>Chegirma qanday ishlaydi:</b>
+      <ol>
+        <li>Hozir anketani to'ldirasiz (30 soniya)</li>
+        <li>Administrator qo'ng'iroq qilib qabul kunini belgilaydi</li>
+        <li><b>10 kun ichida</b> konsultatsiyaga kelsangiz — narx 6 000 000 so'm bo'lib qoladi</li>
+      </ol>
+    </div>
+    <p class="after">10 kundan keyin narx <b>9 000 000 so'm</b>ga qaytadi, sovg'alar yopiladi.</p>
+
+    <div class="cta">
+      <button class="btn" type="button">Hoziroq raqamimni qoldiraman<small>Chegirma va 6 ta sovg'ani band qilaman 👉</small></button>
+      <p class="safe">🔒 Konsultatsiyaga yozilish majburiyat emas — avval holatni bilib olasiz</p>
+    </div>
+  </section>
+</div>
+</body>
+</html>

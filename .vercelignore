@@ -1,0 +1,5 @@
+_docs
+*.backup-*
+.env*
+.DS_Store
+*.bak-*

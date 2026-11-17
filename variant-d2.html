@@ -1,0 +1,1016 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr. Zebo — autizmli bolalar uchun konsultatsiya</title>
+<meta name="description" content="27 yillik tajribali bolalar nevropatologi Zebiniso Yadgarova. Autizm tashxisi — hukm emas. Videoni ko'ring va konsultatsiyaga yoziling.">
+<meta property="og:image" content="/img/zebo-0.webp">
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','862190763626893');
+fbq('init','1801978390843079');
+fbq('track','PageView');
+</script>
+<style>
+/* ===== C variant: siyohrang palitra (yuborilgan namunadan) + Apple shrifti ===== */
+:root{
+  --ind:    oklch(0.33 0.12 283);   /* asosiy siyohrang */
+  --ind-d:  oklch(0.25 0.10 283);
+  --ind-l:  oklch(0.45 0.14 283);
+  --lav:    oklch(0.95 0.025 280);  /* och siyohrang fon */
+  --lav-2:  oklch(0.90 0.045 280);
+  --pink:   oklch(0.60 0.24 0);     /* taymer raqamlari, aksent */
+  --red:    oklch(0.62 0.23 25);
+  --red-d:  oklch(0.52 0.21 25);
+  --gold:   oklch(0.84 0.15 85);
+  --green:  oklch(0.62 0.16 150);
+  --ink:    oklch(0.19 0.02 283);
+  --muted:  oklch(0.47 0.02 283);
+  --line:   oklch(0.89 0.02 283);
+  --sf: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sf);color:var(--ink);background:var(--ind-d);line-height:1.5;-webkit-font-smoothing:antialiased}
+.page{max-width:580px;margin:0 auto;background:#fff;overflow:clip;padding-bottom:84px}
+.w{padding:0 22px}
+img{display:block;max-width:100%}
+.H{font-weight:900;text-transform:uppercase;letter-spacing:-.9px;line-height:1.02}
+.c{text-align:center}
+u{text-decoration-thickness:2px;text-underline-offset:4px}
+p{font-size:17.5px;margin-top:14px}
+.mut{color:var(--muted)}
+section{position:relative}
+
+/* Taymer */
+.timer{background:#fff;text-align:center;padding:12px 8px 9px;position:sticky;top:0;z-index:30;box-shadow:0 2px 12px oklch(0 0 0 / .08)}
+.timer__t{color:var(--ind-l);font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:-.1px}
+.timer__r{display:flex;justify-content:center;align-items:flex-start;gap:4px}
+.timer__c{min-width:56px}
+.timer__n{color:var(--pink);font-weight:700;font-size:32px;line-height:1.1;font-variant-numeric:tabular-nums}
+.timer__l{color:var(--muted);font-size:12.5px}
+.timer__s{color:var(--pink);font-weight:700;font-size:28px;line-height:1.2}
+
+/* 1. HEADLINE */
+.hero{background:var(--ind);color:#fff;text-align:center;padding:26px 0 30px}
+.hero__k{display:inline-block;background:oklch(1 0 0 / .12);border:1px solid oklch(1 0 0 / .25);border-radius:30px;padding:6px 14px;font-size:13.5px;font-weight:700}
+.hero h1{font-size:39px;margin:16px 0 14px}
+.hero h1 em{font-style:normal;color:oklch(0.82 0.13 0)}
+.hero__s{font-size:17px;opacity:.94;margin:0;padding:0 4px}
+.hero__s b{color:#fff}
+
+/* 2. VIDEO */
+.vbox{margin:22px 16px 0;background:#fff;color:var(--ink);border-radius:6px;overflow:hidden;box-shadow:0 18px 40px oklch(0 0 0 / .35)}
+.vbox__cap{font-weight:800;font-size:17px;line-height:1.3;padding:12px 14px;display:flex;align-items:center;gap:10px;justify-content:center}
+.vbox__cap .spk{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--red);display:grid;place-items:center;position:relative}
+.vbox__cap .spk::before{content:"🔊";font-size:17px}
+.vbox__cap .spk::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--red);animation:ring 1.4s infinite}
+@keyframes ring{0%{transform:scale(.85);opacity:1}100%{transform:scale(1.45);opacity:0}}
+.video{position:relative;aspect-ratio:16/9;background:#000}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.facade{position:absolute;inset:0;border:0;padding:0;cursor:pointer;background:#000 center/cover no-repeat}
+.facade::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,oklch(0 0 0 / .15),oklch(0 0 0 / .55))}
+.facade__play{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:78px;height:78px;border-radius:50%;background:oklch(0.66 0.2 35);box-shadow:0 0 0 0 oklch(0.66 0.2 35 / .6);animation:pulse 1.6s infinite}
+.facade__play::after{content:"";position:absolute;left:31px;top:23px;border-left:24px solid #fff;border-top:16px solid transparent;border-bottom:16px solid transparent}
+@keyframes pulse{70%{box-shadow:0 0 0 18px oklch(0.66 0.2 35 / 0)}100%{box-shadow:0 0 0 0 oklch(0.66 0.2 35 / 0)}}
+.facade__txt{position:absolute;left:0;right:0;bottom:14px;color:#fff;font-weight:900;font-size:24px;text-transform:uppercase;letter-spacing:-.6px;text-shadow:0 2px 10px oklch(0 0 0 / .6)}
+.facade__mute{position:absolute;right:10px;top:10px;background:oklch(0 0 0 / .6);color:#fff;font-size:12.5px;font-weight:700;padding:5px 10px;border-radius:20px}
+.vnote{display:flex;gap:8px;justify-content:center;align-items:center;font-size:14px;font-weight:600;padding:10px 12px;background:oklch(0.97 0.04 85);color:oklch(0.40 0.08 70)}
+
+/* CTA */
+.cta{padding:24px 0 30px;text-align:center}
+.btn{display:block;width:100%;border:0;cursor:pointer;font-family:var(--sf);font-weight:800;text-transform:uppercase;color:#fff;background:var(--ind);border-radius:12px;padding:22px 16px;font-size:18.5px;line-height:1.4;letter-spacing:-.2px;box-shadow:0 7px 0 var(--ind-d);position:relative;overflow:hidden}
+.btn:active{transform:translateY(5px);box-shadow:0 2px 0 var(--ind-d)}
+.btn small{display:block;font-size:13.5px;font-weight:600;text-transform:none;opacity:.92;margin-top:3px}
+.btn::after{content:"";position:absolute;inset:-60%;background:linear-gradient(100deg,transparent 42%,oklch(1 0 0 / .22) 50%,transparent 58%);animation:shine 2.8s infinite}
+@keyframes shine{from{transform:translateX(-55%)}to{transform:translateX(55%)}}
+.btn--red{background:var(--red);box-shadow:0 7px 0 var(--red-d);border-radius:30px}
+.btn--red:active{box-shadow:0 2px 0 var(--red-d)}
+.cta__note{font-size:14px;color:var(--muted);margin-top:14px}
+
+/* Siyohrang blok (og'riqlar) */
+.dark{background:var(--ind);color:#fff;padding:42px 0 36px}
+.dark .H{font-size:31px;text-align:center;margin-bottom:28px}
+.chk{list-style:none;display:grid;gap:22px}
+.chk li{display:grid;grid-template-columns:28px 1fr;gap:14px;font-size:17.5px;line-height:1.55}
+.chk li::before{content:"";width:22px;height:22px;margin-top:4px;background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.5 12.5l5.5 5.5L20.5 6'/%3E%3C/svg%3E")}
+.quote{border-left:4px solid oklch(0.82 0.13 0);padding:4px 0 4px 14px;margin-top:26px;font-style:italic;font-size:16.5px;opacity:.95}
+.quote b{display:block;font-style:normal;font-size:13px;opacity:.75;margin-top:6px}
+
+/* Oq bloklar */
+.sec{padding:38px 0 8px}
+.sec .H{font-size:29px;color:var(--ind);text-align:center;margin-bottom:6px}
+.sec .sub{text-align:center;color:var(--muted);font-size:15.5px;margin-top:6px}
+.xl{list-style:none;display:grid;gap:22px;margin-top:20px}
+.xl li{display:grid;grid-template-columns:32px 1fr;gap:16px;font-size:17.5px}
+.xl li::before{content:"";width:28px;height:28px;background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23201b4a' stroke-width='2.3' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M8.5 8.5l7 7M15.5 8.5l-7 7'/%3E%3C/svg%3E")}
+
+/* "Tashxis — hukm emas" */
+.hope{background:linear-gradient(170deg,var(--lav),#fff);border-radius:24px;padding:24px 18px;margin-top:20px;border:1px solid var(--line)}
+.hope .big{font-weight:900;font-size:26px;color:var(--ind);letter-spacing:-.7px;line-height:1.1;text-transform:uppercase}
+.hope p{font-size:16.5px}
+
+/* O'zgarishlar */
+.chg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.chg__c{background:var(--lav);border-radius:18px;overflow:hidden;font-size:14.5px;font-weight:600;line-height:1.35;display:flex;flex-direction:column}
+.chg__c span{display:block;padding:10px 12px 14px}
+.chg__m{position:relative;aspect-ratio:4/3;background:linear-gradient(160deg,var(--lav-2),var(--lav))}
+.chg__m img{width:100%;height:100%;object-fit:cover;display:block}
+/* 5-kartochka: ikki rasm navbatma-navbat almashadi (har 4 soniyada) */
+.chg__m--swap{overflow:visible}
+.chg__m--swap .swap{position:absolute;inset:0;opacity:0;animation:swap 8s ease-in-out infinite}
+@keyframes swap{0%,40%{opacity:0}50%,90%{opacity:1}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.chg__m--swap .swap{animation-duration:16s}}
+/* 1-kartochka: 5 ta "birinchi so'z" rasmi aylanib turadi */
+.chg .chg__c:first-child .chg__m.chg__m--slides{aspect-ratio:4/3}
+.chg__m--slides img{position:absolute;inset:0;opacity:0;transition:opacity .9s ease}
+.chg__m--slides img.on{opacity:1}
+.dots{position:absolute;left:0;right:0;bottom:10px;display:flex;justify-content:center;gap:6px;z-index:2}
+.dots b{width:7px;height:7px;border-radius:50%;background:oklch(1 0 0 / .55);transition:width .3s,background .3s}
+.dots b.on{width:20px;border-radius:4px;background:#fff}
+.chg__m--slides i{z-index:3}
+.chg__m i{position:absolute;left:10px;bottom:-16px;font-style:normal;display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:#fff;font-size:21px;box-shadow:0 4px 10px oklch(0.3 0.1 283 / .15)}
+.chg__m.no{aspect-ratio:auto;height:56px;background:none}
+.chg__m.no i{position:static;margin:12px 0 0 12px}
+.chg__c:has(.chg__m:not(.no)) span{padding-top:24px}
+.chg__c:first-child,.chg__c:last-child{grid-column:1/-1}
+.chg__c:first-child{background:var(--ind);color:#fff;font-size:17px}
+.chg__c:first-child .chg__m,.chg__c:last-child .chg__m{aspect-ratio:16/9}
+.chg__c:first-child .chg__m.no,.chg__c:last-child .chg__m.no{aspect-ratio:auto}
+.disc{font-size:13px;color:var(--muted);margin-top:12px;text-align:center}
+
+/* Otzivlar */
+.rev{display:grid;gap:14px;margin-top:20px}
+.rcard{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 8px 22px oklch(0.3 0.1 283 / .07)}
+.rcard__v{position:relative;aspect-ratio:9/12;background:linear-gradient(160deg,var(--lav-2),var(--ind-l));display:grid;place-items:center;color:#fff;text-align:center;padding:20px}
+.rcard__v b{display:block;font-size:44px;line-height:1}
+.rcard__v span{font-weight:800;font-size:15px;margin-top:8px;display:block}
+.rcard__v small{display:block;font-size:12.5px;opacity:.85;margin-top:4px}
+.rcard__b{padding:12px 14px 14px}
+.rcard__b h4{font-size:16px;font-weight:800;color:var(--ind)}
+.rcard__b p{font-size:14.5px;margin-top:4px;color:var(--muted)}
+.tag{display:inline-block;font-size:11.5px;font-weight:800;text-transform:uppercase;padding:3px 8px;border-radius:6px;background:oklch(0.95 0.06 85);color:oklch(0.45 0.1 70);margin-bottom:6px}
+.rev-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ig{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:14px;background:linear-gradient(90deg,oklch(0.62 0.2 30),oklch(0.55 0.25 350),oklch(0.52 0.22 300));color:#fff;text-decoration:none;font-weight:800;border-radius:14px;padding:15px;font-size:15.5px}
+
+/* Ishonch: kim */
+.who{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center;margin-top:18px}
+.who__ph{width:120px;height:140px;border-radius:18px;background:linear-gradient(160deg,var(--lav),var(--lav-2));overflow:hidden;position:relative}
+.who__ph img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:100%;width:auto;max-width:none}
+.who h3{font-size:22px;font-weight:900;color:var(--ind);letter-spacing:-.5px;line-height:1.1}
+.who p{font-size:14.5px;margin-top:6px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}
+.stats div{background:var(--ind);color:#fff;border-radius:16px;padding:14px 6px;text-align:center}
+.stats b{display:block;font-size:28px;font-weight:900;letter-spacing:-1px;line-height:1}
+.stats span{font-size:12px;opacity:.85;line-height:1.25;display:block;margin-top:4px}
+.tl{list-style:none;margin-top:22px;border-left:3px solid var(--lav-2);padding-left:18px;display:grid;gap:16px}
+.tl li{position:relative;font-size:15.5px}
+.tl li::before{content:"";position:absolute;left:-26px;top:5px;width:13px;height:13px;border-radius:50%;background:var(--pink);border:3px solid #fff;box-shadow:0 0 0 2px var(--pink)}
+.tl b{color:var(--ind);display:block;font-size:14px}
+.vals{display:grid;gap:8px;margin-top:20px}
+.vals div{display:grid;grid-template-columns:36px 1fr;gap:10px;align-items:center;background:var(--lav);border-radius:14px;padding:10px 12px;font-size:15.5px;font-weight:600}
+.vals i{font-style:normal;font-size:22px;text-align:center}
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.gal figure{margin:0;border-radius:16px;overflow:hidden;background:var(--lav);position:relative}
+.gal img{width:100%;height:auto;display:block}
+.gal .g-full{grid-column:1/-1}
+.gal .g-tall img{aspect-ratio:3/4;object-fit:cover;height:100%}
+.gal figcaption{position:absolute;left:8px;bottom:8px;right:8px;background:oklch(0.2 0.05 283 / .72);color:#fff;font-size:12.5px;font-weight:700;padding:5px 9px;border-radius:9px;line-height:1.3;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.gal figure:first-child figcaption{top:8px;bottom:auto;right:auto}
+
+/* E'tirozlar */
+.obj details{border:1.5px solid var(--line);border-radius:16px;margin-top:10px;background:#fff}
+.obj summary{list-style:none;cursor:pointer;padding:16px 46px 16px 16px;font-weight:800;font-size:16.5px;position:relative;color:var(--ind);line-height:1.3}
+.obj summary::-webkit-details-marker{display:none}
+.obj summary::after{content:"+";position:absolute;right:14px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;background:var(--lav);text-align:center;line-height:26px;font-size:20px;font-weight:500}
+.obj details[open] summary::after{content:"−"}
+.obj details p{margin:0;padding:0 16px 16px;font-size:15.5px;color:var(--ink)}
+
+/* Narx taqqoslash */
+.cmp{display:grid;gap:10px;margin-top:20px}
+.cmp__row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;background:var(--lav);border-radius:14px;padding:13px 14px;font-size:15px;font-weight:600}
+.cmp__row b{font-size:17px;font-weight:900;color:var(--ind);white-space:nowrap}
+.cmp__row.bad b{color:var(--red);text-decoration:line-through;text-decoration-thickness:2px}
+.cmp__tot{background:var(--red);color:#fff;border-radius:16px;padding:14px;text-align:center}
+.cmp__tot small{display:block;font-size:13px;opacity:.9}
+.cmp__tot b{font-size:32px;font-weight:900;letter-spacing:-1px}
+.cmp{margin-top:16px}
+/* "Qancha to'lagan bo'lardingiz?" */
+.ask{background:linear-gradient(170deg,var(--ind),var(--ind-d));color:#fff;border-radius:26px;padding:28px 18px 22px;text-align:center;position:relative;margin-top:30px}
+.ask__q{width:58px;height:58px;border-radius:50%;background:var(--pink);color:#fff;font-weight:900;font-size:32px;display:grid;place-items:center;margin:-56px auto 10px;box-shadow:0 8px 18px oklch(0.6 0.24 0 / .4)}
+.ask__lead{font-size:15px;opacity:.85;margin:0}
+.ask__h{font-weight:900;text-transform:uppercase;letter-spacing:-.7px;line-height:1.08;font-size:25px;margin-top:10px}
+.ask__h span{color:oklch(0.82 0.13 0)}
+.ask__list{list-style:none;display:grid;gap:8px;margin:18px 0 6px;text-align:left}
+.ask__list li{background:oklch(1 0 0 / .1);border-radius:12px;padding:11px 12px 11px 40px;font-size:15.5px;position:relative}
+.ask__list li::before{content:"✨";position:absolute;left:12px;top:10px}
+.ask__list b{color:oklch(0.86 0.1 85)}
+.ask__h{font-size:28px}
+.ask__note{font-size:13.5px;opacity:.8;font-style:italic;margin:8px 0 4px}
+.ask__p{font-size:16px;opacity:.95}
+.ask__p b{color:var(--gold)}
+/* Markaz vs Stop Autizm */
+.vs{margin-top:16px;background:var(--lav);border-radius:20px;padding:16px 14px}
+.vs__row{margin-bottom:12px}
+.vs__lbl{display:block;font-size:13.5px;font-weight:700;margin-bottom:5px}
+.vs__bar{width:var(--w);height:42px;border-radius:12px;display:flex;align-items:center;justify-content:flex-end;padding:0 12px;color:#fff;min-width:96px}
+.vs__bar b{font-weight:900;font-size:18px;letter-spacing:-.4px}
+.vs__bar--bad{background:var(--red)}
+.vs__bar--good{background:var(--green)}
+.vs__res{margin:6px 0 0;text-align:center;font-size:16px;font-weight:600}
+.vs__res b{color:var(--green);font-weight:900}
+.vt{width:100%;border-collapse:separate;border-spacing:0 6px;margin-top:10px;font-size:14px}
+.vt th{font-size:12px;font-weight:800;text-transform:uppercase;color:var(--muted);padding:0 6px 2px;text-align:center}
+.vt th:first-child{text-align:left}
+.vt td{background:#fff;padding:10px 8px;vertical-align:middle;line-height:1.3}
+.vt td:first-child{border-radius:12px 0 0 12px;font-weight:600}
+.vt td:last-child{border-radius:0 12px 12px 0}
+.vt td.yes,.vt td.no{text-align:center;font-weight:900;font-size:18px;width:62px}
+.vt td.yes{color:var(--green);background:oklch(0.96 0.04 150)}
+.vt td.no{color:var(--red)}
+.vt__hl td{background:oklch(0.97 0.05 85)}
+.vt__hl td:first-child{border-left:4px solid var(--gold)}
+.vt__hl td.yes{background:oklch(0.93 0.07 150)}
+.vt__sum td{font-weight:900;font-size:15px;white-space:nowrap}
+.vt__sum td.bad{color:var(--red);text-align:center;text-decoration:line-through}
+.vt__sum td.good{color:#fff;background:var(--green);text-align:center}
+.src{font-size:12.5px;color:var(--muted);margin-top:8px}
+
+/* Tarif kartochkalari (namunadagi kabi) */
+.tarif{background:var(--lav);margin-top:34px;padding-bottom:30px}
+.tarif__h{background:var(--ind);color:#fff;text-align:center;font-size:27px;padding:10px 12px}
+.t{padding:24px 20px 0;text-align:center}
+.t__step{display:inline-block;background:var(--ind);color:#fff;font-weight:800;font-size:12.5px;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.3px}
+.t__name{font-size:34px;font-weight:900;letter-spacing:-1px;margin-top:10px;line-height:1.02}
+.t__price{color:var(--ind);font-size:17px;margin-top:6px}
+.t__price s{color:var(--muted)}
+.t__price b{font-size:30px;font-weight:900;letter-spacing:-.8px;display:block}
+.t__list{list-style:none;background:#fff;text-align:left;margin:16px 0 18px;padding:4px 16px;border-radius:4px}
+.t__list li{display:grid;grid-template-columns:20px 1fr;gap:6px;padding:11px 0;border-bottom:1px dashed var(--line);font-size:16.5px}
+.t__list li:last-child{border-bottom:0}
+.t__list li::before{content:"";width:11px;height:11px;margin-top:7px;border-right:4px solid var(--ind);border-bottom:4px solid var(--ind);transform:rotate(-45deg)}
+.vip{border:4px dashed var(--ind);margin:30px 0 0;background:var(--lav)}
+.vip .t__name{color:var(--red);text-decoration:underline;text-decoration-thickness:4px;text-underline-offset:7px;font-size:44px}
+.vip__plus{font-size:18px;font-weight:900;font-style:italic;text-align:left;margin-top:16px}
+
+/* SOVG'ALAR — shakllarga o'ralgan */
+.gift-h{display:flex;align-items:center;gap:10px;justify-content:center;margin-top:30px}
+.gift-h span{font-weight:900;text-transform:uppercase;color:var(--ind);font-size:22px;letter-spacing:-.5px}
+/* Eng muhim sovg'a: shaxsiy shifokor */
+.gifts .gift.gift--top{background:linear-gradient(165deg,var(--ind),var(--ind-d));color:#fff;border:3px solid var(--gold);text-align:center;padding-top:34px}
+.gift .gift__pill.gift__pill--top{background:var(--gold);color:var(--ind-d);border-color:var(--ind-d)}
+.gift .gift__pill.gift__pill--top::after{content:" ⭐"}
+.doc{position:relative;width:132px;margin:4px auto 0}
+.doc__av{width:132px;height:132px;border-radius:50%;padding:5px;background:conic-gradient(var(--gold),oklch(0.75 0.16 0),var(--gold));position:relative}
+.doc__av img{width:100%;height:100%;border-radius:50%;object-fit:cover;background:#fff;display:block;border:3px solid var(--ind)}
+.doc__on{position:absolute;right:10px;bottom:10px;width:22px;height:22px;border-radius:50%;background:var(--green);border:3px solid var(--ind);box-shadow:0 0 0 0 oklch(0.62 0.16 150 / .6);animation:on 1.8s infinite}
+@keyframes on{70%{box-shadow:0 0 0 10px oklch(0.62 0.16 150 / 0)}100%{box-shadow:0 0 0 0 oklch(0.62 0.16 150 / 0)}}
+.doc__badge{position:absolute;left:-14px;top:6px;background:var(--red);color:#fff;font-weight:900;font-size:15px;padding:5px 9px;border-radius:12px;transform:rotate(-10deg);box-shadow:0 4px 10px oklch(0 0 0 / .25)}
+.gifts .gift--top .doc__quote{color:#fff;font-size:17px;line-height:1.45;margin-top:14px}
+.doc__quote b{color:var(--gold)}
+.doc__list{list-style:none;display:grid;gap:7px;margin:14px 0 6px;text-align:left}
+.doc__list li{background:oklch(1 0 0 / .1);border-radius:12px;padding:10px 12px;font-size:14.5px}
+/* A → B (90 kun) */
+.ab{display:grid;grid-template-columns:1fr 54px 1fr;gap:6px;align-items:stretch;margin:14px 0 4px}
+.ab__s{border-radius:14px;padding:10px;font-size:13.5px;font-weight:600;line-height:1.3;text-align:left}
+.ab__s small{display:block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;margin-bottom:4px}
+.ab__s--a{background:oklch(0.95 0.03 25);color:oklch(0.40 0.12 25)}
+.ab__s--b{background:oklch(0.93 0.07 150);color:oklch(0.35 0.11 150)}
+.ab__arrow{display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--ind);position:relative}
+.ab__arrow b{font-size:22px;font-weight:900;line-height:1}
+.ab__arrow::after{content:"→";font-size:22px;font-weight:900;color:oklch(0.5 0.14 150);line-height:1}
+.gifts{display:grid;gap:18px;margin-top:20px}
+.gift{background:#fff;border-radius:22px;padding:30px 14px 14px;position:relative;border:2px solid var(--lav-2);box-shadow:0 10px 24px oklch(0.3 0.1 283 / .08)}
+.gift__pill{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--ind);color:#fff;font-weight:900;font-size:15px;padding:6px 18px;border-radius:30px;white-space:nowrap;border:3px solid #fff;letter-spacing:-.2px}
+.gift__pill::after{content:" 🎁"}
+.gift__media{border-radius:14px;overflow:hidden;position:relative;box-shadow:0 6px 14px oklch(0 0 0 / .12)}
+.gift__media img{width:100%;height:auto}
+.gift__media.play::after{content:"";position:absolute;left:50%;top:50%;width:52px;height:52px;transform:translate(-50%,-50%);border-radius:50%;background:var(--pink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M8 5v14l11-7z'/%3E%3C/svg%3E") no-repeat 55% 50%/24px;opacity:.92}
+.gift h4{font-weight:900;text-transform:uppercase;color:var(--ind);font-size:16.5px;letter-spacing:-.4px;line-height:1.15;margin-top:12px}
+.gift p{font-size:14.5px;color:var(--muted);margin-top:4px}
+.gift__for{display:inline-block;margin-top:8px;font-size:12px;font-weight:800;text-transform:uppercase;padding:3px 9px;border-radius:6px}
+.for-q{background:oklch(0.93 0.06 150);color:oklch(0.40 0.12 150)}
+.for-p{background:oklch(0.94 0.05 0);color:var(--pink)}
+.minis{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.mini{border-radius:12px;overflow:hidden;background:var(--lav)}
+.mini img{width:100%;aspect-ratio:16/9.8;object-fit:cover}
+.mini span{display:block;font-size:12px;font-weight:700;color:var(--ind);padding:6px 8px 8px;line-height:1.25}
+.mini:nth-child(5){grid-column:1/-1;width:calc(50% - 4px);justify-self:center}
+.books{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:14px;background:var(--lav)}
+.book{aspect-ratio:3/4;border-radius:6px 12px 12px 6px;padding:10px 8px;color:#fff;font-weight:900;font-size:11.5px;line-height:1.1;text-transform:uppercase;display:flex;align-items:flex-end;box-shadow:inset 6px 0 0 oklch(0 0 0 / .15),0 6px 12px oklch(0 0 0 / .15)}
+.book:nth-child(1){background:linear-gradient(160deg,var(--ind-l),var(--ind-d))}
+.book:nth-child(2){background:linear-gradient(160deg,oklch(0.68 0.2 0),oklch(0.48 0.2 355))}
+.book:nth-child(3){background:linear-gradient(160deg,oklch(0.72 0.14 250),oklch(0.45 0.15 265))}
+
+/* Nega hozir */
+.now{background:var(--ind);color:#fff;border-radius:24px;padding:24px 18px;margin-top:22px}
+.now .H{color:#fff;font-size:27px;text-align:left;margin:0}
+.now ul{list-style:none;display:grid;gap:12px;margin-top:16px}
+.now li{display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start;font-size:16px}
+.now li i{font-style:normal;width:40px;height:40px;border-radius:12px;background:oklch(1 0 0 / .13);display:grid;place-items:center;font-size:20px}
+.now li b{display:block;font-size:16.5px}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-top:18px}
+.cal span{aspect-ratio:1;border-radius:8px;background:oklch(1 0 0 / .08);display:grid;place-items:center;font-size:12px;opacity:.55}
+.cal span.on{background:var(--gold);color:var(--ind-d);font-weight:900;opacity:1}
+.cal-l{font-size:12.5px;opacity:.8;margin-top:8px}
+
+/* FAQ */
+.faq{padding:34px 0 30px}
+.faq .H{font-size:27px;margin-bottom:12px}
+.foot{background:var(--ind-d);color:oklch(1 0 0 / .65);text-align:center;font-size:12.5px;padding:22px 18px}
+
+/* Pastki tugma */
+.sticky{position:fixed;left:50%;bottom:0;transform:translateX(-50%);width:100%;max-width:580px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:oklch(1 0 0 / .95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 -4px 16px oklch(0 0 0 / .1);z-index:40;transition:transform .25s}
+.sticky.hide{transform:translate(-50%,130%)}
+.sticky .btn{padding:15px 12px;font-size:16px}
+
+/* Modal */
+.modal{position:fixed;inset:0;z-index:60;background:#fff;display:none;overflow:auto}
+.modal.on{display:block}
+.modal__in{max-width:480px;margin:0 auto;padding:18px 22px 40px}
+.modal__x{display:block;margin-left:auto;background:none;border:0;cursor:pointer;width:46px;height:46px;position:relative}
+.modal__x::before,.modal__x::after{content:"";position:absolute;left:8px;right:8px;top:21px;height:4px;background:#000;transform:rotate(45deg)}
+.modal__x::after{transform:rotate(-45deg)}
+.modal__t{text-align:center;font-weight:800;font-size:19px;text-transform:uppercase;margin:18px 0 6px;line-height:1.35}
+.modal__s{text-align:center;color:var(--muted);font-size:14.5px;margin:0 0 22px}
+.f{margin-bottom:18px}
+.f label{display:block;font-size:17px;margin-bottom:8px}
+.f input,.f select{width:100%;border:1px solid var(--line);background:#fff;font:inherit;font-size:17.5px;padding:15px 14px;color:var(--ink);border-radius:0;-webkit-appearance:none;appearance:none}
+.f select{background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 12px center/18px}
+.f input:focus,.f select:focus{outline:2px solid var(--ind);outline-offset:-1px}
+.alert{display:none;background:oklch(0.96 0.03 20);color:oklch(0.45 0.18 25);border:1px solid oklch(0.85 0.08 20);padding:10px 12px;font-size:14.5px;margin-bottom:14px}
+.alert.on{display:block}
+.submit{width:100%;border:0;cursor:pointer;background:oklch(0.60 0.25 28);color:#fff;font:800 18px var(--sf);text-transform:uppercase;padding:19px;border-radius:6px}
+.submit[disabled]{opacity:.7}
+.safe{font-size:12.5px;color:var(--muted);text-align:center;margin-top:12px}
+
+
+/* "Omadingiz bor ekan" bloki */
+.luck{margin-top:44px;background:linear-gradient(160deg,oklch(0.97 0.05 150),#fff 70%);border:2px solid oklch(0.85 0.09 150);border-radius:24px;padding:24px 18px 20px;text-align:center;position:relative}
+.luck__ic{width:58px;height:58px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:30px;margin:-52px auto 8px;box-shadow:0 6px 16px oklch(0.4 0.1 150 / .2)}
+.luck__h{font-weight:900;text-transform:uppercase;letter-spacing:-.8px;line-height:1.02;font-size:28px;color:oklch(0.42 0.13 150)}
+.luck p{font-size:16.5px;text-align:left}
+.luck p b{color:var(--ind)}
+.luck p:last-child{text-align:center;font-weight:600}
+
+/* Otziv videolari, ovozli xabar, yopiq kanal, mashg'ulotlar */
+.vrow{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:#000}
+.vrow video{width:100%;aspect-ratio:1;object-fit:cover;background:#000;display:block}
+.voice{display:grid;grid-template-columns:44px 1fr;gap:10px;align-items:center;margin-bottom:10px}
+.voice__i{width:44px;height:44px;border-radius:50%;background:var(--ind);display:grid;place-items:center;font-size:20px}
+.voice small{color:var(--muted);font-size:12.5px}
+.rcard audio{width:100%;height:40px}
+.rcard__b p b{color:var(--ind)}
+.club{margin-top:20px;background:linear-gradient(160deg,var(--ind),var(--ind-d));color:#fff;border-radius:24px;padding:24px 18px 22px;text-align:center}
+.club__ic{width:56px;height:56px;border-radius:50%;background:oklch(1 0 0 / .14);display:grid;place-items:center;font-size:26px;margin:0 auto 10px}
+.club h3{font-weight:900;text-transform:uppercase;letter-spacing:-.6px;font-size:23px;line-height:1.05}
+.club p{font-size:16px;opacity:.95}
+.club .btn{margin-top:18px}
+.ex{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.ex__card{background:var(--lav);border-radius:18px;overflow:hidden}
+.ex__card video{width:100%;aspect-ratio:9/14;object-fit:cover;background:#000;display:block}
+.ex__b{padding:10px 12px 12px}
+.ex__t{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;background:var(--ind);color:#fff;padding:3px 8px;border-radius:6px}
+.ex__b h4{font-size:15.5px;font-weight:800;color:var(--ind);margin-top:6px}
+.ex__b p{font-size:13px;color:var(--muted);margin-top:3px;line-height:1.4}
+.ico3{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.ico3 li{background:var(--ind);color:#fff;border-radius:14px;padding:12px 6px;text-align:center}
+.ico3 b{display:block;font-size:24px;font-weight:900;letter-spacing:-.6px}
+.ico3 span{font-size:11.5px;opacity:.85;line-height:1.25;display:block}
+.shot{width:100%;border-radius:14px;margin-top:14px;box-shadow:0 8px 20px oklch(0 0 0 / .15)}
+@media (max-width:390px){.timer__n{font-size:27px}.timer__c{min-width:48px}.stats b{font-size:24px}}
+
+/* ===== Mobil o'qilishi: Russell Brunson sahifasi uslubida =====
+   Sarlavhalar katta harfda emas, oddiy yozuvda: keng harf oralig'i, havoli qatorlar.
+   Video ekranning deyarli butun kengligida. */
+.H{text-transform:none;letter-spacing:-.4px;line-height:1.14;font-weight:800}
+.hero{padding:22px 0 26px}
+.hero .w{padding:0 14px}
+.hero h1{font-size:34px;margin:14px 0 14px;line-height:1.13;letter-spacing:-.6px}
+.hero__s{font-size:18px;line-height:1.5;padding:0 10px}
+.vbox{margin:20px 6px 0;border-radius:4px}
+.vbox__cap{font-size:16px;padding:10px 12px;background:var(--ind-l);color:#fff}
+.vbox__cap .spk{width:30px;height:30px}
+.vnote{font-size:13.5px}
+.sec .H,.dark .H{font-size:28px}
+.w{padding:0 18px}
+p{line-height:1.6}
+.chk li,.xl li{line-height:1.6}
+.ask__h,.luck__h,.club h3,.hope .big,.now .H{text-transform:none;letter-spacing:-.4px;line-height:1.14}
+/* "Keling, tanishtirsam" */
+.intro{margin-top:34px;text-align:center;background:linear-gradient(160deg,var(--lav),#fff);border:2px solid var(--lav-2);border-radius:24px;padding:22px 16px}
+.intro__k{margin:0;font-size:16px;color:var(--muted);font-weight:600}
+.intro__h{font-weight:800;font-size:25px;line-height:1.2;letter-spacing:-.4px;color:var(--ind);margin-top:6px}
+.intro__h b{color:var(--pink)}
+.intro__h span{white-space:nowrap}
+/* Stop Autizm narx bloki */
+.pr{margin-top:22px;background:#fff;border:3px solid var(--ind);border-radius:24px;text-align:center;padding:28px 14px 18px;position:relative}
+.pr__tag{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--ind);color:#fff;font-weight:800;font-size:13px;padding:5px 16px;border-radius:8px;white-space:nowrap}
+.pr__old{font-weight:800;font-size:24px;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--red);text-decoration-thickness:3px}
+.pr__new{white-space:nowrap;font-weight:900;font-size:38px;color:var(--ind);letter-spacing:-1.4px;line-height:1.05}
+.pr__per{display:inline-block;margin-top:8px;background:var(--lav);color:var(--ind);font-weight:700;font-size:15px;padding:5px 14px;border-radius:30px}
+.pr__split{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.pr__split div{background:var(--lav);border-radius:14px;padding:10px}
+.pr__split small{display:block;font-size:13px;color:var(--muted)}
+.pr__split b{font-size:24px;font-weight:900;color:var(--ind);letter-spacing:-.6px}
+.pr__note{margin:12px 0 0;font-size:16px;font-weight:600}
+/* A → B grafigi */
+.path{margin:20px 0 6px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:14px 12px 14px;box-shadow:0 8px 22px oklch(0.3 0.1 283 / .06)}
+.path svg{width:100%;height:auto;display:block}
+.path__line{stroke-dasharray:420;stroke-dashoffset:420;animation:draw 2.2s ease-out .3s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.path__line{animation:none;stroke-dashoffset:0}}
+.path__legend{list-style:none;display:grid;gap:8px;margin-top:10px}
+.path__legend li{border-radius:12px;padding:10px 12px 10px 14px;font-size:15.5px;line-height:1.4;border-left:5px solid}
+.path__legend b{display:block;font-size:14px;margin-bottom:2px}
+.path__legend .a{background:oklch(0.96 0.03 25);border-color:#e5484d}.path__legend .a b{color:#c4282d}
+.path__legend .m1{background:oklch(0.97 0.05 75);border-color:#f5a524}.path__legend .m1 b{color:#a86a00}
+.path__legend .m2{background:oklch(0.96 0.06 120);border-color:#a3c93a}.path__legend .m2 b{color:#5b7a12}
+.path__legend .b{background:oklch(0.95 0.06 150);border-color:#30a46c}.path__legend .b b{color:#1f7a4d}
+.path figcaption{font-size:13.5px;color:var(--muted);text-align:center;margin-top:10px}
+.sec .tarif__h{color:#fff;font-size:26px}
+.t__name{font-size:30px}
+/* ===== O'qish qulayligi: Russell Brunson sahifasidagi matn o'lchamlari ===== */
+body{color:oklch(0.27 0.015 283)}
+p{font-size:19px;line-height:1.58;letter-spacing:.15px;margin-top:20px}
+.chk li,.xl li{font-size:19px;line-height:1.55;letter-spacing:.1px}
+.chk,.xl{gap:26px}
+.sec .H,.dark .H{font-size:30px}
+.sec .sub{font-size:17px}
+.hope p,.luck p{font-size:18.5px}
+.hope .big{font-size:27px}
+.chg__c{font-size:16.5px}
+.ask__list li{font-size:17.5px;line-height:1.45}
+.ask__p{font-size:18px}
+.rcard__b h4{font-size:18px}
+.rcard__b p{font-size:17px;line-height:1.55}
+.club p{font-size:18px}
+.ex__b h4{font-size:17px}.ex__b p{font-size:15px}
+.who h3{font-size:24px}.who p{font-size:16px}
+.tl li{font-size:17px;line-height:1.5}
+.vals div{font-size:17px}
+.obj summary{font-size:18px}
+.obj details p{font-size:17.5px;line-height:1.6}
+.cmp__row{font-size:16.5px}
+.t__list li{font-size:17.5px}
+.t__price{font-size:18px}
+.vt{font-size:15.5px}
+.vs__lbl{font-size:15px}.vs__res{font-size:17.5px}
+.now li{font-size:17px}
+.gift h4{font-size:18px}.gift p{font-size:16px}
+.doc__quote{font-size:18.5px}.doc__list li{font-size:16.5px}
+.ab__s{font-size:14.5px}
+.mini span{font-size:13px}
+.disc,.src,.cta__note{font-size:14.5px}
+.btn{font-size:19px}
+
+
+/* D: ixcham sovg'alar ro'yxati */
+.gcl{display:grid;gap:8px;margin-top:6px}
+.gcl__grp{font-size:12.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.gc{display:grid;grid-template-columns:72px 1fr;gap:12px;align-items:center;background:var(--lav);border-radius:14px;padding:8px}
+.gc img,.gc__e{width:72px;height:52px;border-radius:10px;object-fit:cover;display:grid;place-items:center;background:#fff;font-size:26px}
+.gc b{font-size:16px;line-height:1.3;color:var(--ind)}
+/* ===== D variant: Russell Brunson'ning birinchi ekrani ===== */
+.timer{padding:7px 8px 6px}
+.timer .timer__t{font-size:11.5px}
+.timer .timer__n{font-size:24px}
+.timer .timer__l{font-size:10.5px}
+.timer .timer__s{font-size:22px}
+.timer .timer__c{min-width:46px}
+.dh{background:#fff;text-align:center;padding:0 0 10px}
+.dh__strip{background:oklch(0.95 0.035 250);color:var(--ink);font-weight:800;font-size:17px;line-height:1.3;padding:10px 14px}
+.dh__strip u{text-decoration-color:oklch(0.55 0.15 255);text-decoration-thickness:2px}
+.dh__h{font-weight:900;color:oklch(0.22 0.02 283);font-size:clamp(24px,7.6vw,40px);line-height:1.14;letter-spacing:-.6px;margin:14px 10px 0;text-wrap:balance}
+.dh__h span{display:block;white-space:nowrap}
+.dh__h u{text-decoration-color:var(--ind-l);text-decoration-thickness:3px;text-underline-offset:5px}
+.dh__proof{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:12px;font-weight:700;font-size:16px}
+.dh__stars{color:oklch(0.8 0.17 75);font-size:26px;letter-spacing:1px;line-height:1}
+.dv{background:#fff;padding:0 0 6px}
+.dv__bar{background:oklch(0.52 0.13 255);color:#fff;text-align:center;font-size:15px;line-height:1.35;padding:9px 12px}
+.dv .video{aspect-ratio:16/9}
+.dv .facade__play{top:50%}
+.dv__press{position:absolute;right:16px;top:14px;color:#fff;font-weight:900;font-style:italic;font-size:26px;transform:rotate(-8deg);text-shadow:0 2px 8px oklch(0 0 0 / .6)}
+.dv__q{margin:14px 16px 0;text-align:center;font-weight:800;font-size:18px;line-height:1.35;color:oklch(0.22 0.02 283)}
+.dv__q u{text-decoration-color:var(--ind-l);text-decoration-thickness:2px;text-underline-offset:3px}
+.dv__q cite{display:block;font-style:normal;font-weight:600;font-size:14.5px;color:var(--muted);margin-top:4px}
+.cta{padding:14px 0 26px}
+/* Barcha bo'lim sarlavhalari markazda, ko'pi bilan 3 qator */
+.H,.sec .H,.dark .H{text-align:center;text-wrap:balance}
+@media (max-width:390px){
+  .hero h1{font-size:30px}
+  .sec .H,.dark .H{font-size:25px}
+  .hero__s{font-size:17px}
+  .hero__k{font-size:12px;padding:5px 12px}
+}
+@media (prefers-reduced-motion:reduce){.btn::after,.facade__play,.vbox__cap .spk::after{animation:none}}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- TAYMER -->
+  <div class="timer">
+    <div class="timer__t" data-tt>Sovg'alar va chegirma tugashiga qoldi</div>
+    <div class="timer__r" data-tr>
+      <div class="timer__c"><div class="timer__n" data-d>00</div><div class="timer__l">kun</div></div><div class="timer__s">:</div>
+      <div class="timer__c"><div class="timer__n" data-h>00</div><div class="timer__l">soat</div></div><div class="timer__s">:</div>
+      <div class="timer__c"><div class="timer__n" data-m>00</div><div class="timer__l">daqiqa</div></div><div class="timer__s">:</div>
+      <div class="timer__c"><div class="timer__n" data-s>00</div><div class="timer__l">soniya</div></div>
+    </div>
+  </div>
+
+  <!-- ===== 1. HEADLINE (D: Russell uslubi — birinchi ekranda hammasi ko'rinadi) ===== -->
+  <section class="dh">
+    <div class="dh__strip">27 yillik tajribali nevropatolog <u>bepul videoda</u> ko'rsatadi:</div>
+    <h1 class="dh__h"><span>“Autizm — <u>hukm emas!</u></span><span>Farzandingiz ham</span><span>«oyi» deyishi mumkin”</span></h1>
+    <div class="dh__proof"><span class="dh__stars" aria-hidden="true">★★★★★</span><span>101K+ obunachi · 200+ bola</span></div>
+  </section>
+
+  <!-- ===== 2. VIDEO ===== -->
+  <section class="dv">
+    <div class="dv__bar"><b>🔊 Ovozni yoqing!</b> (Video to'liq yuklanishini kuting)</div>
+    <div class="video" data-video>
+      <button class="facade" type="button" data-play aria-label="Videoni ovozi bilan ko'rish" style="background-image:url('https://i.ytimg.com/vi/TfvFOfiNyFE/hqdefault.jpg')">
+        <span class="facade__play" aria-hidden="true"></span>
+        <span class="dv__press" aria-hidden="true">Bosing!</span>
+      </button>
+    </div>
+    <blockquote class="dv__q">“Oldinlari chaqirsak qaramasdi — <u>hozir odamlar bilan qo'shiladi!</u>”<cite>— Muhammadalining onasi</cite></blockquote>
+  </section>
+
+  <section class="cta">
+    <div class="w">
+      <button class="btn" type="button" data-open>Hoziroq!<br>Konsultatsiyaga yozilaman 👉<small>Farzandimga yordam berish mumkinmi — bilib olaman</small></button>
+      <p class="cta__note">Anketa 30 soniya · Administrator qo'ng'iroq qilib vaqtni belgilaydi</p>
+    </div>
+  </section>
+
+  <!-- ===== 3. SOTUVCHI MATN ===== -->
+  <section class="dark">
+    <div class="w">
+      <h2 class="H">Siz ham shu holatdan charchadingizmi?</h2>
+      <ul class="chk">
+        <li><span>Farzandingizni <u>shifokordan shifokorga</u> olib yurasiz, lekin hech kim aniq nima qilish kerakligini aytmaydi</span></li>
+        <li><span>Bolangizni <u>tekshirmasdan, ko'rmasdan</u> dori yozib berishadi — foydasini sezmaysiz</span></li>
+        <li><span>Farzandingiz 3–4 yoshda, lekin <u>hali gapirmaydi</u>, ismiga qaramaydi, ko'zingizga boqmaydi</span></li>
+        <li><span>Kechalari <u>uxlamaydi</u>, siz esa yillardan beri to'yib uxlamagansiz</span></li>
+        <li><span>Kechasi o'ylaysiz: "<u>Bolam maktabga ham shu holatda borsa-chi?</u>"</span></li>
+      </ul>
+      <div class="quote">"Kuchli vrach yo'q. Borsam ko'p firmenniy dori yozib berishadi, umuman foydasini ko'rmadim."<b>— Andijondan Mohira opa, onalar bilan suhbatimizdan</b></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="w">
+      <h2 class="H">Agar hozir harakat qilmasangiz</h2>
+      <ul class="xl">
+        <li><span>Bola miyasi eng tez rivojlanadigan yillar o'tib ketadi. Har bir "kutib turamiz" degan oy — qaytib kelmaydigan oy</span></li>
+        <li><span>Nutq, muloqot va xulqdagi orqada qolish yil sayin sezilarli bo'ladi — bog'cha va maktab qiyinlashadi</span></li>
+      </ul>
+
+      <div class="luck">
+        <div class="luck__ic" aria-hidden="true">🍀</div>
+        <div class="luck__h">Lekin sizning omadingiz bor ekan!</div>
+        <p>Chunki siz hozir <b>"Stop Autizm"</b> loyihasi haqida bilib olyapsiz — farzandingizni <b>90 kun davomida, shaxsan mening nazoratim ostida</b> bosqichma-bosqich olib boradigan dastur:</p>
+        <p>"Bolangiz endi o'zgarmaydi" deyilgan bolalar bugun <b>gapira boshlayapti, ismiga javob beryapti.</b></p>
+        <p><b>Autizm tashxisi — hukm emas.</b> Eng katta xato — kutish. Qanchalik erta boshlasangiz, natija shunchalik yaxshi.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="w">
+      <h2 class="H">Dasturdan keyin farzandingizda nimalar o'zgaradi?</h2>
+      <p class="sub">Ota-onalar Stop Autizm dasturida eng ko'p kuzatadigan o'zgarishlar</p>
+
+      <!-- A nuqtadan B nuqtaga: 90 kunlik yo'l grafigi -->
+      <figure class="path">
+        <svg viewBox="0 0 360 250" role="img" aria-labelledby="path-t">
+          <title id="path-t">A nuqtadan B nuqtaga: 90 kunlik yo'l</title>
+          <defs>
+            <linearGradient id="pg" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#e5484d"/><stop offset=".5" stop-color="#f5a524"/><stop offset="1" stop-color="#30a46c"/></linearGradient>
+            <linearGradient id="pa" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#30a46c" stop-opacity=".22"/><stop offset="1" stop-color="#30a46c" stop-opacity="0"/></linearGradient>
+          </defs>
+          <!-- to'r -->
+          <g stroke="#e4e2f3" stroke-width="1">
+            <line x1="30" y1="210" x2="345" y2="210"/>
+            <line x1="30" y1="20" x2="30" y2="210"/>
+            <line x1="135" y1="20" x2="135" y2="210" stroke-dasharray="3 4"/>
+            <line x1="240" y1="20" x2="240" y2="210" stroke-dasharray="3 4"/>
+          </g>
+          <!-- maydon va egri chiziq -->
+          <path d="M40,190 C90,186 110,160 135,146 S205,96 240,86 S310,48 335,40 L335,210 L40,210 Z" fill="url(#pa)"/>
+          <path class="path__line" d="M40,190 C90,186 110,160 135,146 S205,96 240,86 S310,48 335,40" fill="none" stroke="url(#pg)" stroke-width="5" stroke-linecap="round"/>
+          <!-- nuqtalar -->
+          <circle cx="40" cy="190" r="9" fill="#e5484d" stroke="#fff" stroke-width="3"/>
+          <circle cx="135" cy="146" r="6" fill="#f5a524" stroke="#fff" stroke-width="3"/>
+          <circle cx="240" cy="86" r="6" fill="#a3c93a" stroke="#fff" stroke-width="3"/>
+          <circle cx="335" cy="40" r="10" fill="#30a46c" stroke="#fff" stroke-width="3"/>
+          <text x="40" y="172" text-anchor="middle" font-weight="900" font-size="15" fill="#e5484d">A</text>
+          <text x="335" y="24" text-anchor="middle" font-weight="900" font-size="15" fill="#30a46c">B</text>
+          <!-- o'q yozuvlari -->
+          <g font-size="11" fill="#6b6a85" text-anchor="middle" font-weight="600">
+            <text x="40" y="228">Boshlanish</text><text x="135" y="228">30 kun</text><text x="240" y="228">60 kun</text><text x="335" y="228">90 kun</text>
+          </g>
+          <text x="14" y="115" font-size="11" fill="#6b6a85" font-weight="600" transform="rotate(-90 14 115)" text-anchor="middle">Rivojlanish</text>
+        </svg>
+        <ol class="path__legend">
+          <li class="a"><b>A nuqta · Hozir</b>Gapirmaydi, ismiga qaramaydi, o'z dunyosiga yopilgan, kechalari uxlamaydi</li>
+          <li class="b"><b>B nuqta · 90 kun</b>"Oyi", "dada" deydi, gapingizni tinglaydi, tengdoshlari bilan o'ynaydi</li>
+        </ol>
+        <figcaption>Ota-onalar kuzatgan odatiy yo'l. Har bir bolada tezlik va natija har xil — shuning uchun avval konsultatsiya.</figcaption>
+      </figure>
+      <div class="chg">
+        <div class="chg__c"><div class="chg__m chg__m--slides" data-slides>
+          <img class="on" src="/img/c/soz-1.jpg" alt="Bola onasiga 'Oyi!' deyapti">
+          <img src="/img/c/soz-2.jpg" alt="Bola dadasiga 'Dada!' deyapti" loading="lazy">
+          <img src="/img/c/soz-3.jpg" alt="Bola bobosiga 'Bobo!' deyapti" loading="lazy">
+          <img src="/img/c/soz-4.jpg" alt="Bola buvisiga 'Buvi!' deyapti" loading="lazy">
+          <img src="/img/c/soz-5.jpg" alt="Bola akasiga 'Aka!' deyapti" loading="lazy">
+          <div class="dots" aria-hidden="true"><b class="on"></b><b></b><b></b><b></b><b></b></div>
+          <i>🗣</i></div><span>Farzandingiz so'zlarni ayta boshlaydi — "oyi", "dada", "buvi"… butun oila kutgan so'zlar</span></div>
+        <div class="chg__c"><div class="chg__m"><img src="/img/c/ozgarish-2.jpg" alt="" loading="lazy" onerror="this.parentNode.classList.add('no');this.remove()"><i>👀</i></div><span>Ko'zingizga qaraydi, ismiga javob beradi</span></div>
+        <div class="chg__c"><div class="chg__m"><img src="/img/c/ozgarish-3.jpg" alt="" loading="lazy" onerror="this.parentNode.classList.add('no');this.remove()"><i>😌</i></div><span>Injiqlik va jahl chiqishi kamayadi</span></div>
+        <div class="chg__c"><div class="chg__m"><img src="/img/c/ozgarish-4.jpg" alt="" loading="lazy" onerror="this.parentNode.classList.add('no');this.remove()"><i>🌙</i></div><span>Uyqusi tartibga tushadi — siz ham dam olasiz</span></div>
+        <div class="chg__c"><div class="chg__m"><img src="/img/c/ozgarish-5.jpg" alt="" loading="lazy" onerror="this.parentNode.classList.add('no');this.remove()"><i>🎯</i></div><span>Diqqati oshadi, gapingizni tinglaydi</span></div>
+        <div class="chg__c"><div class="chg__m chg__m--swap"><img src="/img/c/ozgarish-6.jpg" alt="Bola tengdoshlari bilan o'ynayapti" loading="lazy" onerror="this.parentNode.classList.add('no');this.remove()"><img class="swap" src="/img/c/ozgarish-6b.jpg" alt="Bolalar birga maktabga ketyapti" loading="lazy" onerror="this.remove()"><i>🧸</i></div><span>Tengdoshlari bilan o'ynay boshlaydi</span></div>
+        <div class="chg__c"><div class="chg__m"><img src="/img/c/ozgarish-7.jpg" alt="" loading="lazy" onerror="this.parentNode.classList.add('no');this.remove()"><i>🍽</i></div><span>Ovqatlanishi yaxshilanadi</span></div>
+        <div class="chg__c"><div class="chg__m"><img src="/img/c/ozgarish-8.jpg" alt="" loading="lazy" onerror="this.parentNode.classList.add('no');this.remove()"><i>❤️</i></div><span>Siz farzandingizni tushuna boshlaysiz</span></div>
+      </div>
+      <p class="disc">Har bir bolada natija va tezlik har xil bo'ladi. Shuning uchun avval konsultatsiyada bolangizning holati ko'riladi.</p>
+    </div>
+  </section>
+
+  <!-- ===== UYDA MASHG'ULOTLAR (ABA + sensor) ===== -->
+  <section class="sec">
+    <div class="w">
+      <h2 class="H">Dasturda uyda nima qilasiz?</h2>
+      <p class="sub">ABA terapiya va sensor integratsiya — bemorlarimiz mashg'ulotlaridan</p>
+      <div class="ex">
+        <div class="ex__card">
+          <video src="/media/mashgulot-2.mp4" poster="/media/mashgulot-2.jpg" controls playsinline preload="none"></video>
+          <div class="ex__b"><span class="ex__t">Sensor integratsiya</span><h4>Ranglarni ajratish</h4><p>Tugmachalarni rangiga qarab "uychalarga" solish — diqqat, ko'z-qo'l koordinatsiyasi va ko'rsatmani tinglash</p></div>
+        </div>
+        <div class="ex__card">
+          <video src="/media/mashgulot-1.mp4" poster="/media/mashgulot-1.jpg" controls playsinline preload="none"></video>
+          <div class="ex__b"><span class="ex__t">ABA terapiya</span><h4>Shakllarni joylashtirish</h4><p>Shakllarni o'z joyiga qo'yish — mayda motorika, mustaqil bajarish va maqtov orqali mustahkamlash</p></div>
+        </div>
+      </div>
+      <ul class="ico3">
+        <li><b>20</b><span>daqiqa — har kuni uyda bola bilan</span></li>
+        <li><b>70%</b><span>amaliyot, 30% nazariya</span></li>
+        <li><b>15+</b><span>video dars, mashqlar ko'rsatib beriladi</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== NARX ===== -->
+  <section class="sec">
+    <div class="w">
+      <!-- Qiymatni ko'tarish: "qancha to'lagan bo'lardingiz?" -->
+      <div class="ask">
+        <div class="ask__q" aria-hidden="true">?</div>
+        <p class="ask__lead">Keling, endi sizdan bir narsani so'rayman…</p>
+        <h3 class="ask__h">Qancha to'lagan bo'lar edingiz? <span>Agar…</span></h3>
+        <ul class="ask__list">
+          <li>Ismini aytganingizda <b>o'girilib, sizga qarasa</b></li>
+          <li>Sizni birinchi marta <b>"oyi", "dada"</b> deb chaqirsa</li>
+          <li>Tengdoshlari safiga qo'shilib, <b>ular bilan o'ynasa</b></li>
+        </ul>
+        <p class="ask__p">Bu kunni ko'rish uchun <b>har qanday ota-ona bor-budini berishga tayyor.</b> Keling, bozorda bu qancha turishini ko'raylik.</p>
+      </div>
+
+      <h2 class="H" style="margin-top:34px">Autizm markazlarida bu qancha turadi?</h2>
+      <img class="shot" src="/img/b/markaz-narx.jpg" alt="O'zbekistonda autizm davolash markazlari narxi: oyiga 3–12 mln so'm" loading="lazy">
+      <p class="src">Manba: bmp_clinics (Instagram) ma'lumoti, vebinar taqdimotidan.</p>
+      <div class="cmp">
+        <div class="cmp__tot"><small>3 oylik markazda o'rtacha (5 mln × 3 oy + tahlillar)</small><b>16 000 000+ so'm</b></div>
+      </div>
+    </div>
+
+    <div class="w">
+      <div class="intro">
+        <p class="intro__k">Keling, sizga</p>
+        <h2 class="intro__h"><b>200 dan ortiq</b> autizmli bolaga yordam berib kelayotgan <span>"Stop Autizm"</span> dasturini tanishtirsam</h2>
+      </div>
+    </div>
+
+    <div class="tarif">
+      <h2 class="H tarif__h">Bizda qanday boshlanadi?</h2>
+      <div class="t">
+        <span class="t__step">1-qadam · hozir</span>
+        <div class="t__name">BIRINCHI KONSULTATSIYA</div>
+        <ul class="t__list">
+          <li>Shifokor bolangizni shaxsan ko'radi</li>
+          <li>Bolangizga yordam berish mumkinmi — aniq javob</li>
+          <li>3 ta sovg'a dars darhol beriladi 🎁</li>
+        </ul>
+        <button class="btn btn--red" type="button" data-open>Konsultatsiyaga yozilish<small>(30 soniyalik anketa)</small></button>
+      </div>
+      <div class="w">
+        <div class="vip t">
+          <span class="t__step">2-qadam · konsultatsiyadan keyin</span>
+          <div class="t__name">STOP AUTIZM</div>
+          <div class="t__price">90 kunlik individual dastur — shaxsan Zebo opa nazoratida</div>
+          <p class="vip__plus"><u>KONSULTATSIYA</u>dagi hamma narsa <u>qo'shimchasiga</u>…</p>
+          <ul class="t__list">
+            <li>6 bosqichli individual dastur</li>
+            <li>15+ video dars, har biri ~20 daqiqa</li>
+            <li>24/7 Zebo opa bilan aloqa</li>
+            <li>Oflayn ko'rik va nazorat</li>
+          </ul>
+          <div style="height:22px"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stop Autizm narxlari -->
+    <div class="w">
+      <div class="pr">
+        <div class="pr__tag">STOP AUTIZM · NARXI</div>
+        <div class="pr__old">9 000 000 so'm</div>
+        <div class="pr__new">6 000 000 so'm</div>
+        <div class="pr__per">📅 3 oy (90 kun) uchun</div>
+        <div class="pr__split">
+          <div><small>Oyiga</small><b>2 000 000</b></div>
+          <div><small>Kuniga</small><b>66 000</b></div>
+        </div>
+        <p class="pr__note">💳 Bo'lib to'lash imkoniyati bor</p>
+      </div>
+    </div>
+
+    <!-- Taqqoslash: markaz vs Stop Autizm (narxlardan keyin) -->
+    <div class="w">
+      <h2 class="H" style="margin-top:34px">Solishtirib ko'ring</h2>
+      <div class="vs">
+        <div class="vs__row">
+          <span class="vs__lbl">Autizm markazi, 3 oy</span>
+          <div class="vs__bar vs__bar--bad" style="--w:100%"><b>16 mln+</b></div>
+        </div>
+        <div class="vs__row">
+          <span class="vs__lbl">Stop Autizm, 3 oy</span>
+          <div class="vs__bar vs__bar--good" style="--w:37%"><b>6 mln</b></div>
+        </div>
+
+        <table class="vt">
+          <thead><tr><th></th><th>Markaz</th><th>Stop Autizm</th></tr></thead>
+          <tbody>
+            <tr class="vt__hl"><td>👩‍⚕️ <b>24/7 oilaviy nevropatolog</b> — 27 yillik tajribali shifokor doim aloqada</td><td class="no">✕</td><td class="yes">✓</td></tr>
+            <tr><td>Uyda har kuni mashg'ulot — video ko'rsatma bilan</td><td class="no">✕</td><td class="yes">✓</td></tr>
+            <tr><td>Oyiga 4 marta jonli suhbat</td><td class="no">✕</td><td class="yes">✓</td></tr>
+            <tr><td>Oflayn ko'rik va nazorat</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr class="vt__sum"><td>3 oylik narx</td><td class="bad">16 mln+</td><td class="good">6 mln</td></tr>
+          </tbody>
+        </table>
+
+        <p class="vs__res">Deyarli <b>3 barobar arzon</b> — va 3 oy davomida <b>oilaviy nevropatologingiz</b> doim yoningizda</p>
+        <button class="btn btn--red" type="button" data-open style="margin-top:14px">Konsultatsiyaga yozilish<small>Avval bolangiz holatini bilib oling</small></button>
+      </div>
+      <p class="src">Markazlar xizmatlari turlicha; jadvalda odatiy reabilitatsiya markazi bilan solishtirildi.</p>
+    </div>
+  </section>
+
+  <!-- ===== SOVG'ALAR + NEGA HOZIR ===== -->
+  <section class="sec">
+    <div class="w">
+      <h2 class="H">Nega aynan hozir yozilish kerak?</h2>
+
+      <div class="now">
+        <h3 class="H">Har oy qabul joylari sanoqli</h3>
+        <ul>
+          <li><i>📅</i><div><b>Oyiga faqat sanoqli kunlar</b>Zebo opa ikki davlatda ishlaydi — Toshkentdagi qabul kunlari oyiga cheklangan</div></li>
+          <li><i>⏳</i><div><b>Sovg'alar faqat taymer tugaguncha</b>Vaqt tugagach, sovg'alar va 6 mln so'mlik narx yopiladi</div></li>
+        </ul>
+      </div>
+
+      <div class="gift-h"><span>🎁 Siz uchun 6 ta sovg'a</span></div>
+      <div class="gifts">
+        <div class="gift gift--top">
+          <div class="gift__pill gift__pill--top">ENG MUHIM SOVG'A</div>
+          <div class="doc">
+            <div class="doc__av"><img src="/img/c/zebo-avatar.jpg" alt="Zebiniso Yadgarova" width="240" height="240"><span class="doc__on" aria-hidden="true"></span></div>
+            <div class="doc__badge">24/7</div>
+          </div>
+          <p class="doc__quote">"Men, 27 yillik tajribaga ega oliy toifali nevropatolog <b>Zebiniso Yadgarova</b>, sizning <b>oilaviy 24/7 shaxsiy shifokoringizga</b> aylanaman."</p>
+          <span class="gift__for for-p">Stop Autizm dasturi ishtirokchilariga</span>
+        </div>
+        <div class="gcl">
+          <div class="gcl__grp">Konsultatsiyaga kelganingizda</div>
+          <div class="gc"><img src="/img/b/gift-nutq.jpg" alt=""><b>Nutqni chiqarish — nevromassaj darsi</b></div>
+          <div class="gc"><img src="/img/b/gift-aqliy.jpg" alt=""><b>Aqliy ortda qolishning 10 belgisi — dars</b></div>
+          <div class="gc"><img src="/img/b/gift-kalsiy.jpg" alt=""><b>Uyda tabiiy kalsiy — qo'llanma</b></div>
+          <div class="gcl__grp">Dasturga taymer tugaguncha yozilsangiz</div>
+          <div class="gc"><img src="/img/b/bonus-1.jpg" alt=""><b>Sirli nevromassaj kursi (5 dars)</b></div>
+          <div class="gc"><span class="gc__e" aria-hidden="true">📚</span><b>ABA va sensor integratsiya kitoblari</b></div>
+          <div class="gc"><span class="gc__e" aria-hidden="true">📒</span><b>Hali sotuvga chiqmagan shaxsiy qo'llanmalar</b></div>
+        </div>
+      </div>
+
+      <div class="cta" style="padding-bottom:0">
+        <button class="btn btn--red" type="button" data-open>Joyimni band qilaman<small>Konsultatsiya + 3 ta sovg'a darhol</small></button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== OTZIVLAR ===== -->
+  <section class="sec">
+    <div class="w">
+      <h2 class="H">Ota-onalar nima deydi?</h2>
+      <p class="sub">Haqiqiy bemorlarimiz oilalari — o'z so'zlari bilan</p>
+      <div class="rev">
+        <div class="rcard">
+          <div class="vrow">
+            <video src="/media/otziv-1a.mp4" poster="/media/otziv-1a.jpg" controls playsinline preload="none"></video>
+            <video src="/media/otziv-1b.mp4" poster="/media/otziv-1b.jpg" controls playsinline preload="none"></video>
+          </div>
+          <div class="rcard__b">
+            <h4>Muhammadalining onasi</h4>
+            <p>"Rossiyada topolmagan shifomizni Zebiniso Yadgarovnaning to'g'ri tashxisi orqali topyapmiz. Oldinlari chaqirsak qaramasdi — <b>hozir odamlar bilan qo'shiladi</b>. Bir kurs davolanishdan keyin o'zgarishlar juda yaxshi, endi ikkinchi kursni boshlaymiz. Katta rahmat!"</p>
+          </div>
+        </div>
+        <div class="rcard">
+          <div class="rcard__b">
+            <div class="voice"><span class="voice__i">🎙</span><div><h4>Tojikistondan ona</h4><small>Ovozli xabar · 1:01</small></div></div>
+            <audio src="/media/ovozli-1.m4a" controls preload="none"></audio>
+            <p>"3 yoshli farzandim gapirmasdi. Bir oy oldin oldingizga borib, kursni oldik — <b>natijalar yaxshi</b>."</p>
+          </div>
+        </div>
+        <div class="rcard">
+          <div class="rcard__b">
+            <div class="voice"><span class="voice__i">🎙</span><div><h4>Davolanishning birinchi oyida</h4><small>Ovozli xabar · 1:16</small></div></div>
+            <audio src="/media/ovozli-2.m4a" controls preload="none"></audio>
+            <p>"Birinchi oyimizda davolanyapmiz. <b>Takrorlashlar boshlandi</b>: ko'rgan multfilmidagi so'zlarni takrorlayapti, <b>1 dan 5 gacha sanadi</b>."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="club">
+        <div class="club__ic">🔒</div>
+        <h3>Bunday natijalarni yuzlab ko'rsatishim mumkin</h3>
+        <p>Barchasini <b>yopiq kanalga</b> to'plaganman. Ro'yxatdan o'tsangiz, sizni ham qo'shaman — ota-onalarning o'zlaridan eshitasiz.</p>
+        <button class="btn btn--red" type="button" data-open>Ro'yxatdan o'tib, kanalga qo'shilish<small>Konsultatsiya + yopiq kanal</small></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEGA ZEBO DOCTOR ===== -->
+  <section class="sec">
+    <div class="w">
+      <h2 class="H">Nega aynan Zebo doctor?</h2>
+      <div class="who">
+        <div class="who__ph"><img src="/img/zebo-0.webp" alt="Zebiniso Yadgarova" loading="lazy"></div>
+        <div><h3>Zebiniso Yadgarova</h3><p>Oliy toifali bolalar nevropatologi. GLOBAL INTERNATIONAL (Toshkent) va Marmed (Tojikiston) klinikalarida qabul qiladi.</p></div>
+      </div>
+      <div class="stats">
+        <div><b>27</b><span>yillik tajriba</span></div>
+        <div><b>200+</b><span>autizmli bolaga yordam</span></div>
+        <div><b>101K+</b><span>Instagram'da obunachi</span></div>
+      </div>
+      <ul class="tl">
+        <li><b>1997</b>Toshkent Pediatriya Tibbiyot Institutini bitirgan</li>
+        <li><b>2006</b>"Eng faol shifokor" deb topilgan</li>
+        <li><b>Bugun</b>Telekanallar mehmoni, "Stop Autizm" dasturi muallifi</li>
+      </ul>
+      <div class="vals">
+        <div><i>💊</i>Ortiqcha dori yozmaydi — avval sababini qidiradi</div>
+        <div><i>🤍</i>Har bir bemorni o'z oila a'zosidek ko'radi</div>
+        <div><i>👩‍👧‍👧</i>O'zi ham ona — 2 nafar qizi bor</div>
+      </div>
+      <div class="gal">
+        <figure class="g-full"><img src="/img/b/exp-tv1.jpg" alt="Zebiniso Yadgarova «Oydin hayot» ko'rsatuvida" loading="lazy"><figcaption>📺 «Oydin hayot» ko'rsatuvida</figcaption></figure>
+        <figure class="g-full"><img src="/img/b/arxiv-2.jpg" alt="Zebiniso Yadgarova bolalar bilan" loading="lazy"><figcaption>Bolalar bilan — 27 yil oldin ham, bugun ham</figcaption></figure>
+        <figure class="g-full"><img src="/img/b/exp-diplom.jpg" alt="Toshkent Pediatriya Tibbiyot Instituti diplomi" loading="lazy"><figcaption>🎓 Toshkent Pediatriya Tibbiyot Instituti diplomi</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== E'TIROZLAR ===== -->
+  <section class="sec obj">
+    <div class="w">
+      <h2 class="H">Sizni o'ylantirayotgan savollar</h2>
+      <details><summary>"Bizga autizm davolanmaydi deyishgan..."</summary><p>Autizm bir haftada o'tmaydi — bu rost. Lekin to'g'ri yordam bilan bola gapira boshlashi, muloqotga kirishishi mumkin. Qancha yordam bera olishimizni bolani ko'rgach aytamiz.</p></details>
+      <details><summary>"Ko'p shifokorga bordik, foydasi bo'lmadi"</summary><p>Ko'pincha sabab topilmasdan faqat belgi "o'chiriladi". Zebo opa avval sababni qidiradi. Avvalgi xulosalaringizni olib keling.</p></details>
+      <details><summary>"Bolamga ko'p dori berishni xohlamayman"</summary><p>Dasturning 70% qismi — uydagi mashqlar. Dori faqat haqiqatan kerak bo'lganda tayinlanadi.</p></details>
+      <details><summary>"Katta bo'lsa o'zi gapirib ketadi"</summary><p>Ismiga qaramaslik va ko'zga boqmaslik bilan birga kelgan kechikish o'z-o'zidan o'tmaydi. Kutilgan har oy — boy berilgan oy.</p></details>
+      <details><summary>"Tashxis qo'yilmagan, faqat shubha bor"</summary><p>Aynan shunda konsultatsiya eng to'g'ri birinchi qadam. Tashxisni kutish shart emas.</p></details>
+      <details><summary>"Konsultatsiyadan keyin dasturga yozilish majburiymi?"</summary><p>Yo'q. Avval holatni bilib olasiz, keyin o'zingiz qaror qilasiz.</p></details>
+      <details><summary>"Biz boshqa viloyatdamiz"</summary><p>Dastur darslari, jonli suhbatlar va 24/7 aloqa onlayn. Oflayn ko'rik uchun qabul kuni oldindan kelishiladi.</p></details>
+    </div>
+  </section>
+
+  <footer class="foot">© 2026 Dr. Zebiniso Yadgarova · Stop Autizm<br>Sahifadagi ma'lumotlar tanishish uchun berilgan va shifokor ko'rigi o'rnini bosmaydi.</footer>
+</div>
+
+<div class="sticky hide" data-sticky><button class="btn btn--red" type="button" data-open>Konsultatsiyaga yozilish 👉</button></div>
+
+<!-- ANKETA -->
+<div class="modal" data-modal role="dialog" aria-modal="true" aria-labelledby="mt">
+  <div class="modal__in">
+    <button class="modal__x" type="button" aria-label="Yopish" data-close></button>
+    <h2 class="modal__t" id="mt">Konsultatsiyaga yozilish uchun anketani to'ldiring</h2>
+    <p class="modal__s">Administrator qo'ng'iroq qilib, qabul kunini belgilaydi</p>
+    <form data-form novalidate>
+      <div class="alert" data-alert role="alert"></div>
+      <div class="f"><label for="name">Ismingizni kiriting</label><input id="name" type="text" autocomplete="given-name" maxlength="60"></div>
+      <div class="f"><label for="phone">Telefon raqamingizni kiriting</label><input id="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+998 90 123 45 67"></div>
+      <div class="f"><label for="age">Farzandingiz yoshi</label><select id="age"><option value="">Tanlang</option><option>1–3 yosh</option><option>3–5 yosh</option><option>5–7 yosh</option><option>7 yoshdan katta</option></select></div>
+      <div class="f"><label for="topic">Holat</label><select id="topic"><option value="">Tanlang</option><option>Autizm / RAS tashxisi bor</option><option>Autizmga shubha bor</option><option>Nutq kechikishi</option><option>Boshqa</option></select></div>
+      <button class="submit" type="submit" data-submit>Davom etish</button>
+      <p class="safe">🔒 Ma'lumotlaringiz faqat konsultatsiyani belgilash uchun ishlatiladi</p>
+    </form>
+  </div>
+</div>
+
+<script>
+(function () {
+  var q = function (s) { return document.querySelector(s); };
+  var pad = function (n) { return (n < 10 ? "0" : "") + n; };
+
+  // "Birinchi so'z" rasmlari: har 3 soniyada keyingisi
+  document.querySelectorAll("[data-slides]").forEach(function (box) {
+    var imgs = box.querySelectorAll("img"), dots = box.querySelectorAll(".dots b"), k = 0;
+    if (imgs.length < 2) return;
+    setInterval(function () {
+      imgs[k].classList.remove("on"); if (dots[k]) dots[k].classList.remove("on");
+      k = (k + 1) % imgs.length;
+      imgs[k].classList.add("on"); if (dots[k]) dots[k].classList.add("on");
+    }, 3000);
+  });
+
+  // Taymer — aksiya oxiri (aniq sanani o'zgartirish shu yerda)
+  var END = Date.parse("2026-11-29T23:59:59+05:00");
+  var tid = setInterval(tick, 1000); tick();
+  function tick() {
+    var l = END - Date.now();
+    if (l <= 0) { q("[data-tt]").textContent = "Konsultatsiyaga yozilish davom etmoqda"; q("[data-tr]").style.display = "none"; clearInterval(tid); return; }
+    var s = Math.floor(l / 1000);
+    q("[data-d]").textContent = pad(Math.floor(s / 86400)); q("[data-h]").textContent = pad(Math.floor(s % 86400 / 3600));
+    q("[data-m]").textContent = pad(Math.floor(s % 3600 / 60)); q("[data-s]").textContent = pad(s % 60);
+  }
+
+  // Video: bosilganda ovozi bilan ishga tushadi
+  q("[data-play]").addEventListener("click", function () {
+    var f = document.createElement("iframe");
+    f.src = "https://www.youtube-nocookie.com/embed/TfvFOfiNyFE?autoplay=1&rel=0&playsinline=1";
+    f.title = "Dr. Zebo — video";
+    f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+    f.allowFullscreen = true;
+    q("[data-video]").appendChild(f); this.remove();
+    if (window.fbq) fbq("trackCustom", "VideoPlay");
+  });
+
+  // Modal
+  var modal = q("[data-modal]");
+  document.querySelectorAll("[data-open]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      modal.classList.add("on"); document.body.style.overflow = "hidden";
+      setTimeout(function () { q("#name").focus(); }, 60);
+      if (window.fbq) fbq("track", "InitiateCheckout");
+    });
+  });
+  function close() { modal.classList.remove("on"); document.body.style.overflow = ""; }
+  q("[data-close]").addEventListener("click", close);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+
+  // Pastki tugma: videodan keyin
+  var sticky = q("[data-sticky]"), anchor = q(".dv");
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function (en) {
+      sticky.classList.toggle("hide", !(!en[0].isIntersecting && en[0].boundingClientRect.top < 0));
+    }).observe(anchor);
+  }
+
+  // Yuborish → Google Sheets → /rahmat (Lead pixel)
+  var URL_ = "https://script.google.com/macros/s/AKfycbwiavNUy0IuYHQeodWeSNwdG-0MPhc6b5rRIewj-KK-rqU0TfKd1bJO1qW6cxkGzNbCtQ/exec";
+  var alertBox = q("[data-alert]"), btn = q("[data-submit]"), phone = q("#phone");
+  phone.addEventListener("input", function () { this.value = this.value.replace(/[^\d+ ]/g, "").slice(0, 17); });
+  function fail(m, el) { alertBox.textContent = m; alertBox.classList.add("on"); el.focus(); }
+  q("[data-form]").addEventListener("submit", function (e) {
+    e.preventDefault(); alertBox.classList.remove("on");
+    var name = q("#name").value.trim(), d = phone.value.replace(/\D/g, "");
+    if (d.length === 9) d = "998" + d;
+    if (name.length < 2) return fail("Iltimos, ismingizni kiriting.", q("#name"));
+    if (d.length < 11 || d.length > 13) return fail("Iltimos, telefon raqamingizni to'liq kiriting.", phone);
+    var full = "+" + d;
+    btn.disabled = true; btn.textContent = "Yuborilmoqda...";
+    var body = JSON.stringify({ phone: full, name: name, age: q("#age").value, topic: q("#topic").value, source: "variant-d2" });
+    var done = false;
+    function go() { if (!done) { done = true; location.href = "/rahmat-c?ph=" + encodeURIComponent(full); } }
+    var sent = false;
+    try { sent = navigator.sendBeacon && navigator.sendBeacon(URL_, new Blob([body], { type: "text/plain" })); } catch (x) {}
+    if (sent) return go();
+    fetch(URL_, { method: "POST", mode: "no-cors", body: body }).catch(function () {}).then(function () { setTimeout(go, 150); });
+    setTimeout(go, 1500);
+  });
+})();
+</script>
+</body>
+</html>

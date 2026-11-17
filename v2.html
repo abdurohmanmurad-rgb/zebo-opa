@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stop Autizm — bepul masterklass | Dr. Zebiniso Yadgarova</title>
+<meta name="description" content="18-noyabr, soat 20:00 — bolalar nevropatologi Zebiniso Yadgarovaning bepul onlayn masterklassi: autizmning ota-onalar sezmaydigan 10 ta erta belgisi.">
+<meta property="og:title" content="18-noyabr — Stop Autizm bepul masterklassi">
+<meta property="og:description" content="Autizmning ota-onalar sezmaydigan 10 ta erta belgisi. Bepul, onlayn, Telegram'da.">
+<meta property="og:image" content="/img/zebo-0.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel (mavjud saytdagi bilan bir xil ikkita dataset) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','862190763626893');
+fbq('init','1801978390843079');
+fbq('track','PageView');
+</script>
+
+<style>
+:root{
+  --indigo:      oklch(0.32 0.115 282);   /* asosiy to'q binafsha-ko'k fon */
+  --indigo-deep: oklch(0.26 0.10 282);
+  --pink:        oklch(0.60 0.225 2);     /* taymer raqamlari */
+  --red:         oklch(0.62 0.225 25);    /* asosiy CTA */
+  --red-deep:    oklch(0.52 0.21 25);
+  --lilac:       oklch(0.94 0.025 275);   /* och fon bloklar */
+  --ink:         oklch(0.20 0.02 280);
+  --muted:       oklch(0.45 0.02 280);
+  --line:        oklch(0.88 0.02 280);
+  --white:       oklch(1 0 0);
+  --gold:        oklch(0.84 0.15 85);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Montserrat,system-ui,sans-serif;color:var(--ink);background:var(--indigo-deep);line-height:1.5;-webkit-font-smoothing:antialiased}
+.page{max-width:560px;margin:0 auto;background:var(--white);overflow:hidden}
+.wrap{padding:0 22px}
+.h{font-family:"Barlow Condensed",Impact,sans-serif;font-weight:800;text-transform:uppercase;line-height:1.05;letter-spacing:.2px}
+u,.u{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+
+/* ── Taymer ───────────────────────── */
+.timer{background:var(--white);text-align:center;padding:14px 10px 12px;position:sticky;top:0;z-index:20;box-shadow:0 2px 10px oklch(0 0 0 / .08)}
+.timer__title{font-weight:700;font-size:15px;color:oklch(0.45 0.17 265);text-transform:uppercase;letter-spacing:.2px}
+.timer__row{display:flex;justify-content:center;align-items:flex-start;gap:6px;margin-top:4px}
+.timer__cell{min-width:58px}
+.timer__num{font-weight:700;font-size:36px;line-height:1.05;color:var(--pink);font-variant-numeric:tabular-nums}
+.timer__lbl{font-size:13px;color:var(--muted)}
+.timer__sep{font-weight:700;font-size:32px;color:var(--pink);line-height:1.1}
+
+/* ── Hero ─────────────────────────── */
+.hero{background:var(--indigo);color:var(--white);text-align:center;padding:26px 0 34px}
+.hero__kicker{font-weight:700;font-size:15px;text-transform:uppercase;line-height:1.35;padding:0 14px}
+.hero__title{font-size:44px;margin:16px 0 14px}
+.hero__sub{font-size:15px;opacity:.95;padding:0 10px}
+.media{margin:22px 16px 0;background:var(--white);border-radius:4px;overflow:hidden;color:var(--ink)}
+.media__cap{font-weight:700;font-size:17px;padding:12px 12px;line-height:1.3}
+.media__img{position:relative;background:linear-gradient(160deg,oklch(0.93 0.03 280),oklch(0.80 0.07 285));aspect-ratio:540/560;overflow:hidden}
+.media__img img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:100%;width:auto}
+.media__badge{position:absolute;left:10px;bottom:12px;background:var(--indigo);color:var(--white);font-size:12px;font-weight:600;padding:6px 10px;border-radius:6px;text-align:left;line-height:1.3;max-width:62%}
+.media__badge b{display:block;font-size:14px}
+
+/* ── Narx + CTA ───────────────────── */
+.price{background:var(--white);padding:22px 0 30px;text-align:center}
+.price__row{display:flex;justify-content:center;align-items:baseline;gap:14px;flex-wrap:wrap}
+.price__old{font-size:20px;color:var(--muted)}
+.price__new{font-size:42px;font-weight:600;color:var(--ink)}
+.price__note{font-size:13px;color:var(--muted);margin-top:2px}
+.btn{display:block;width:100%;border:0;cursor:pointer;font-family:Montserrat,sans-serif;font-weight:700;text-transform:uppercase;color:var(--white);background:var(--indigo);border-radius:12px;padding:22px 18px;font-size:17px;line-height:1.45;box-shadow:0 8px 0 var(--indigo-deep);transition:transform .08s, box-shadow .08s;position:relative;overflow:hidden}
+.btn:active{transform:translateY(6px);box-shadow:0 2px 0 var(--indigo-deep)}
+.btn--red{background:var(--red);box-shadow:0 8px 0 var(--red-deep);font-family:Montserrat,sans-serif;font-size:22px;border-radius:24px}
+.btn--red:active{box-shadow:0 2px 0 var(--red-deep)}
+.btn::after{content:"";position:absolute;inset:-50%;background:linear-gradient(100deg,transparent 40%,oklch(1 0 0 / .22) 50%,transparent 60%);animation:shine 2.6s infinite}
+@keyframes shine{from{transform:translateX(-60%)}to{transform:translateX(60%)}}
+.btn small{display:block;font-size:14px;font-weight:600;opacity:.95}
+.price .btn{margin-top:18px}
+
+/* ── Og'riqlar ro'yxati ───────────── */
+.pains{background:var(--indigo);color:var(--white);padding:40px 0 34px}
+.pains__title{font-size:34px;text-align:center;margin-bottom:26px}
+.checks{list-style:none;display:grid;gap:22px}
+.checks li{display:grid;grid-template-columns:28px 1fr;gap:12px;font-size:16.5px;line-height:1.55}
+.checks li::before{content:"";width:22px;height:22px;margin-top:3px;background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12.5l5 5L20 6.5'/%3E%3C/svg%3E")}
+.pains__foot{margin-top:28px;font-size:14px;opacity:.85;border-top:1px solid oklch(1 0 0 / .2);padding-top:16px}
+
+/* ── Matnli bloklar ───────────────── */
+.block{padding:34px 0 8px}
+.block__title{font-size:31px;color:var(--indigo);text-align:center;margin-bottom:16px}
+.block p{font-size:16.5px;margin-bottom:14px}
+.xlist{list-style:none;display:grid;gap:20px;margin:6px 0 10px}
+.xlist li{display:grid;grid-template-columns:30px 1fr;gap:12px;font-size:16.5px}
+.xlist li::before{content:"";width:26px;height:26px;margin-top:1px;background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23201c3a' stroke-width='2.2' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M8.5 8.5l7 7M15.5 8.5l-7 7'/%3E%3C/svg%3E")}
+
+/* ── Masterklass tarkibi ──────────── */
+.program{padding:30px 0 10px}
+.program__name{font-size:30px;color:var(--indigo);text-align:center}
+.program__q{font-size:28px;color:var(--indigo);text-align:center;text-decoration:underline;text-underline-offset:5px;margin:16px 0 22px}
+.vlist{list-style:none;display:grid;gap:18px}
+.vlist li{display:grid;grid-template-columns:26px 1fr;gap:12px;font-size:16.5px}
+.vlist li::before{content:"";width:20px;height:20px;margin-top:3px;background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232f2a72' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12.5l5 5L20 6.5'/%3E%3C/svg%3E")}
+.vlist b{text-decoration:underline;text-underline-offset:3px}
+
+/* ── Tarif uslubidagi taklif kartasi ─ */
+.offer{background:var(--lilac);margin-top:30px;padding:30px 0 32px}
+.offer__head{font-size:34px;text-align:center;color:var(--white);background:var(--indigo);padding:10px 0;margin-bottom:24px}
+.card{background:var(--white);border:3px dashed var(--indigo);padding:22px 18px 24px}
+.card__badge{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:54px;color:var(--red);text-align:center;line-height:1;text-decoration:underline;text-decoration-thickness:4px;text-underline-offset:6px}
+.card__for{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:26px;text-align:center;margin-top:8px}
+.card__price{text-align:center;color:var(--indigo);font-size:16px;margin:6px 0 16px}
+.arrows{list-style:none}
+.arrows li{display:grid;grid-template-columns:20px 1fr;gap:8px;padding:11px 0;border-bottom:1px dashed var(--line);font-size:16px;font-weight:500}
+.arrows li:last-child{border-bottom:0}
+.arrows li::before{content:"";width:14px;height:14px;margin-top:4px;border-right:4px solid var(--indigo);border-bottom:4px solid var(--indigo);transform:rotate(-45deg) scale(.8)}
+.gift{display:grid;grid-template-columns:52px 1fr;gap:12px;align-items:center;background:oklch(0.97 0.04 85);border:2px solid var(--gold);border-radius:12px;padding:12px 14px;margin:18px 0 20px;font-size:15px}
+.gift__ico{font-size:38px;line-height:1;animation:bell 1.8s ease-in-out infinite;transform-origin:top center}
+@keyframes bell{0%,60%,100%{transform:rotate(0)}10%{transform:rotate(14deg)}20%{transform:rotate(-12deg)}30%{transform:rotate(8deg)}40%{transform:rotate(-5deg)}}
+
+/* ── Ekspert ──────────────────────── */
+.expert{padding:36px 0 10px}
+.expert__name{font-size:32px;color:var(--indigo)}
+.bullets{margin:12px 0 0 20px;font-size:16.5px;font-weight:600;display:grid;gap:6px}
+.expert__photo{width:240px;margin:22px auto 0;aspect-ratio:1;border-radius:50%;overflow:hidden;background:linear-gradient(160deg,oklch(0.93 0.03 280),oklch(0.80 0.07 285));position:relative}
+.expert__photo img{position:absolute;left:50%;top:6%;transform:translateX(-50%);width:150%;max-width:none}
+.expert__cta{text-align:center;margin:20px 0 18px;font-size:16px}
+
+/* ── FAQ ──────────────────────────── */
+.faq{padding:30px 0 40px}
+.faq__title{font-size:32px;margin-bottom:16px}
+.faq details{border:1.5px solid var(--muted);margin-bottom:12px;background:var(--white)}
+.faq summary{list-style:none;cursor:pointer;padding:16px 46px 16px 14px;font-weight:600;font-size:16px;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:26px;font-weight:400;color:var(--muted);transition:transform .2s}
+.faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.faq details p{padding:0 14px 16px;font-size:15.5px;color:var(--muted)}
+
+.foot{background:var(--indigo-deep);color:oklch(1 0 0 / .7);text-align:center;font-size:12.5px;padding:22px 18px 96px}
+.foot p+p{margin-top:8px}
+
+/* ── Pastki yopishqoq tugma ───────── */
+.sticky{position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:100%;max-width:560px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:oklch(1 0 0 / .96);box-shadow:0 -4px 16px oklch(0 0 0 / .12);z-index:30;transition:transform .25s}
+.sticky.is-hidden{transform:translate(-50%,120%)}
+.sticky .btn{padding:15px 12px;font-size:16px;border-radius:12px}
+
+/* ── Modal forma ──────────────────── */
+.modal{position:fixed;inset:0;z-index:50;background:var(--white);display:none;overflow:auto}
+.modal.is-open{display:block}
+.modal__in{max-width:480px;margin:0 auto;padding:22px 22px 40px}
+.modal__x{display:block;margin-left:auto;background:none;border:0;cursor:pointer;width:44px;height:44px;font-size:40px;line-height:1;color:var(--ink)}
+.modal__title{text-align:center;font-weight:700;font-size:18px;text-transform:uppercase;margin:18px 0 26px;line-height:1.4}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:16.5px;font-weight:500;margin-bottom:8px}
+.phone{display:flex;border:1px solid var(--line);background:oklch(0.985 0 0)}
+.phone select{border:0;background:transparent;font:inherit;font-size:16px;padding:0 6px 0 12px;color:var(--ink);border-right:1px solid var(--line)}
+.phone input,.field>input{flex:1;width:100%;border:0;background:transparent;font:inherit;font-size:18px;padding:16px 14px;color:var(--ink);outline:none}
+.field>input{border:1px solid var(--line);background:oklch(0.985 0 0)}
+.phone:focus-within,.field>input:focus{outline:2px solid var(--indigo);outline-offset:-1px}
+.alert{display:none;background:oklch(0.96 0.03 20);color:oklch(0.45 0.18 25);border:1px solid oklch(0.85 0.08 20);padding:10px 12px;font-size:14.5px;margin-bottom:14px}
+.alert.is-on{display:block}
+.submit{width:100%;border:0;cursor:pointer;background:oklch(0.60 0.24 27);color:var(--white);font:700 18px Montserrat,sans-serif;text-transform:uppercase;padding:18px;border-radius:6px}
+.submit[disabled]{opacity:.7;cursor:wait}
+.modal__safe{font-size:13px;color:var(--muted);text-align:center;margin-top:14px}
+
+@media (max-width:380px){
+  .hero__title{font-size:38px}
+  .timer__num{font-size:31px}
+  .timer__cell{min-width:50px}
+  .pains__title,.block__title{font-size:29px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- TAYMER -->
+  <div class="timer" role="timer" aria-live="off">
+    <div class="timer__title" data-timer-title>Shoshiling! Masterklass boshlanishiga qoldi</div>
+    <div class="timer__row" data-timer-row>
+      <div class="timer__cell"><div class="timer__num" data-d>00</div><div class="timer__lbl">kun</div></div>
+      <div class="timer__sep">:</div>
+      <div class="timer__cell"><div class="timer__num" data-h>00</div><div class="timer__lbl">soat</div></div>
+      <div class="timer__sep">:</div>
+      <div class="timer__cell"><div class="timer__num" data-m>00</div><div class="timer__lbl">daqiqa</div></div>
+      <div class="timer__sep">:</div>
+      <div class="timer__cell"><div class="timer__num" data-s>00</div><div class="timer__lbl">soniya</div></div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero__kicker">🔥 18-noyabr, soat 20:00 — bepul jonli masterklass. Ro'yxatdan o'tish ochiq! 🔥</p>
+    <div class="wrap">
+      <h1 class="h hero__title">Farzandingizdagi autizmning <u>10 ta erta belgisini</u> bir kechada aniqlashni o'rganing!</h1>
+    </div>
+    <p class="hero__sub">27 yillik tajribaga ega oliy toifali bolalar nevropatologi Zebiniso Yadgarovadan — bepul, onlayn, uydan turib</p>
+
+    <div class="media">
+      <div class="media__cap">👩‍⚕️ Ko'pchilik ota-onalar bu belgilarni "erkalik" yoki "kech gapiradi" deb o'tkazib yuboradi</div>
+      <div class="media__img">
+        <img src="/img/zebo-0.webp" alt="Bolalar nevropatologi Zebiniso Yadgarova" width="540" height="673" fetchpriority="high">
+        <div class="media__badge"><b>Zebiniso Yadgarova</b>Oliy toifali bolalar nevropatologi</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NARX + CTA -->
+  <section class="price">
+    <div class="wrap">
+      <div class="price__row">
+        <span class="price__old">Ishtirok narxi:</span>
+        <span class="price__new">BEPUL</span>
+      </div>
+      <p class="price__note">+ ro'yxatdan o'tganlarga sovg'a darslik 🎁</p>
+      <button class="btn" type="button" data-open>Hoziroq!<br>Masterklassga yozilishni xohlayman! 👉</button>
+    </div>
+  </section>
+
+  <!-- OG'RIQLAR -->
+  <section class="pains">
+    <div class="wrap">
+      <h2 class="h pains__title">Farzandingizda shu holatlarni sezyapsizmi?</h2>
+      <ul class="checks">
+        <li><span>Ismini aytib chaqirsangiz, <u>o'girilmaydi</u> — go'yo eshitmayotgandek</span></li>
+        <li><span>Gaplashganda <u>ko'zingizga qaramaydi</u>, kulgingizga kulgi bilan javob bermaydi</span></li>
+        <li><span>2 yoshdan oshgan, lekin <u>hali gapirmaydi</u> yoki bir-ikki so'z bilan qolib ketgan</span></li>
+        <li><span>Avval aytgan so'zlarini <u>aytmay qo'ydi</u> — bilganini unutayotgandek</span></li>
+        <li><span>Barmog'i bilan ko'rsatish o'rniga <u>qo'lingizdan tortib</u> olib boradi</span></li>
+        <li><span>O'yinchoqlarni o'ynamaydi, <u>qatorga terib chiqadi</u> yoki bitta narsani aylantiradi</span></li>
+        <li><span>Qo'llarini <u>silkitadi</u>, aylanadi, <u>oyoq uchida</u> yuradi</span></li>
+        <li><span>Kichik o'zgarishdan <u>qattiq injiqlik</u> qiladi, uyquga yotqizish — har kecha jang</span></li>
+        <li><span>Telefonni olsangiz — <u>tutqanoqdek yig'i</u>, bersangiz — soatlab jim o'tiradi</span></li>
+        <li><span>Qarindoshlar "<u>o'g'il bola kech gapiradi</u>", "katta bo'lsa o'tib ketadi" deyishadi, lekin ichingizda xavotir bor</span></li>
+      </ul>
+      <p class="pains__foot">Bitta belgi hali tashxis emas. Lekin bir nechtasi birga bo'lsa — bu mutaxassisga ko'rsatish uchun jiddiy sabab.</p>
+    </div>
+  </section>
+
+  <!-- YO'QOTISH -->
+  <section class="block">
+    <div class="wrap">
+      <h2 class="h block__title">Siz farzandingizning eng qimmatli yillarini boy bermoqchi emassiz</h2>
+      <p>Bola miyasi eng tez rivojlanadigan davr — hayotining birinchi yillari. Aynan shu davrda boshlangan yordam eng katta samara beradi.</p>
+    </div>
+    <div class="wrap">
+      <h2 class="h block__title">Agar hozir e'tibor bermasangiz:</h2>
+      <ul class="xlist">
+        <li><span>"Kutib turamiz" degan har bir oy — rivojlanishning eng faol davridan yo'qotilgan oy. Bu vaqtni keyin qaytarib bo'lmaydi</span></li>
+        <li><span>Nutq va muloqotdagi orqada qolish tengdoshlar orasida sezilarli bo'lib boradi — bog'cha va maktabga tayyorlik qiyinlashadi</span></li>
+        <li><span>Siz har kuni "nima qilyapman o'zi?" degan savol bilan, kimning maslahatiga ishonishni bilmay yurasiz</span></li>
+      </ul>
+    </div>
+    <div class="wrap">
+      <h2 class="h block__title">Lekin yaxshi xabar bor</h2>
+      <p>Belgilarni erta sezgan ona farzandiga eng katta yordamni bera oladi. Buning uchun nimaga qarash kerakligini bilish kifoya.</p>
+      <p>Qanday qilib deysizmi?</p>
+      <p>Sizni 1 kechalik bepul masterklassga taklif qilishimga ijozat bering…</p>
+    </div>
+  </section>
+
+  <!-- MASTERKLASS TARKIBI -->
+  <section class="program">
+    <div class="wrap">
+      <h2 class="h program__name">Bolalar nevropatologi Zebiniso Yadgarovaning "Stop Autizm" masterklassi</h2>
+      <h3 class="h program__q">Masterklassda sizni nima kutyapti?</h3>
+      <ul class="vlist">
+        <li><span><b>10 ta erta belgi</b> — ota-onalar ko'pincha sezmaydigan belgilar, real misollar bilan</span></li>
+        <li><span><b>Birinchi qadam</b> — belgilarni sezsangiz, qaysi mutaxassisga, qaysi tartibda murojaat qilish kerak</span></li>
+        <li><span><b>Ovqatlanish va kun tartibi</b> — ular bola rivojlanishiga qanday ta'sir qiladi</span></li>
+        <li><span><b>Uyda nima qilish mumkin</b> — har kuni bola bilan qilinadigan oddiy, lekin muhim ishlar</span></li>
+        <li><span><b>Jonli savol-javob</b> — farzandingiz haqidagi savollaringizga shifokorning o'zi javob beradi</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TAKLIF KARTASI -->
+  <section class="offer">
+    <h2 class="h offer__head">Ishtirok shartlari</h2>
+    <div class="wrap">
+      <div class="card">
+        <div class="card__badge">BEPUL</div>
+        <div class="card__for">farzandining kelajagini o'ylaydigan ota-onalar uchun</div>
+        <div class="card__price">18-noyabr · soat 20:00 (Toshkent vaqti) · onlayn</div>
+        <ul class="arrows">
+          <li>Autizmning 10 ta erta belgisi</li>
+          <li>Belgilarni sezsangiz — aniq harakatlar rejasi</li>
+          <li>Ovqatlanish va kun tartibi bo'yicha tavsiyalar</li>
+          <li>Uyda qilinadigan amaliy ishlar</li>
+          <li>Shifokor bilan jonli savol-javob</li>
+          <li>Telefon orqali, uydan turib qatnashasiz</li>
+        </ul>
+        <div class="gift">
+          <div class="gift__ico" aria-hidden="true">🎁</div>
+          <div><b>SOVG'A:</b> ro'yxatdan o'tganlarga "Uy sharoitida kalsiy tayyorlash" darsligi</div>
+        </div>
+        <button class="btn btn--red" type="button" data-open>Masterklassga yozilish<small>(atigi 30 soniya)</small></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- EKSPERT -->
+  <section class="expert">
+    <div class="wrap">
+      <h2 class="h expert__name">Zebiniso Yadgarova</h2>
+      <ul class="bullets">
+        <li>Oliy toifali bolalar nevropatologi</li>
+        <li>27 yillik klinik tajriba</li>
+        <li>Autizm, nutqning kechikishi va bolalar nevrologiyasi bo'yicha mutaxassis</li>
+        <li>"Stop Autizm" dasturi muallifi</li>
+        <li>Instagram: @dr_zebo_nevrolog</li>
+      </ul>
+      <div class="expert__photo"><img src="/img/zebo-0.webp" alt="Zebiniso Yadgarova" loading="lazy"></div>
+      <p class="expert__cta">Farzandingiz uchun birinchi to'g'ri qadamni qo'yishni xohlasangiz, pastdagi tugmani bosib ro'yxatdan o'ting</p>
+      <button class="btn" type="button" data-open>Masterklassga qo'shilish</button>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="wrap">
+      <h2 class="h faq__title">Ko'p so'raladigan savollar</h2>
+      <details><summary>Masterklassga qanday qo'shilaman?</summary><p>Tugmani bosib telefon raqamingizni qoldirasiz. Keyingi sahifada Telegram kanalga obuna bo'lasiz — masterklass shu kanalda bo'lib o'tadi.</p></details>
+      <details><summary>Masterklass qachon boshlanadi?</summary><p>18-noyabr, soat 20:00 da (Toshkent vaqti). Boshlanishidan oldin kanalda eslatma beriladi.</p></details>
+      <details><summary>Haqiqatan ham bepulmi?</summary><p>Ha, masterklass to'liq bepul. Ro'yxatdan o'tganlarga "Uy sharoitida kalsiy tayyorlash" darsligi ham sovg'a qilinadi.</p></details>
+      <details><summary>Farzandimga tashxis qo'yilmagan. Menga ham kerakmi?</summary><p>Ha. Masterklass aynan xavotiri bor, lekin hali shifokorga bormagan ota-onalar uchun ham — nimaga qarash kerakligini bilib olasiz.</p></details>
+      <details><summary>Masterklass shifokor ko'rigining o'rnini bosadimi?</summary><p>Yo'q. Masterklass belgilarni tanib olishga va to'g'ri qadam qo'yishga yordam beradi. Tashxisni faqat bolani ko'rgan mutaxassis qo'yadi.</p></details>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <p>Dr. Zebiniso Yadgarova · Stop Autizm</p>
+    <p>Sahifadagi ma'lumotlar tanishish uchun berilgan va shifokor ko'rigi o'rnini bosmaydi.</p>
+  </footer>
+</div>
+
+<!-- Pastki yopishqoq tugma -->
+<div class="sticky is-hidden" data-sticky>
+  <button class="btn btn--red" type="button" data-open>Bepul ro'yxatdan o'tish 👉</button>
+</div>
+
+<!-- MODAL FORMA -->
+<div class="modal" data-modal role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal__in">
+    <button class="modal__x" type="button" aria-label="Yopish" data-close>&times;</button>
+    <h2 class="modal__title" id="modal-title">Bepul masterklassda ishtirok etish uchun anketani to'ldiring</h2>
+    <form data-form novalidate>
+      <div class="alert" data-alert role="alert"></div>
+      <div class="field">
+        <label for="name">Ismingizni kiriting</label>
+        <input id="name" name="name" type="text" autocomplete="given-name" placeholder="Ismingiz" maxlength="60">
+      </div>
+      <div class="field">
+        <label for="phone">Telefon raqamingizni kiriting</label>
+        <div class="phone">
+          <select data-country aria-label="Davlat kodi">
+            <option value="+998" data-len="9" selected>🇺🇿 +998</option>
+            <option value="+7" data-len="10">🇷🇺 +7</option>
+            <option value="+7" data-len="10">🇰🇿 +7</option>
+            <option value="+996" data-len="9">🇰🇬 +996</option>
+            <option value="+992" data-len="9">🇹🇯 +992</option>
+            <option value="+993" data-len="8">🇹🇲 +993</option>
+            <option value="+82" data-len="10">🇰🇷 +82</option>
+            <option value="+1" data-len="10">🇺🇸 +1</option>
+          </select>
+          <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="90 123 45 67">
+        </div>
+      </div>
+      <button class="submit" type="submit" data-submit>Davom etish</button>
+      <p class="modal__safe">🔒 Raqamingiz faqat masterklass haqida eslatish uchun ishlatiladi</p>
+    </form>
+  </div>
+</div>
+
+<script>
+(function () {
+  // ===== Taymer: 18-noyabr 2026, 20:00 Toshkent (UTC+5) =====
+  var START = Date.parse("2026-11-18T20:00:00+05:00");
+  var el = {
+    d: document.querySelector("[data-d]"), h: document.querySelector("[data-h]"),
+    m: document.querySelector("[data-m]"), s: document.querySelector("[data-s]"),
+    title: document.querySelector("[data-timer-title]"), row: document.querySelector("[data-timer-row]")
+  };
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function tick() {
+    var left = START - Date.now();
+    if (left <= 0) {
+      el.title.textContent = "Masterklass boshlandi — Telegram kanalga kiring!";
+      el.row.innerHTML = '<a href="https://t.me/stopautizm3" style="color:inherit;font-weight:700;font-size:18px">t.me/stopautizm3 →</a>';
+      clearInterval(timerId);
+      return;
+    }
+    var s = Math.floor(left / 1000);
+    el.d.textContent = pad(Math.floor(s / 86400));
+    el.h.textContent = pad(Math.floor(s % 86400 / 3600));
+    el.m.textContent = pad(Math.floor(s % 3600 / 60));
+    el.s.textContent = pad(s % 60);
+  }
+  var timerId = setInterval(tick, 1000); tick();
+
+  // ===== Modal =====
+  var modal = document.querySelector("[data-modal]");
+  var lastFocus = null;
+  function openModal() {
+    lastFocus = document.activeElement;
+    modal.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+    setTimeout(function () { document.getElementById("phone").focus(); }, 50);
+    if (window.fbq) fbq("track", "InitiateCheckout");
+  }
+  function closeModal() {
+    modal.classList.remove("is-open");
+    document.body.style.overflow = "";
+    if (lastFocus) lastFocus.focus();
+  }
+  document.querySelectorAll("[data-open]").forEach(function (b) { b.addEventListener("click", openModal); });
+  document.querySelector("[data-close]").addEventListener("click", closeModal);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal(); });
+
+  // ===== Yopishqoq tugma: hero'dan o'tgach ko'rinadi =====
+  var sticky = document.querySelector("[data-sticky]");
+  var firstCta = document.querySelector(".price .btn");
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function (en) {
+      var past = !en[0].isIntersecting && en[0].boundingClientRect.top < 0;
+      sticky.classList.toggle("is-hidden", !past);
+    }).observe(firstCta);
+  }
+
+  // ===== Telefon formatlash =====
+  var phone = document.getElementById("phone");
+  var country = document.querySelector("[data-country]");
+  function need() { return +country.selectedOptions[0].getAttribute("data-len"); }
+  phone.addEventListener("input", function () {
+    var d = this.value.replace(/\D/g, "").slice(0, need());
+    if (country.value === "+998") {
+      var o = d.slice(0, 2);
+      if (d.length > 2) o += " " + d.slice(2, 5);
+      if (d.length > 5) o += " " + d.slice(5, 7);
+      if (d.length > 7) o += " " + d.slice(7, 9);
+      this.value = o;
+    } else {
+      this.value = d;
+    }
+  });
+  country.addEventListener("change", function () { phone.value = ""; phone.focus(); });
+
+  // ===== Yuborish: mavjud Google Sheets (Apps Script) → thankyoupage (Lead pixel o'sha yerda) =====
+  var GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwiavNUy0IuYHQeodWeSNwdG-0MPhc6b5rRIewj-KK-rqU0TfKd1bJO1qW6cxkGzNbCtQ/exec";
+  var alertBox = document.querySelector("[data-alert]");
+  var submitBtn = document.querySelector("[data-submit]");
+  document.querySelector("[data-form]").addEventListener("submit", function (e) {
+    e.preventDefault();
+    alertBox.classList.remove("is-on");
+    var digits = phone.value.replace(/\D/g, "");
+    if (digits.length !== need()) {
+      alertBox.textContent = "Iltimos, telefon raqamingizni to'liq kiriting (" + need() + " ta raqam).";
+      alertBox.classList.add("is-on");
+      phone.focus();
+      return;
+    }
+    var fullPhone = country.value + digits;
+    var name = document.getElementById("name").value.trim();
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Yuborilmoqda...";
+
+    var payload = JSON.stringify({ phone: fullPhone, name: name, source: "v2" });
+    var go = function () { window.location.href = "/thankyoupage?ph=" + encodeURIComponent(fullPhone); };
+
+    // sendBeacon sahifa almashganda ham so'rovni yetkazadi; bo'lmasa fetch + 600ms kutish
+    var sent = false;
+    try { sent = navigator.sendBeacon && navigator.sendBeacon(GOOGLE_SCRIPT_URL, new Blob([payload], { type: "text/plain" })); } catch (err) {}
+    if (sent) { go(); return; }
+    fetch(GOOGLE_SCRIPT_URL, { method: "POST", mode: "no-cors", body: payload })
+      .catch(function () {})
+      .then(function () { setTimeout(go, 150); });
+    setTimeout(go, 1500); // tarmoq osilib qolsa ham foydalanuvchi kutib qolmasin
+  });
+})();
+</script>
+</body>
+</html>

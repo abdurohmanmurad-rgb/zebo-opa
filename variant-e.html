@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stop Autizm — Dr. Zebiniso Yadgarova</title>
+<meta name="description" content="27 yillik tajribali bolalar nevropatologi Zebiniso Yadgarovaning Stop Autizm dasturi. Videoni ko'ring va konsultatsiyaga yoziling.">
+<meta property="og:image" content="/img/zebo-0.webp">
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','862190763626893');
+fbq('init','1801978390843079');
+fbq('track','PageView');
+</script>
+<style>
+/* E variant: namunadagi (barnodietolog.uz) sahifa tuzilmasi 1:1, mavzu — Stop Autizm */
+:root{
+  --ind:oklch(0.33 0.12 283); --ind-d:oklch(0.27 0.11 283);
+  --blue:oklch(0.48 0.18 262); --pink:oklch(0.60 0.24 0);
+  --red:oklch(0.63 0.22 25); --red-d:oklch(0.55 0.21 25);
+  --lav:oklch(0.94 0.03 270); --ink:oklch(0.18 0.01 280); --muted:oklch(0.50 0.01 280); --line:oklch(0.88 0.01 280);
+  --sf:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sf);color:var(--ink);background:var(--ind-d);line-height:1.5;-webkit-font-smoothing:antialiased}
+.page{max-width:580px;margin:0 auto;background:#fff;overflow:clip}
+.w{padding:0 24px}
+.hd{font-weight:900;text-transform:uppercase;letter-spacing:-.6px;line-height:1.08}
+u{text-decoration-thickness:2px;text-underline-offset:4px}
+p{font-size:18.5px;margin-top:20px}
+
+/* 1. Taymer */
+.timer{background:#fff;text-align:center;padding:14px 8px 10px;position:sticky;top:0;z-index:30}
+.timer__t{color:var(--blue);font-weight:800;font-size:17px;text-transform:uppercase;letter-spacing:-.2px}
+.timer__r{display:flex;justify-content:center;gap:4px;margin-top:2px}
+.timer__c{min-width:64px}
+.timer__n{color:var(--pink);font-weight:700;font-size:38px;line-height:1.1;font-variant-numeric:tabular-nums}
+.timer__l{color:var(--muted);font-size:15px}
+.timer__s{color:var(--pink);font-weight:700;font-size:34px;line-height:1.15}
+
+/* 2. Hero */
+.hero{background:var(--ind);color:#fff;text-align:center;padding:30px 0 0}
+.hero__k{font-weight:800;font-size:16px;text-transform:uppercase;line-height:1.4;padding:0 16px}
+.hero__h{font-size:42px;margin:22px 0 18px}
+.hero__s{font-size:17px;padding:0 18px 26px;margin:0}
+
+/* 3. Video */
+.vbox{margin:0 18px;background:#fff;color:var(--ink)}
+.vbox__cap{font-weight:800;font-size:19px;line-height:1.3;padding:14px 12px}
+.vbox__cap .yt{display:inline-block;width:26px;height:18px;border-radius:5px;background:var(--ind);vertical-align:-2px;margin-right:6px;position:relative}
+.vbox__cap .yt::after{content:"";position:absolute;left:10px;top:5px;border-left:8px solid #fff;border-top:4px solid transparent;border-bottom:4px solid transparent}
+.vbox__cap b{text-transform:uppercase}
+.video{position:relative;aspect-ratio:16/9;background:#000}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.facade{position:absolute;inset:0;border:0;padding:0;cursor:pointer;background:#000 center/cover no-repeat}
+.facade::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,oklch(0 0 0 / .1),oklch(0 0 0 / .55))}
+.facade__play{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:74px;height:74px;border-radius:50%;background:oklch(0.66 0.2 35)}
+.facade__play::after{content:"";position:absolute;left:29px;top:22px;border-left:23px solid #fff;border-top:15px solid transparent;border-bottom:15px solid transparent}
+.facade__txt{position:absolute;left:0;right:0;bottom:14px;color:#fff;font-weight:900;font-size:25px;line-height:1.05;text-transform:uppercase;text-shadow:0 2px 10px oklch(0 0 0 / .6)}
+.facade__txt span{display:block;font-size:34px;letter-spacing:-.5px}
+
+/* 4. Narx + tugma */
+.price{padding:22px 0 34px;text-align:center}
+.price__r{display:flex;justify-content:center;align-items:baseline;gap:18px;flex-wrap:wrap}
+.price__o{font-size:24px;text-decoration:line-through}
+.price__n{font-size:38px;font-weight:500;white-space:nowrap}
+.btn{display:block;width:100%;border:0;cursor:pointer;font-family:var(--sf);font-weight:800;text-transform:uppercase;color:#fff;background:var(--ind);border-radius:10px;padding:26px 18px;font-size:19px;line-height:1.5}
+.btn:active{transform:translateY(2px)}
+.price .btn{margin-top:20px}
+.btn-i,.btn-r{border-radius:30px;font-size:30px;line-height:1.12;padding:18px 16px;font-weight:700}
+.btn-r{background:var(--red)}
+.btn-i small,.btn-r small{display:block;font-size:19px;margin-top:4px}
+.btn-pill{display:inline-block;width:auto;border-radius:40px;padding:16px 36px;font-size:24px;font-weight:600}
+
+/* 5. Og'riqlar */
+.pain{background:var(--ind);color:#fff;padding:46px 0 40px}
+.pain__h{font-size:33px;text-align:center;margin-bottom:34px}
+.chk{list-style:none;display:grid;gap:30px}
+.chk li{display:grid;grid-template-columns:30px 1fr;gap:16px;font-size:18.5px;line-height:1.55}
+.chk li::before{content:"";width:24px;height:24px;margin-top:4px;background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.5 12.5l5.5 5.5L20.5 6'/%3E%3C/svg%3E")}
+
+/* 6–8. Matn bloklari */
+.sec{padding:36px 0 6px}
+.sec__h{font-size:30px;color:var(--ind);text-align:center;margin-bottom:6px}
+.xl{list-style:none;display:grid;gap:30px;margin:26px 0 30px}
+.xl li{display:grid;grid-template-columns:34px 1fr;gap:20px;font-size:18.5px}
+.xl li::before{content:"";width:28px;height:28px;margin-top:2px;background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23111' stroke-width='2.3' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M8.5 8.5l7 7M15.5 8.5l-7 7'/%3E%3C/svg%3E")}
+
+/* 9. Dastur */
+.prod__h{font-size:30px;color:var(--ind);text-align:center;margin:30px 0 16px}
+.prod__q{font-size:28px;color:var(--ind);text-align:center;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:3px;margin-bottom:22px}
+.mock{position:relative;height:270px;margin:0 0 26px}
+.mock__lap{position:absolute;left:0;bottom:22px;width:48%;aspect-ratio:16/10;border:7px solid oklch(0.22 0.01 280);border-radius:10px;overflow:hidden;background:#000}
+.mock__lap::after{content:"";position:absolute}
+.mock__mon{position:absolute;left:28%;top:0;width:56%;aspect-ratio:16/10;border:8px solid oklch(0.22 0.01 280);border-radius:10px;overflow:hidden;background:linear-gradient(160deg,oklch(0.96 0.03 350),oklch(0.86 0.07 330))}
+.mock img{width:100%;height:100%;object-fit:cover;display:block}
+.mock__mon img{object-fit:contain;object-position:bottom}
+.mock__mon span{position:absolute;left:8px;top:6px;font-weight:900;font-size:13px;color:var(--ind);text-transform:uppercase;line-height:1.05;max-width:50%}
+.mock__base{position:absolute;bottom:14px;left:-2%;width:52%;height:10px;background:oklch(0.80 0.01 280);border-radius:0 0 8px 8px}
+.mock__ph{position:absolute;right:2%;bottom:6px;width:78px;height:150px;border:5px solid oklch(0.22 0.01 280);border-radius:14px;overflow:hidden;background:#fff}
+.mock__doc{position:absolute;right:20%;top:6px;width:76px;height:96px;background:#fff;border:1px solid var(--line);box-shadow:0 6px 14px oklch(0 0 0 / .12);transform:rotate(6deg);padding:8px 6px;font-size:8px;line-height:1.5;color:var(--muted)}
+.mock__doc b{display:block;color:var(--pink);font-size:9px;margin-bottom:3px}
+.vl{list-style:none;display:grid;gap:26px}
+.vl li{display:grid;grid-template-columns:28px 1fr;gap:16px;font-size:18.5px}
+.vl li::before{content:"";width:22px;height:22px;margin-top:4px;background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232f2a73' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.5 12.5l5.5 5.5L20.5 6'/%3E%3C/svg%3E")}
+.vl b{text-decoration:underline;text-underline-offset:3px}
+
+/* 10. Tariflar */
+.tarif{background:var(--lav);margin-top:40px;padding-bottom:34px}
+.tarif__h{background:var(--ind);color:#fff;text-align:center;font-size:30px;padding:8px 0}
+.t{padding:26px 22px 0;text-align:center}
+.t__name{font-size:38px;font-weight:900;letter-spacing:-.8px;line-height:1.05}
+.t__name span{font-weight:500}
+.t__old{text-decoration:line-through;color:var(--ind);font-size:18px;margin-top:6px}
+.t__now{color:var(--ind);font-size:18px}
+.t__list{list-style:none;background:#fff;text-align:left;margin:16px 0 22px;padding:6px 18px}
+.t__list li{display:grid;grid-template-columns:20px 1fr;gap:6px;padding:12px 0;border-bottom:1px dashed var(--line);font-size:18.5px}
+.t__list li:last-child{border-bottom:0}
+.t__list li::before{content:"";width:12px;height:12px;margin-top:7px;border-right:4px solid var(--ind);border-bottom:4px solid var(--ind);transform:rotate(-45deg)}
+.vip{border:4px dashed var(--ind);margin:34px 0 0;background:var(--lav)}
+.vip__name{font-size:52px;font-weight:900;color:var(--red);text-decoration:underline;text-decoration-thickness:5px;text-underline-offset:8px;letter-spacing:-1px;line-height:1}
+.vip__for{font-size:26px;font-weight:900;margin-top:12px;letter-spacing:-.5px}
+.vip__plus{font-size:20px;font-weight:900;font-style:italic;text-align:left;margin:14px 0 0}
+
+/* 11. Natijalar */
+.res__h{font-size:30px;color:var(--ind);text-align:center;margin:40px 0 26px}
+.res{margin-bottom:34px}
+.res__name{font-size:18px;margin:0 0 6px 30px}
+.res__row{display:grid;grid-template-columns:22px 1fr 1fr;gap:10px;align-items:center}
+.res__lbl{writing-mode:vertical-rl;transform:rotate(180deg);font-size:16px;text-align:center}
+.res__box{background:var(--ind);color:#fff;border-radius:12px;padding:12px;font-size:16px;line-height:1.5}
+.res__media{border-radius:4px;overflow:hidden;background:#000}
+.res__media video{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.res__voice{background:var(--lav);border-radius:10px;padding:10px;text-align:center;font-size:13.5px;font-weight:700;color:var(--ind)}
+.res__voice audio{width:100%;height:36px;margin-top:6px}
+.res__tag{grid-column:3;text-align:center;font-weight:900;font-size:14px;text-transform:uppercase;margin-top:6px}
+
+/* 13. Ekspert */
+.exp{padding:30px 0 10px;text-align:center}
+.exp p{text-align:left}
+.exp__h{font-size:28px;color:var(--ind);text-align:left;margin:34px 0 8px}
+.exp ul{text-align:left;margin-left:22px;font-size:18.5px;font-weight:700;display:grid;gap:4px}
+.exp__ph{width:260px;height:300px;margin:26px auto 22px;position:relative;overflow:hidden}
+.exp__ph img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:100%}
+.exp .cen{text-align:center}
+
+/* 14. FAQ */
+.faq{padding:30px 0 50px}
+.faq__h{font-size:30px;margin-bottom:22px}
+.faq details{border:1.5px solid oklch(0.45 0.01 280);margin-bottom:14px}
+.faq summary{list-style:none;cursor:pointer;padding:18px 48px 18px 16px;font-weight:600;font-size:18px;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:28px;font-weight:300;color:var(--muted)}
+.faq details[open] summary::after{content:"−"}
+.faq details p{padding:0 16px 18px;margin:0;font-size:17px;color:var(--muted)}
+.foot{background:var(--ind-d);color:oklch(1 0 0 / .65);text-align:center;font-size:13px;padding:22px 18px}
+
+/* 15. Anketa */
+.modal{position:fixed;inset:0;z-index:50;background:#fff;display:none;overflow:auto}
+.modal.on{display:block}
+.modal__in{max-width:480px;margin:0 auto;padding:20px 24px 40px}
+.modal__x{display:block;margin-left:auto;background:none;border:0;cursor:pointer;width:48px;height:48px;position:relative}
+.modal__x::before,.modal__x::after{content:"";position:absolute;left:8px;right:8px;top:22px;height:4px;background:#000;transform:rotate(45deg)}
+.modal__x::after{transform:rotate(-45deg)}
+.modal__t{text-align:center;font-weight:700;font-size:19px;text-transform:uppercase;margin:26px 0 30px;line-height:1.4}
+.f{margin-bottom:22px}
+.f label{display:block;font-size:18px;margin-bottom:10px}
+.f input,.f select{width:100%;border:1px solid var(--line);background:#fff;font:inherit;font-size:18px;padding:16px 14px;color:var(--ink);border-radius:0;-webkit-appearance:none;appearance:none}
+.f select{background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 12px center/18px}
+.f input:focus,.f select:focus{outline:2px solid var(--ind);outline-offset:-1px}
+.alert{display:none;background:oklch(0.96 0.03 20);color:oklch(0.45 0.18 25);border:1px solid oklch(0.85 0.08 20);padding:10px 12px;font-size:15px;margin-bottom:16px}
+.alert.on{display:block}
+.submit{width:100%;border:0;cursor:pointer;background:oklch(0.60 0.25 28);color:#fff;font:700 19px var(--sf);text-transform:uppercase;padding:20px;border-radius:6px}
+.submit[disabled]{opacity:.7}
+
+@media (max-width:400px){
+  .hero__h{font-size:34px}.timer__n{font-size:32px}.timer__c{min-width:54px}
+  .pain__h,.sec__h,.prod__h,.res__h{font-size:27px}.btn-i,.btn-r{font-size:25px}.vip__name{font-size:44px}.t__name{font-size:32px}
+  .price__n{font-size:32px}.price__o{font-size:20px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 1. TAYMER -->
+  <div class="timer">
+    <div class="timer__t" data-tt>Shoshiling! Chegirma tugashiga qoldi</div>
+    <div class="timer__r" data-tr>
+      <div class="timer__c"><div class="timer__n" data-d>00</div><div class="timer__l">kun</div></div><div class="timer__s">:</div>
+      <div class="timer__c"><div class="timer__n" data-h>00</div><div class="timer__l">soat</div></div><div class="timer__s">:</div>
+      <div class="timer__c"><div class="timer__n" data-m>00</div><div class="timer__l">daqiqa</div></div><div class="timer__s">:</div>
+      <div class="timer__c"><div class="timer__n" data-s>00</div><div class="timer__l">soniya</div></div>
+    </div>
+  </div>
+
+  <!-- 2. HEADLINE -->
+  <section class="hero">
+    <p class="hero__k">🔥 Bu oy faqat 100 ta oila uchun eng yaxshi taklifni qo'lga kiritish uchun oxirgi imkoniyat! 🔥</p>
+    <div class="w"><h1 class="hd hero__h">90 kun ichida farzandingizning <u>"oyi" deyishiga</u> yo'l oching!</h1></div>
+    <p class="hero__s">200+ oila bu orqali farzandida ijobiy o'zgarishlarni ko'rdi!</p>
+
+    <!-- 3. VIDEO -->
+    <div class="vbox">
+      <div class="vbox__cap"><span class="yt"></span>Videoni ovoz chiqarib ko'ring, siz ham <b>dastur haqida bilishingiz kerak!</b></div>
+      <div class="video" data-video>
+        <button class="facade" type="button" data-play aria-label="Videoni ko'rish" style="background-image:url('https://i.ytimg.com/vi/TfvFOfiNyFE/hqdefault.jpg')">
+          <span class="facade__play" aria-hidden="true"></span>
+          <span class="facade__txt">Videoni ko'rish uchun<span>ustiga bosing</span></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. NARX + TUGMA -->
+  <section class="price">
+    <div class="w">
+      <div class="price__r"><span class="price__o">9 000 000 so'm</span><span class="price__n">6 000 000 so'm</span></div>
+      <button class="btn" type="button" data-open>Hoziroq!<br>Konsultatsiyaga yozilishni xohlayman! 👉</button>
+    </div>
+  </section>
+
+  <!-- 5. MUAMMOLAR -->
+  <section class="pain">
+    <div class="w">
+      <h2 class="hd pain__h">Siz ham bu muammolardan charchadingizmi?</h2>
+      <ul class="chk">
+        <li><span>Farzandingiz 2–3 yoshdan oshgan, lekin <u>hali gapirmaydi</u> yoki bir-ikki so'z bilan qolib ketgan</span></li>
+        <li><span>Ismini aytib chaqirsangiz <u>o'girilmaydi</u>, gaplashganda <u>ko'zingizga qaramaydi</u></span></li>
+        <li><span>Tengdoshlari bilan o'ynamaydi, <u>o'z dunyosiga yopilib</u> yolg'iz o'tiradi</span></li>
+        <li><span>Kichik narsaga <u>qattiq injiqlik qiladi</u>, tinchlantirib bo'lmaydi</span></li>
+        <li><span>Kechalari <u>uxlamaydi</u>, siz esa yillardan beri to'yib uxlamagansiz</span></li>
+        <li><span>Qo'llarini <u>silkitadi</u>, aylanadi, narsalarni <u>qatorga terib chiqadi</u></span></li>
+        <li><span>Farzandingizni <u>shifokordan shifokorga</u> olib yurasiz, lekin hech kim aniq nima qilishni aytmaydi</span></li>
+        <li><span>Ko'rmasdan dori yozishadi, faqat <u>tinchlantiruvchi dorilar</u> berishadi — foydasini sezmaysiz</span></li>
+        <li><span>Qarindoshlar "<u>katta bo'lsa o'tib ketadi</u>" deyishadi, siz esa "<u>bolam maktabga ham shu holatda borsa-chi?</u>" deb qo'rqasiz</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6–8. -->
+  <section class="sec">
+    <div class="w">
+      <h2 class="hd sec__h">Lekin siz farzandingiz hayotida bunday muammolar bo'lishini xohlamaysiz</h2>
+      <p>Shunday ekan, farzandingizning rivojlanishiga va tengdoshlari safiga qo'shilishiga to'sqinlik qilayotgan sababni topishingiz va uni vaqtida hal qilishingiz lozim.</p>
+
+      <h2 class="hd sec__h" style="margin-top:34px">Agar farzandingiz sog'lig'iga hozirdan e'tibor berishni boshlamasangiz:</h2>
+      <ul class="xl">
+        <li><span>Vaqt o'tgan sari nutq va muloqotdagi orqada qolish kuchayib boradi, bola miyasi eng tez rivojlanadigan yillar esa qaytib kelmaydi</span></li>
+        <li><span>Farzandingiz bog'cha va maktabda tengdoshlari orasida qiynaladi, boshqa bolalar qatori o'qiy olmaydi</span></li>
+        <li><span>Oilada stress, xavotir va charchoq ko'payadi, shifokorlarga ketgan pul va vaqt behuda ketaveradi</span></li>
+      </ul>
+
+      <h2 class="hd sec__h">Lekin sizning omadingiz bor ekan</h2>
+      <p>Endi siz yuqoridagi barcha sanab o'tilgan va bu yerga sig'magan muammolar bilan "nima qilsam ekan" deb yolg'iz qolishingiz shart emas.</p>
+      <p>Qanday qilib deysizmi?</p>
+      <p>90 kun ichida farzandingizni shaxsan mening nazoratim ostida "jim dunyo"dan muloqot sari olib chiqishga yordam beruvchi dastur bilan tanishtirishimga ijozat bering…</p>
+    </div>
+  </section>
+
+  <!-- 9. DASTUR -->
+  <section>
+    <div class="w">
+      <h2 class="hd prod__h">Bolalar nevropatologi Zebiniso Yadgarovaning "Stop Autizm" dasturi</h2>
+      <h3 class="hd prod__q">Dasturda sizni nima kutyapti?</h3>
+      <div class="mock" aria-hidden="true">
+        <div class="mock__mon"><span>Stop Autizm</span><img src="/img/zebo-0.webp" alt=""></div>
+        <div class="mock__doc"><b>Uy vazifasi</b>✓ Sensor mashq<br>✓ Taqlid<br>✓ Nevromassaj<br>✓ Kundalik</div>
+        <div class="mock__lap"><img src="/img/b/gift-nutq.jpg" alt=""></div>
+        <div class="mock__base"></div>
+        <div class="mock__ph"><img src="/media/mashgulot-2.jpg" alt=""></div>
+      </div>
+      <ul class="vl">
+        <li><span><b>Diagnostika va baholash</b> - holat darajasi (yengil, o'rta, og'ir), kerakli tahlillar, EEG va MRT bo'yicha yo'llanma</span></li>
+        <li><span><b>15+ video darslar</b> - har biri ~20 daqiqa, uyda bola bilan qilinadigan mashqlar ko'rsatib beriladi</span></li>
+        <li><span><b>Uyda korreksiya</b> - sensor integratsiya, taqlid (imitatsiya) va ABA mashqlari</span></li>
+        <li><span><b>Ovqatlanish rejasi</b> - shaxsan men tomonimdan tuzilgan ruxsat etilgan va cheklanadigan mahsulotlar ro'yxati</span></li>
+        <li><span><b>24/7 aloqa</b> - savolingiz bo'lsa, to'g'ridan-to'g'ri menga yozasiz</span></li>
+        <li><span><b>Natijani kuzatish</b> - uyqu, diqqat va nutqdagi o'zgarishlar har bosqichda baholanadi</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 10. TARIFLAR -->
+  <section class="tarif">
+    <h2 class="hd tarif__h">2 xil yo'l mavjud</h2>
+    <div class="t">
+      <div class="t__name">KONSULTATSIYA <span>qabuli</span></div>
+      <div class="t__now">Birinchi qadam — bolangiz holatini bilib olasiz</div>
+      <ul class="t__list">
+        <li>Shifokor bolangizni shaxsan ko'radi</li>
+        <li>Holat darajasi baholanadi</li>
+        <li>Qaysi tekshiruvlar kerakligi aytiladi</li>
+        <li>Bolangizga yordam berish mumkinmi — aniq javob</li>
+        <li>3 ta sovg'a dars</li>
+        <li>"Autizmdan davo topganlar" yopiq kanaliga qo'shilish</li>
+      </ul>
+      <button class="btn btn-i" type="button" data-open data-plan="0">Konsultatsiyaga yozilish<small>(atigi 30 soniya)</small></button>
+    </div>
+    <div class="w">
+      <div class="vip t">
+        <div class="vip__name">STOP AUTIZM</div>
+        <div class="vip__for">natija xohlovchilar uchun</div>
+        <div class="t__old">Oldingi narxi - 9 000 000 so'm</div>
+        <div class="t__now">Hozirgi narx - 6 000 000 so'm</div>
+        <p class="vip__plus"><u>KONSULTATSIYA</u>dagi hamma narsa <u>qo'shimchasiga</u>…</p>
+        <ul class="t__list">
+          <li>90 kunlik individual dastur, 6 bosqich</li>
+          <li>Shaxsan Zebiniso Yadgarova nazorati</li>
+          <li>24/7 oilaviy shaxsiy nevropatolog</li>
+          <li>Oyiga 4 marta jonli suhbat</li>
+          <li>Oflayn ko'rik va nazorat</li>
+          <li>Sirli nevromassaj kursi (5 dars)</li>
+          <li>ABA va sensor integratsiya kitoblari</li>
+          <li>Onalar jamiyati (yopiq chat)</li>
+        </ul>
+        <button class="btn btn-r" type="button" data-open data-plan="1">Stop Autizm'ga ega bo'lish<small>(atigi 6 000 000 so'm)</small></button>
+        <div style="height:24px"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. NATIJALAR -->
+  <section>
+    <div class="w">
+      <h2 class="hd res__h">Ota-onalar natijalari</h2>
+
+      <div class="res">
+        <div class="res__name">Muhammadalining onasi</div>
+        <div class="res__row">
+          <div class="res__lbl">Avval</div>
+          <div class="res__box">Chaqirsa qaramasdi<br>Odamlarga qo'shilmasdi<br>Rossiyada shifo topilmagan</div>
+          <div class="res__media"><video src="/media/otziv-1a.mp4" poster="/media/otziv-1a.jpg" controls playsinline preload="none"></video></div>
+        </div>
+        <div class="res__row" style="margin-top:10px">
+          <div class="res__lbl">Keyin</div>
+          <div class="res__box">Odamlar bilan qo'shiladi<br>1 kursdan keyin "juda yaxshi o'zgarishlar"<br>2-kursni boshlashdi</div>
+          <div class="res__media"><video src="/media/otziv-1b.mp4" poster="/media/otziv-1b.jpg" controls playsinline preload="none"></video></div>
+        </div>
+        <div class="res__row"><div></div><div></div><div class="res__tag">Video sharh</div></div>
+      </div>
+
+      <div class="res">
+        <div class="res__name">Tojikistondan ona</div>
+        <div class="res__row">
+          <div class="res__lbl">Avval</div>
+          <div class="res__box">3 yoshda<br>Gapirmasdi</div>
+          <div class="res__voice">🎙 Ovozli xabar<audio src="/media/ovozli-1.m4a" controls preload="none"></audio></div>
+        </div>
+        <div class="res__row" style="margin-top:10px">
+          <div class="res__lbl">Keyin</div>
+          <div class="res__box">1 oydan keyin<br>"Natijalar yaxshi"</div>
+          <div class="res__tag">Ovozli sharh · 1:01</div>
+        </div>
+      </div>
+
+      <div class="res">
+        <div class="res__name">Davolanishning birinchi oyidagi ona</div>
+        <div class="res__row">
+          <div class="res__lbl">Avval</div>
+          <div class="res__box">So'zlarni takrorlamasdi<br>Sanamasdi</div>
+          <div class="res__voice">🎙 Ovozli xabar<audio src="/media/ovozli-2.m4a" controls preload="none"></audio></div>
+        </div>
+        <div class="res__row" style="margin-top:10px">
+          <div class="res__lbl">Keyin</div>
+          <div class="res__box">1-oyda: multfilmdagi so'zlarni takrorlaydi<br>1 dan 5 gacha sanaydi</div>
+          <div class="res__tag">Ovozli sharh · 1:16</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12–13. EKSPERT -->
+  <section class="exp">
+    <div class="w">
+      <p>Bu natijalar dastur ishtirokchilari natijalari.<br>Natijalar hammada har xil bo'lishi mumkin.</p>
+      <p>Men 27 yildan beri bolalar nevropatologi bo'lib ishlab kelaman. "Stop Autizm" orqali 200 dan ortiq bolaga yordam berishda men va jamoam mehnat qildik.</p>
+      <p>Bu dasturdan maqsadim shunchaki tashxis qo'yish emas, balki onalar bolasidagi holatni vaqtida anglasin, farzandlari oddiy xatolar sabab tengdoshlaridan ortda qolib ketmasin va bog'cha, maktabga boshqa bolalar qatori borsin.</p>
+      <p class="cen">Siz ham shu natijalarga erishmoqchi bo'lsangiz, hoziroq pastdagi tugmani bosib ro'yxatdan o'ting</p>
+      <button class="btn btn-pill" type="button" data-open style="margin-top:20px">RO'YXATDAN O'TISH</button>
+
+      <h2 class="hd exp__h">Zebiniso Yadgarova</h2>
+      <ul>
+        <li>Oliy toifali bolalar nevropatologi</li>
+        <li>Toshkent Pediatriya Tibbiyot Institutini tamomlaganman</li>
+        <li>Autizm va bolalar nevrologiyasi bo'yicha ekspert</li>
+        <li>27 yil ichida 200+ autizmli bolaga yordam bergan</li>
+        <li>"Stop Autizm" va "Sog'lom bola formulasi" dasturlari muallifi</li>
+      </ul>
+      <div class="exp__ph"><img src="/img/zebo-0.webp" alt="Zebiniso Yadgarova" loading="lazy"></div>
+      <p class="cen">Menga ishonch bildirib konsultatsiyamga kelishni xohlasangiz, pastdagi tugmani bosib ro'yxatdan o'ting</p>
+      <button class="btn btn-pill" type="button" data-open style="margin-top:20px">KONSULTATSIYAGA YOZILISH</button>
+    </div>
+  </section>
+
+  <!-- 14. FAQ -->
+  <section class="faq">
+    <div class="w">
+      <h2 class="hd faq__h">Ko'p so'raladigan savollar</h2>
+      <details><summary>Konsultatsiyaga qanday qilib yozilsa bo'ladi?</summary><p>Tugmani bosib anketani to'ldirasiz. Administrator qo'ng'iroq qilib, qabul kunini belgilaydi.</p></details>
+      <details><summary>Chegirma qancha muddat amal qiladi?</summary><p>Ro'yxatdan o'tganingizdan keyin 10 kun ichida konsultatsiyaga kelsangiz, Stop Autizm narxi 6 000 000 so'm bo'lib qoladi.</p></details>
+      <details><summary>Tashxis qo'yilmagan bo'lsa ham kelsa bo'ladimi?</summary><p>Ha. Xavotir paydo bo'lgan zahoti ko'rsatish eng to'g'ri yo'l — tashxisni kutish shart emas.</p></details>
+      <details><summary>Boshqa viloyat yoki davlatdamiz, qatnasha olamizmi?</summary><p>Ha. Darslar, jonli suhbatlar va 24/7 aloqa onlayn. Oflayn ko'rik kuni oldindan kelishiladi.</p></details>
+    </div>
+  </section>
+
+  <footer class="foot">Barcha huquqlar himoyalangan 2026 · Dr. Zebiniso Yadgarova</footer>
+</div>
+
+<!-- 15. ANKETA -->
+<div class="modal" data-modal role="dialog" aria-modal="true" aria-labelledby="mt">
+  <div class="modal__in">
+    <button class="modal__x" type="button" aria-label="Yopish" data-close></button>
+    <h2 class="modal__t" id="mt">Konsultatsiyaga yozilish uchun anketani to'ldiring</h2>
+    <form data-form novalidate>
+      <div class="alert" data-alert role="alert"></div>
+      <div class="f"><label for="name">Ismingizni kiriting</label><input id="name" type="text" autocomplete="given-name" maxlength="60"></div>
+      <div class="f"><label for="phone">Telefon raqamingizni kiriting</label><input id="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="998 90 123 45 67"></div>
+      <div class="f"><label for="plan">Yo'nalish tanlash</label>
+        <select id="plan"><option>Konsultatsiya qabuli</option><option>Stop Autizm - 6 000 000 so'm</option></select>
+      </div>
+      <button class="submit" type="submit" data-submit>Davom etish</button>
+    </form>
+  </div>
+</div>
+
+<script>
+(function () {
+  var q = function (s) { return document.querySelector(s); };
+  var pad = function (n) { return (n < 10 ? "0" : "") + n; };
+  var END = Date.parse("2026-11-29T23:59:59+05:00");
+  var tid = setInterval(tick, 1000); tick();
+  function tick() {
+    var l = END - Date.now();
+    if (l <= 0) { q("[data-tt]").textContent = "Konsultatsiyaga yozilish davom etmoqda"; q("[data-tr]").style.display = "none"; clearInterval(tid); return; }
+    var s = Math.floor(l / 1000);
+    q("[data-d]").textContent = pad(Math.floor(s / 86400)); q("[data-h]").textContent = pad(Math.floor(s % 86400 / 3600));
+    q("[data-m]").textContent = pad(Math.floor(s % 3600 / 60)); q("[data-s]").textContent = pad(s % 60);
+  }
+
+  q("[data-play]").addEventListener("click", function () {
+    var f = document.createElement("iframe");
+    f.src = "https://www.youtube-nocookie.com/embed/TfvFOfiNyFE?autoplay=1&rel=0&playsinline=1";
+    f.title = "Dr. Zebo — video"; f.allow = "autoplay; encrypted-media; picture-in-picture"; f.allowFullscreen = true;
+    q("[data-video]").appendChild(f); this.remove();
+    if (window.fbq) fbq("trackCustom", "VideoPlay");
+  });
+
+  var modal = q("[data-modal]"), plan = q("#plan");
+  document.querySelectorAll("[data-open]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      if (b.dataset.plan) plan.selectedIndex = +b.dataset.plan;
+      modal.classList.add("on"); document.body.style.overflow = "hidden";
+      setTimeout(function () { q("#name").focus(); }, 60);
+      if (window.fbq) fbq("track", "InitiateCheckout");
+    });
+  });
+  function close() { modal.classList.remove("on"); document.body.style.overflow = ""; }
+  q("[data-close]").addEventListener("click", close);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+
+  var URL_ = "https://script.google.com/macros/s/AKfycbwiavNUy0IuYHQeodWeSNwdG-0MPhc6b5rRIewj-KK-rqU0TfKd1bJO1qW6cxkGzNbCtQ/exec";
+  var alertBox = q("[data-alert]"), btn = q("[data-submit]"), phone = q("#phone");
+  phone.addEventListener("input", function () { this.value = this.value.replace(/[^\d+ ]/g, "").slice(0, 17); });
+  function fail(m, el) { alertBox.textContent = m; alertBox.classList.add("on"); el.focus(); }
+  q("[data-form]").addEventListener("submit", function (e) {
+    e.preventDefault(); alertBox.classList.remove("on");
+    var name = q("#name").value.trim(), d = phone.value.replace(/\D/g, "");
+    if (d.length === 9) d = "998" + d;
+    if (name.length < 2) return fail("Iltimos, ismingizni kiriting.", q("#name"));
+    if (d.length < 11 || d.length > 13) return fail("Iltimos, telefon raqamingizni to'liq kiriting.", phone);
+    var full = "+" + d;
+    btn.disabled = true; btn.textContent = "Yuborilmoqda...";
+    var body = JSON.stringify({ phone: full, name: name, plan: plan.value, source: "variant-e" });
+    var done = false;
+    function go() { if (!done) { done = true; location.href = "/rahmat-c?ph=" + encodeURIComponent(full); } }
+    var sent = false;
+    try { sent = navigator.sendBeacon && navigator.sendBeacon(URL_, new Blob([body], { type: "text/plain" })); } catch (x) {}
+    if (sent) return go();
+    fetch(URL_, { method: "POST", mode: "no-cors", body: body }).catch(function () {}).then(function () { setTimeout(go, 150); });
+    setTimeout(go, 1500);
+  });
+})();
+</script>
+</body>
+</html>

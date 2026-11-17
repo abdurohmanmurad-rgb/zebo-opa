@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tabriklayman! Ro'yxatdan o'tdingiz — Dr. Zebo</title>
+<meta name="robots" content="noindex">
+<link rel="preload" as="image" href="/img/c/yt-video.jpg" fetchpriority="high">
+
+<!-- Meta Pixel: Lead faqat shu sahifada, telefon bo'yicha dedup -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+(function () {
+  var lead = null;
+  try { lead = JSON.parse(sessionStorage.getItem('zebo_lead') || 'null'); } catch (e) {}
+  // Eski havolalar (?ph=...) uchun: telefonni olib, URL'dan darhol o'chiramiz
+  try {
+    var ph = new URLSearchParams(location.search).get('ph');
+    if (ph) {
+      var digits = ph.replace(/\D/g, '');
+      if (!lead && !sessionStorage.getItem('lead_c_' + ph)) lead = { ph: digits, id: 'lead_' + Date.now() };
+      history.replaceState(null, '', location.pathname);
+    }
+  } catch (e) {}
+  // Advanced Matching: pixel telefon/ismni brauzerda SHA-256 bilan xeshlab yuboradi
+  var am = {};
+  if (lead && lead.ph) am.ph = lead.ph;
+  if (lead && lead.fn) am.fn = lead.fn;
+  fbq('init', '862190763626893', am);
+  fbq('init', '1801978390843079', am);
+  fbq('track', 'PageView');
+  // Lead: faqat anketa yuborilgandan keyin, bir marta (eventID bilan dedup)
+  if (lead && !lead.sent) {
+    fbq('track', 'Lead', { content_name: 'konsultatsiya' }, { eventID: lead.id });
+    lead.sent = 1;
+    if (lead.v) { // dashboard hisoblagichi
+      var b = JSON.stringify({ v: lead.v, e: ['lead'] });
+      try { if (!(navigator.sendBeacon && navigator.sendBeacon('/api/ev', new Blob([b], { type: 'text/plain' })))) fetch('/api/ev', { method: 'POST', body: b, keepalive: true }); } catch (e) {}
+    }
+    try { sessionStorage.setItem('zebo_lead', JSON.stringify(lead)); } catch (e) {}
+  }
+})();
+</script>
+
+<style>
+:root{
+  --ind:oklch(0.33 0.12 283); --ind-d:oklch(0.25 0.10 283); --ind-l:oklch(0.45 0.14 283);
+  --lav:oklch(0.95 0.025 280); --lav-2:oklch(0.90 0.045 280);
+  --pink:oklch(0.60 0.24 0); --red:oklch(0.62 0.23 25); --gold:oklch(0.84 0.15 85);
+  --green:oklch(0.62 0.16 150); --tg:oklch(0.62 0.14 240); --tg-d:oklch(0.52 0.14 240);
+  --ink:oklch(0.27 0.015 283); --muted:oklch(0.48 0.02 283); --line:oklch(0.89 0.02 283);
+  --sf:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sf);color:var(--ink);background:var(--ind-d);line-height:1.55;-webkit-font-smoothing:antialiased}
+.page{max-width:580px;margin:0 auto;background:#fff;min-height:100vh;padding-bottom:30px}
+.w{padding:0 18px}
+p{font-size:18px;margin-top:14px}
+b{font-weight:700}
+
+/* Qadamlar */
+.steps{display:flex;align-items:center;justify-content:center;gap:6px;padding:18px 12px 0}
+.st{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11.5px;font-weight:700;color:var(--muted);width:84px;text-align:center;line-height:1.2}
+.st i{font-style:normal;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:17px;background:var(--lav);color:var(--muted)}
+.st.done i{background:var(--green);color:#fff}
+.st.now i{background:var(--ind);color:#fff;box-shadow:0 0 0 5px oklch(0.33 0.12 283 / .18);animation:pulse 1.8s infinite}
+.st.now{color:var(--ind)}
+@keyframes pulse{50%{box-shadow:0 0 0 9px oklch(0.33 0.12 283 / .05)}}
+.bar{flex:1;max-width:34px;height:3px;border-radius:2px;background:var(--lav-2);margin-bottom:18px}
+.bar.done{background:var(--green)}
+
+/* Hero */
+.hero{text-align:center;padding:22px 0 6px}
+.hero__ok{width:74px;height:74px;border-radius:50%;background:var(--green);color:#fff;font-size:40px;font-weight:900;display:grid;place-items:center;margin:0 auto;box-shadow:0 10px 24px oklch(0.62 0.16 150 / .35)}
+.hero h1{font-weight:800;font-size:31px;line-height:1.15;letter-spacing:-.5px;color:var(--ind);margin-top:14px}
+.hero p{margin-top:10px}
+.call{display:flex;gap:12px;align-items:center;background:oklch(0.96 0.05 150);border:1px solid oklch(0.85 0.08 150);border-radius:16px;padding:14px;margin-top:18px;text-align:left}
+.call i{font-style:normal;font-size:30px}
+.call b{display:block;font-size:16.5px;color:oklch(0.35 0.11 150)}
+.call span{font-size:15px}
+
+/* 100 joy */
+.limit{margin-top:26px;background:linear-gradient(165deg,var(--ind),var(--ind-d));color:#fff;border-radius:24px;padding:22px 18px;text-align:center}
+.limit__k{font-size:14px;font-weight:700;opacity:.8;text-transform:uppercase;letter-spacing:.6px}
+.limit__n{font-weight:900;font-size:76px;line-height:1;letter-spacing:-3px;color:var(--gold);margin-top:6px}
+.limit__n small{font-size:22px;letter-spacing:0;color:#fff;font-weight:800}
+.limit h2{font-weight:800;font-size:23px;line-height:1.2;margin-top:8px}
+.limit p{font-size:16.5px;opacity:.92}
+.limit__why{display:grid;gap:8px;margin-top:14px;text-align:left;list-style:none}
+.limit__why li{background:oklch(1 0 0 / .1);border-radius:12px;padding:10px 12px;font-size:15.5px}
+
+/* Sovg'alar */
+.sec{padding-top:30px}
+.sec h2{font-weight:800;font-size:27px;line-height:1.18;letter-spacing:-.4px;color:var(--ind);text-align:center}
+.sec .sub{text-align:center;color:var(--muted);font-size:16.5px;margin-top:6px}
+.lock{display:flex;gap:10px;align-items:center;background:oklch(0.97 0.05 85);border:2px dashed var(--gold);border-radius:16px;padding:12px 14px;margin-top:16px;font-size:16px;font-weight:600}
+.lock i{font-style:normal;font-size:26px}
+.gl{list-style:none;display:grid;gap:10px;margin-top:14px}
+.g{display:grid;grid-template-columns:76px 1fr;gap:12px;align-items:center;background:var(--lav);border-radius:16px;padding:10px;position:relative}
+.g img{width:76px;height:56px;object-fit:cover;border-radius:10px;display:block}
+.g .emo{width:76px;height:56px;border-radius:10px;background:#fff;display:grid;place-items:center;font-size:28px}
+.g b{display:block;font-size:16px;line-height:1.3;color:var(--ind)}
+.g span{font-size:13.5px;color:var(--muted)}
+.g__tag{position:absolute;top:-8px;right:10px;font-size:11px;font-weight:800;padding:2px 8px;border-radius:6px;background:var(--green);color:#fff}
+.g--vip{background:linear-gradient(165deg,var(--ind),var(--ind-d));border:2px solid var(--gold)}
+.g--vip b{color:var(--gold)}.g--vip span{color:#fff;opacity:.85}
+.g--vip img{border-radius:50%;width:56px;height:56px;justify-self:center;border:3px solid var(--gold)}
+.grp{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-top:18px}
+
+/* Tayyorgarlik */
+.prep{list-style:none;counter-reset:p;display:grid;gap:10px;margin-top:14px}
+.prep li{counter-increment:p;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:center;font-size:16.5px;line-height:1.45}
+.prep li::before{content:counter(p);width:40px;height:40px;border-radius:50%;background:var(--ind);color:#fff;display:grid;place-items:center;font-weight:900;font-size:18px}
+.prep b{color:var(--ind)}
+
+/* Kanal */
+.chan{margin-top:30px;border-radius:26px;overflow:hidden;background:linear-gradient(170deg,oklch(0.96 0.03 240),#fff);border:2px solid oklch(0.85 0.06 240)}
+.chan__top{display:flex;gap:12px;align-items:center;padding:16px}
+.chan__av{width:58px;height:58px;border-radius:50%;background:linear-gradient(160deg,var(--tg),var(--ind));display:grid;place-items:center;color:#fff;font-weight:900;font-size:22px;flex:0 0 auto;position:relative}
+.chan__av::after{content:"🔒";position:absolute;right:-4px;bottom:-4px;font-size:16px;background:#fff;border-radius:50%;width:24px;height:24px;display:grid;place-items:center}
+.chan__n{font-weight:800;font-size:18px;line-height:1.2}
+.chan__s{font-size:13.5px;color:var(--muted)}
+.chan__b{padding:0 16px 18px}
+.chan__b p{font-size:17px;margin-top:0}
+.chan__b ul{list-style:none;display:grid;gap:6px;margin:12px 0 4px}
+.chan__b li{font-size:15.5px}
+.tg{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin-top:14px;background:linear-gradient(180deg,var(--tg),var(--tg-d));color:#fff;text-decoration:none;font-weight:800;font-size:18px;text-transform:uppercase;letter-spacing:-.2px;padding:19px 14px;border-radius:16px;box-shadow:0 7px 0 oklch(0.42 0.12 240);position:relative;overflow:hidden;animation:nudge 3s ease-in-out infinite}
+.tg:active{transform:translateY(5px);box-shadow:0 2px 0 oklch(0.42 0.12 240)}
+@keyframes nudge{0%,88%,100%{transform:translateX(0)}90%{transform:translateX(-6px)}93%{transform:translateX(6px)}96%{transform:translateX(-3px)}}
+@media (prefers-reduced-motion:reduce){.tg,.st.now i{animation:none}}
+.alt{font-size:14.5px;color:var(--muted);text-align:center;margin-top:16px}
+.alt a{color:var(--tg-d);font-weight:700}
+.foot{text-align:center;font-size:12.5px;color:var(--muted);margin-top:26px}
+
+/* Chegirma: tirnab ochiladigan karta (scratch card) */
+.scr{margin-top:28px;background:linear-gradient(170deg,var(--ind-d),oklch(0.20 0.08 283));color:#fff;border-radius:26px;padding:24px 16px 20px;text-align:center}
+.scr__k{font-size:12.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+.scr h2{font-weight:800;font-size:26px;line-height:1.15;margin-top:6px}
+.scr__s{font-size:15.5px;opacity:.85;margin-top:6px}
+/* YouTube video bloki: rasm → matn → strelka → tugma (bot havolasi) */
+.yt{margin-top:18px;background:#fff;color:var(--ink,#1b1b22);border-radius:18px;overflow:hidden;box-shadow:0 14px 30px oklch(0 0 0 / .25);padding-bottom:16px}
+.yt__img{display:block}
+.yt__img img{display:block;width:100%;height:auto}
+.yt__h{font-weight:800;font-size:21px;line-height:1.25;text-align:center;padding:16px 16px 4px}
+.yt__arr{text-align:center;font-size:34px;line-height:1;margin:6px 0 2px;animation:ytb 1.2s ease-in-out infinite}
+@keyframes ytb{50%{transform:translateY(7px)}}
+.yt__a{display:flex;align-items:center;justify-content:center;gap:8px;margin:8px 14px 0;background:linear-gradient(180deg,#ff1f1f,#d90000);color:#fff;text-decoration:none;font-weight:900;font-size:17px;line-height:1.2;text-transform:uppercase;text-align:center;padding:17px 14px;border-radius:14px;box-shadow:0 6px 0 #9c0000}
+.yt__a{position:relative;overflow:hidden;animation:ytwig 2.5s ease-in-out infinite}
+.yt__a::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);animation:ytshine 2.5s ease-in-out infinite}
+@keyframes ytwig{0%,55%,100%{transform:scale(1) rotate(0)}62%{transform:scale(1.05) rotate(-1.5deg)}69%{transform:scale(1.05) rotate(1.5deg)}76%{transform:scale(1.05) rotate(-1deg)}83%{transform:scale(1) rotate(0)}}
+@keyframes ytshine{0%,50%{left:-60%}80%,100%{left:130%}}
+.yt__adm{position:relative;overflow:hidden;animation:ytwig 2.5s ease-in-out 1.25s infinite}
+.yt__adm::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(34,158,217,.25),transparent);transform:skewX(-20deg);animation:ytshine 2.5s ease-in-out 1.25s infinite}
+.tg{animation:ytwig 2.5s ease-in-out .6s infinite!important}
+.tg::before{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.4),transparent);transform:skewX(-20deg);animation:ytshine 2.5s ease-in-out .6s infinite;pointer-events:none}
+@media (prefers-reduced-motion:reduce){.yt__arr,.yt__a,.yt__a::after,.yt__adm,.yt__adm::after,.tg,.tg::before{animation:none!important}}
+.yt__k{font-weight:800;font-size:15px;text-transform:uppercase;letter-spacing:.3px;color:var(--ind,#3a2f8f);text-align:center}
+.yt__box{margin:12px 14px 0;padding:14px;border-radius:14px;background:oklch(0.97 0.03 150);border:2px dashed oklch(0.62 0.16 150);text-align:center}
+.yt__price{display:flex;align-items:baseline;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:6px}
+.yt__old{font-size:18px;color:oklch(0.55 0.02 283);text-decoration:line-through;text-decoration-color:oklch(0.62 0.23 25);text-decoration-thickness:2px}
+.yt__new{font-size:30px;font-weight:900;color:oklch(0.45 0.16 150);letter-spacing:-.5px}
+.yt__save{display:inline-block;margin-top:6px;background:oklch(0.62 0.23 25);color:#fff;font-weight:800;font-size:14px;padding:5px 12px;border-radius:20px}
+.yt__note{font-size:13.5px;color:oklch(0.4 0.02 283);margin-top:8px}
+.yt__lim{margin:16px 14px 0;padding:16px 14px;border-radius:14px;background:linear-gradient(160deg,oklch(0.33 0.12 283),oklch(0.25 0.10 283));color:#fff;text-align:center}
+.yt__lim-n{font-weight:900;font-size:48px;line-height:1;color:oklch(0.84 0.15 85);letter-spacing:-1px}
+.yt__lim-n small{font-size:18px;color:#fff;letter-spacing:0;font-weight:800}
+.yt__lim-t{font-weight:800;font-size:19px;line-height:1.25;margin-top:6px}
+.yt__lim p{font-size:15px;line-height:1.45;margin-top:8px;opacity:.95}
+.yt__gifts{margin:12px 14px 0;padding:14px;border-radius:14px;background:oklch(0.96 0.025 280)}
+.yt__grp{font-size:12.5px;font-weight:800;color:oklch(0.47 0.02 283);text-transform:uppercase;letter-spacing:.4px;margin:12px 0 6px}
+.yt__gifts ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.yt__gifts li{display:flex;align-items:center;gap:10px;background:#fff;border-radius:10px;padding:8px;font-weight:700;font-size:15px;line-height:1.25}
+.yt__gifts li img,.yt__gifts li span{flex:0 0 44px;width:44px;height:44px;border-radius:8px;object-fit:cover;display:grid;place-items:center;font-size:24px;background:oklch(0.96 0.025 280)}
+.yt__gifts li.vip{background:oklch(0.95 0.06 85);border:1px solid oklch(0.84 0.15 85)}
+.yt__adm{display:flex;align-items:center;justify-content:center;gap:8px;margin:16px 14px 0;color:#229ED9;background:#fff;border:2px solid #229ED9;text-decoration:none;font-weight:800;font-size:16px;padding:13px 14px;border-radius:14px}
+.card{position:relative;margin:18px auto 0;max-width:360px;aspect-ratio:16/10;border-radius:20px;overflow:hidden;box-shadow:0 14px 30px oklch(0 0 0 / .35)}
+.card__prize{position:absolute;inset:0;background:#fff;color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;gap:4px}
+.card__prize small{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--green)}
+.card__prize b{font-size:21px;font-weight:900;color:var(--ind);line-height:1.15}
+.card__old{font-size:15px;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--red);text-decoration-thickness:2px}
+.card__new{font-size:32px;font-weight:900;color:var(--red);letter-spacing:-1px;line-height:1}
+.card__code{margin-top:6px;border:2px dashed var(--ind-l);border-radius:10px;padding:5px 12px;font-size:13px;font-weight:800;color:var(--ind);letter-spacing:1px}
+.card canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab;transition:opacity .6s}
+.card canvas.gone{opacity:0;pointer-events:none}
+.scr__hint{font-size:12.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;opacity:.7;margin-top:14px}
+.scr__done{display:none;margin-top:14px;background:oklch(1 0 0 / .1);border-radius:14px;padding:12px;font-size:16px;line-height:1.45}
+.scr__done b{color:var(--gold)}
+.scr.open .scr__done{display:block}
+.scr.open .scr__hint{display:none}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="steps" aria-label="Sizning yo'lingiz">
+    <div class="st done"><i>✓</i>Ro'yxatdan o'tish</div>
+    <div class="bar done"></div>
+    <div class="st now"><i>2</i>Konsultatsiya</div>
+    <div class="bar"></div>
+    <div class="st"><i>3</i>Stop Autizm</div>
+  </div>
+
+  <section class="hero w">
+    <div class="hero__ok" aria-hidden="true">✓</div>
+    <h1>Tabriklayman! Siz ro'yxatdan o'tdingiz</h1>
+    <div class="call"><i>📞</i><div><b>Administrator tez orada qo'ng'iroq qiladi</b><span>Telefoningiz yoqiq tursin</span></div></div>
+    <div class="yt">
+      <a class="yt__img" href="https://t.me/zebodoctorstopautizm_bot?start=rahmat" target="_blank" rel="noopener"><img src="/img/c/yt-video.jpg" width="800" height="608" alt="Ota-onalar uchun «Autizmni siz bilmaydigan 10 ta belgisi» — YouTube video" fetchpriority="high" decoding="async"></a>
+
+      <div class="yt__h">Videoni YouTube orqali ko'rishingiz mumkin</div>
+      <div class="yt__arr" aria-hidden="true">⬇️</div>
+      <a class="yt__a" href="https://t.me/zebodoctorstopautizm_bot?start=rahmat" target="_blank" rel="noopener">▶ Videoni YouTube orqali tomosha qiling</a>
+
+      <div class="yt__lim">
+        <div class="yt__lim-n">100 <small>ta oila</small></div>
+        <div class="yt__lim-t">Noyabr oyida faqat <b>100 ta oilani</b> qabul qilaman</div>
+        <p>Instagram'da meni <b>100 mingdan ortiq ota-ona</b> kuzatadi — joylar tez to'ladi. <b>Shoshiling:</b> administrator qo'ng'iroq qilganda joyingizni darhol tasdiqlang.</p>
+      </div>
+
+      <div class="yt__box">
+        <div class="yt__k">🎉 Siz uchun chegirma</div>
+        <div class="yt__price"><span class="yt__old">9 000 000</span><span class="yt__new">6 000 000 so'm</span></div>
+        <div class="yt__save">−3 000 000 so'm · Stop Autizm dasturi</div>
+        <div class="yt__note">⏳ 10 kun ichida konsultatsiyaga kelsangiz amal qiladi</div>
+      </div>
+
+      <div class="yt__gifts">
+        <div class="yt__k">🎁 Siz oladigan sovg'alar</div>
+        <div class="yt__grp">Konsultatsiyada</div>
+        <ul>
+          <li><img src="/img/t/gift-nutq.jpg" alt="" loading="lazy">Nutqni chiqarish — nevromassaj darsi</li>
+          <li><img src="/img/t/gift-aqliy.jpg" alt="" loading="lazy">Aqliy ortda qolishning 10 belgisi — dars</li>
+          <li><img src="/img/t/gift-kalsiy.jpg" alt="" loading="lazy">Uyda tabiiy kalsiy — qo'llanma</li>
+        </ul>
+        <div class="yt__grp">Dasturga yozilsangiz</div>
+        <ul>
+          <li class="vip"><img src="/img/t/zebo-avatar.jpg" alt="" loading="lazy">⭐ 24/7 oilaviy shaxsiy nevropatolog</li>
+          <li><img src="/img/t/bonus-1.jpg" alt="" loading="lazy">Sirli nevromassaj kursi (5 dars)</li>
+          <li><span>📚</span>ABA va sensor integratsiya kitoblari</li>
+          <li><span>📒</span>Shaxsiy qo'llanmalar</li>
+        </ul>
+      </div>
+
+      <a class="yt__adm" href="https://t.me/dr_zebo_admin" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 3.5 2.9 10.84c-1.3.52-1.29 1.25-.24 1.57l4.88 1.52 1.88 5.78c.23.63.41.87.84.87.33 0 .51-.15.74-.36l2.36-2.29 4.91 3.63c.9.5 1.55.24 1.78-.84l3.2-15.07c.33-1.49-.6-2.16-1.97-1.68z"/></svg>Admin bilan bog'lanish</a>
+    </div>
+  </section>
+
+  <section class="w">
+    <div class="limit">
+      <div class="limit__k">Noyabr oyi</div>
+      <div class="limit__n">100 <small>ta oila</small></div>
+      <h2>Bu oy faqat 100 ta oilani qabul qilamiz</h2>
+      <p>Qo'ng'iroq bo'lganda <b>joyingizni darhol tasdiqlang.</b></p>
+    </div>
+  </section>
+
+  <section class="w">
+    <div class="scr" data-scr>
+      <div class="scr__k">Siz uchun yashirin sovg'a</div>
+      <h2>Kartani tirnab oching 🎁</h2>
+      <div class="card">
+        <div class="card__prize">
+          <small>✓ Chegirma narxni ham qo'lga kiritdingiz!</small>
+          <b>Stop Autizm dasturi</b>
+          <span class="card__old">9 000 000 so'm</span>
+          <span class="card__new">6 000 000 so'm</span>
+          <span class="card__code">⏳ 10 kun amal qiladi</span>
+        </div>
+        <canvas data-canvas aria-label="Tirnab ochiladigan karta"></canvas>
+      </div>
+      <div class="scr__hint">👆 Tirnab oching</div>
+      <div class="scr__done">🎉 Chegirma sizniki! <b>10 kun ichida konsultatsiyaga kelsangiz</b> amal qiladi.</div>
+    </div>
+  </section>
+
+  <section class="sec w">
+    <h2>Siz oladigan sovg'alar</h2>
+    <div class="lock"><i>🔑</i><span>Sovg'alar <b>konsultatsiyada</b> beriladi</span></div>
+
+    <div class="grp">Konsultatsiyada</div>
+    <ul class="gl">
+      <li class="g"><span class="g__tag">1</span><img src="/img/t/gift-nutq.jpg" alt=""><div><b>Nutqni chiqarish — nevromassaj darsi</b></div></li>
+      <li class="g"><span class="g__tag">2</span><img src="/img/t/gift-aqliy.jpg" alt=""><div><b>Aqliy ortda qolishning 10 belgisi — dars</b></div></li>
+      <li class="g"><span class="g__tag">3</span><img src="/img/t/gift-kalsiy.jpg" alt=""><div><b>Uyda tabiiy kalsiy — qo'llanma</b></div></li>
+    </ul>
+
+    <div class="grp">Dasturga yozilsangiz</div>
+    <ul class="gl">
+      <li class="g g--vip"><img src="/img/t/zebo-avatar.jpg" alt=""><div><b>⭐ 24/7 oilaviy shaxsiy nevropatolog</b></div></li>
+      <li class="g"><span class="g__tag">4</span><img src="/img/t/bonus-1.jpg" alt=""><div><b>Sirli nevromassaj kursi (5 dars)</b></div></li>
+      <li class="g"><span class="g__tag">5</span><span class="emo" aria-hidden="true">📚</span><div><b>ABA va sensor integratsiya kitoblari</b></div></li>
+      <li class="g"><span class="g__tag">6</span><span class="emo" aria-hidden="true">📒</span><div><b>Shaxsiy qo'llanmalar</b></div></li>
+    </ul>
+  </section>
+
+  <section class="sec w">
+    <h2>Qabulga olib keling</h2>
+    <ol class="prep">
+      <li><span><b>Bolaning uydagi 1–2 daqiqalik videosi</b></span></li>
+      <li><span><b>Muhim sanalar</b> (qachon yurdi, gapirdi)</span></li>
+      <li><span><b>Avvalgi tahlil va xulosalar</b></span></li>
+    </ol>
+  </section>
+
+  <section class="w">
+    <div class="chan">
+      <div class="chan__top">
+        <div class="chan__av" aria-hidden="true">ADT</div>
+        <div><div class="chan__n">Autizmdan davo topganlar</div><div class="chan__s">Yopiq Telegram kanal · faqat ro'yxatdan o'tganlar uchun</div></div>
+      </div>
+      <div class="chan__b">
+        <p>Natijaga erishgan oilalarning <b>video va ovozli sharhlari</b> — o'zlaridan eshiting.</p>
+        <a class="tg" data-channel href="https://t.me/dr_zebo_admin" target="_blank" rel="noopener">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M21.94 3.5 2.9 10.84c-1.3.52-1.29 1.25-.24 1.57l4.88 1.52 1.88 5.78c.23.63.41.87.84.87.33 0 .51-.15.74-.36l2.36-2.29 4.91 3.63c.9.5 1.55.24 1.78-.84l3.2-15.07c.33-1.49-.6-2.16-1.97-1.68z"/></svg>
+          Kanalga qo'shilish
+        </a>
+      </div>
+    </div>
+    <p class="alt">Savolingiz bo'lsa: <a href="https://t.me/dr_zebo_admin" target="_blank" rel="noopener">@dr_zebo_admin</a></p>
+    <p class="foot">© 2026 Dr. Zebiniso Yadgarova · Stop Autizm</p>
+  </section>
+</div>
+
+<script>
+  // Yopiq kanal havolasi tayyor bo'lgach shu qatorni almashtiring (masalan: "https://t.me/+AbCdEf...")
+  var CHANNEL_URL = "";
+  if (CHANNEL_URL) document.querySelector("[data-channel]").href = CHANNEL_URL;
+  document.querySelector("[data-channel]").addEventListener("click", function () {
+  });
+
+  // Scratch card
+  (function () {
+    var box = document.querySelector("[data-scr]"), cv = document.querySelector("[data-canvas]");
+    if (!cv || !cv.getContext) return;
+    var ctx = cv.getContext("2d"), drawing = false, done = false, dpr = window.devicePixelRatio || 1;
+    function paint() {
+      var r = cv.getBoundingClientRect(); cv.width = r.width * dpr; cv.height = r.height * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var g = ctx.createLinearGradient(0, 0, r.width, r.height);
+      g.addColorStop(0, "#7b5cf0"); g.addColorStop(1, "#4b2fb8");
+      ctx.fillStyle = g; ctx.fillRect(0, 0, r.width, r.height);
+      ctx.fillStyle = "rgba(255,255,255,.10)";
+      for (var i = 0; i < 9; i++) { ctx.beginPath(); ctx.arc((i * 73) % r.width, (i * 47) % r.height, 18 + (i % 3) * 10, 0, 7); ctx.fill(); }
+      ctx.fillStyle = "#fff"; ctx.font = "800 18px -apple-system,Helvetica,Arial"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
+      ctx.fillText("🎁  Shu yerni tirnang", r.width / 2, r.height / 2);
+      ctx.globalCompositeOperation = "destination-out";
+    }
+    function pos(e) { var r = cv.getBoundingClientRect(), t = e.touches ? e.touches[0] : e; return { x: t.clientX - r.left, y: t.clientY - r.top }; }
+    function scratch(e) {
+      if (!drawing || done) return; e.preventDefault();
+      var p = pos(e); ctx.beginPath(); ctx.arc(p.x, p.y, 24, 0, 7); ctx.fill();
+    }
+    function check() {
+      if (done) return;
+      var d = ctx.getImageData(0, 0, cv.width, cv.height).data, clear = 0, step = 64;
+      for (var i = 3; i < d.length; i += 4 * step) if (d[i] === 0) clear++;
+      if (clear / (d.length / (4 * step)) > 0.45) {
+        done = true; cv.classList.add("gone"); box.classList.add("open");
+        try { localStorage.setItem("zebo_scratch", "1"); } catch (x) {}
+      }
+    }
+    paint();
+    try { if (localStorage.getItem("zebo_scratch")) { done = true; cv.classList.add("gone"); box.classList.add("open"); } } catch (x) {}
+    ["mousedown", "touchstart"].forEach(function (ev) { cv.addEventListener(ev, function (e) { drawing = true; scratch(e); }, { passive: false }); });
+    ["mousemove", "touchmove"].forEach(function (ev) { cv.addEventListener(ev, scratch, { passive: false }); });
+    ["mouseup", "mouseleave", "touchend"].forEach(function (ev) { cv.addEventListener(ev, function () { drawing = false; check(); }); });
+    cv.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { done = true; cv.classList.add("gone"); box.classList.add("open"); } });
+    cv.tabIndex = 0;
+  })();
+</script>
+</body>
+</html>

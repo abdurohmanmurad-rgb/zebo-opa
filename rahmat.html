@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rahmat! Anketangiz qabul qilindi — Dr. Zebo</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="/css/zebo.css">
+
+<!-- Meta Pixel: Lead faqat shu sahifada, telefon bo'yicha dedup (eventID) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','862190763626893');
+fbq('init','1801978390843079');
+fbq('track','PageView');
+(function () {
+  try {
+    var ph = new URLSearchParams(location.search).get('ph') || '';
+    if (!ph) return;                       // to'g'ridan-to'g'ri ochilsa Lead yuborilmaydi
+    var key = 'lead_qabul_' + ph;
+    if (sessionStorage.getItem(key)) return; // sahifa yangilansa qayta yuborilmaydi
+    sessionStorage.setItem(key, '1');
+    fbq('track', 'Lead', { content_name: 'qabul' }, { eventID: key });
+  } catch (e) {}
+})();
+</script>
+<style>
+  .ty{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px 22px;gap:22px}
+  .ty__ok{width:84px;height:84px;border-radius:50%;background:oklch(0.62 0.17 150);display:grid;place-items:center;color:#fff;font-size:44px;font-weight:700}
+  .ty__title{font-size:38px;color:var(--indigo)}
+  .ty p{font-size:17px;max-width:400px}
+  .ty .steps{text-align:left;max-width:420px;width:100%}
+  .tg{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;max-width:400px;background:oklch(0.60 0.13 235);color:#fff;text-decoration:none;font-weight:700;font-size:17px;text-transform:uppercase;padding:18px;border-radius:14px}
+  body,.h,.tg{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif}.h{font-weight:900;letter-spacing:-.5px}
+</style>
+</head>
+<body>
+<div class="page">
+  <main class="ty">
+    <div class="ty__ok" aria-hidden="true">✓</div>
+    <h1 class="h ty__title">Rahmat! Anketangiz qabul qilindi</h1>
+    <p>Administrator tez orada siz bilan bog'lanib, qabul kuni va vaqtini belgilaydi. Telefoningiz yoqiq tursin.</p>
+    <ol class="steps">
+      <li><span><b>Qo'ng'iroqni kuting</b>Administrator qulay vaqtni siz bilan kelishadi</span></li>
+      <li><span><b>Bolaning uydagi videosini oling</b>O'ynayotgan yoki gapirayotgan 1–2 daqiqalik video</span></li>
+      <li><span><b>Hujjatlarni yig'ing</b>Avvalgi tahlil va xulosalarni bitta papkaga soling</span></li>
+    </ol>
+    <p>Kutib qolishni xohlamasangiz — hoziroq Telegram orqali yozing:</p>
+    <a class="tg" href="https://t.me/dr_zebo_admin" target="_blank" rel="noopener">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M21.94 3.5 2.9 10.84c-1.3.52-1.29 1.25-.24 1.57l4.88 1.52 1.88 5.78c.23.63.41.87.84.87.33 0 .51-.15.74-.36l2.36-2.29 4.91 3.63c.9.5 1.55.24 1.78-.84l3.2-15.07c.33-1.49-.6-2.16-1.97-1.68z"/></svg>
+      Administratorga yozish
+    </a>
+  </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Zebo statistika</title>
+<style>
+:root{
+  --bg:#f6f6f8; --card:#fff; --ink:#1b1b22; --muted:#6b6b78; --line:#e6e6ec;
+  --acc:#4b3fb5; --acc-l:#e9e6fb; --good:#1f8a4c; --warn:#b4541a; --hl:#fbfaff;
+  --sf:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#121216; --card:#1c1c22; --ink:#ececf1; --muted:#9a9aa8; --line:#2c2c35;
+  --acc:#9d93ff; --acc-l:#2a2747; --good:#4cc787; --warn:#f0a067; --hl:#22212c;
+}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:15px/1.45 var(--sf);padding:16px}
+.w{max-width:1180px;margin:0 auto}
+h1{font-size:22px;margin-bottom:4px}
+h3{font-size:13px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin:18px 0 8px}
+.sub{color:var(--muted);font-size:13px;margin-bottom:16px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:6px}
+.bar button{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:7px 12px;border-radius:8px;font:inherit;font-size:14px;cursor:pointer}
+.bar button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.bar .sp{flex:1}
+.range{color:var(--muted);font-size:12.5px;margin-bottom:6px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.k{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 13px}
+.k small{color:var(--muted);font-size:12.5px;display:block}
+.k b{font-size:23px;font-variant-numeric:tabular-nums;display:block;margin-top:2px}
+.k em{font-style:normal;font-size:12px;color:var(--muted)}
+.k.main{border-color:var(--acc);background:var(--hl)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:760px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+.card h2{font-size:15px;margin-bottom:10px}
+.row{display:grid;grid-template-columns:110px 1fr 92px;gap:8px;align-items:center;font-size:13.5px;margin:6px 0}
+.row .t{color:var(--muted)}
+.track{background:var(--acc-l);border-radius:6px;height:18px;overflow:hidden}
+.fill{background:var(--acc);height:100%;border-radius:6px;min-width:2px}
+.row .n{text-align:right;font-variant-numeric:tabular-nums}
+.row .n i{font-style:normal;color:var(--muted);font-size:12px}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:tabular-nums}
+th,td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left;position:sticky;left:0;background:var(--card)}
+th{color:var(--muted);font-weight:500;font-size:12px}
+tr.tot td{font-weight:600;border-top:2px solid var(--line)}
+.note{color:var(--muted);font-size:12.5px;margin-top:10px;line-height:1.55}
+.msg{padding:28px;text-align:center;color:var(--muted)}
+.warn{background:var(--card);border:1px solid var(--warn);color:var(--warn);border-radius:12px;padding:12px 14px;font-size:13.5px;margin-top:10px}
+.err{color:var(--warn)}
+.login{max-width:340px;margin:12vh auto;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+.login input{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;font:inherit;margin:10px 0;background:var(--bg);color:var(--ink)}
+.login button{width:100%;padding:10px;border:0;border-radius:8px;background:var(--acc);color:#fff;font:inherit;cursor:pointer}
+/* ===== Issiqlik xaritasi ===== */
+.hm{margin-top:18px}
+.hm__bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.hm__bar button{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:7px 12px;border-radius:8px;font:inherit;font-size:14px;cursor:pointer}
+.hm__bar button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.hm__bar .sp{flex:1}
+.hm__tag{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:8px;padding:6px 10px;background:var(--card)}
+.hm__grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:14px;align-items:start}
+@media (max-width:900px){.hm__grid{grid-template-columns:1fr}}
+.hm__stage{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.hm__head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 14px;border-bottom:1px solid var(--line);font-size:14px}
+.hm__head b{font-variant-numeric:tabular-nums}
+.hm__leg{display:flex;align-items:center;gap:4px;color:var(--muted);font-size:12.5px}
+.hm__leg i{width:16px;height:12px;border-radius:3px;display:inline-block}
+.hm__scroll{background:oklch(0.94 0.005 283);display:flex;justify-content:center;padding:16px 0}
+.hm__phone{position:relative;width:390px;flex:0 0 390px;background:#fff;box-shadow:0 10px 30px oklch(0 0 0 / .18);border-radius:6px;overflow:hidden}
+.hm__phone iframe{display:block;width:390px;border:0;pointer-events:none}
+.hm__phone canvas{position:absolute;left:0;top:0;pointer-events:none}
+.hm__hl{position:absolute;left:0;width:390px;border:2px solid var(--acc);background:oklch(0.6 0.15 283 / .07);pointer-events:none;display:none}
+.hm__side{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;position:sticky;top:12px;max-height:calc(100vh - 24px);overflow:auto}
+@media (max-width:900px){.hm__side{position:static;max-height:none}}
+.hm__side h2{font-size:15px;margin-bottom:4px}
+.hm__side .note{margin-top:0;margin-bottom:10px}
+.hm__sec{padding:10px 8px;border-radius:8px;cursor:pointer;border-bottom:1px solid var(--line)}
+.hm__sec:hover{background:var(--acc-l)}
+.hm__sec-t{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600}
+.hm__sec-t .dot{width:10px;height:10px;border-radius:3px;flex:0 0 10px}
+.hm__sec-t .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hm__sec-t .pc{font-variant-numeric:tabular-nums}
+.hm__sec-m{display:flex;gap:12px;font-size:12.5px;color:var(--muted);margin:4px 0 6px 18px;font-variant-numeric:tabular-nums}
+.hm__sec .track{height:6px;margin-left:18px}
+.hm__els{margin-top:14px}
+.hm__els li{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;padding:6px 0;border-bottom:1px solid var(--line);list-style:none}
+.hm__els li span:first-child{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hm__els li b{font-variant-numeric:tabular-nums}
+.hm__empty{padding:40px 16px;text-align:center;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="w" id="app"><div class="msg">Yuklanmoqda…</div></div>
+<div class="w hm" id="hm" hidden></div>
+<script>
+(function () {
+  var app = document.getElementById("app");
+  var KEY = "zst_key", key = "", period = "7", data = null;
+  try { key = localStorage.getItem(KEY) || ""; period = localStorage.getItem("zst_p") || "7"; } catch (e) {}
+  var PERIODS = [["1", "Bugun"], ["2", "Kecha"], ["7", "7 kun"], ["14", "14 kun"], ["30", "30 kun"], ["all", "Boshidan beri"]];
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function n0(x) { return Math.round(x).toLocaleString("ru-RU"); }
+  function usd(x) { return x ? "$" + x.toFixed(x < 10 ? 2 : x < 1000 ? 2 : 0) : "—"; }
+  function rate(a, b) { if (!b) return "—"; var r = a / b * 100; return (r < 10 ? r.toFixed(2) : r.toFixed(1)) + "%"; }
+  function div(a, b) { return b ? a / b : 0; }
+  function dd(d) { return d.slice(8) + "." + d.slice(5, 7) + (d.slice(0, 4) !== String(new Date().getFullYear()) ? "." + d.slice(2, 4) : ""); }
+  function tdate(off) { return new Date(Date.now() + 5 * 3600 * 1000 - off * 86400000).toISOString().slice(0, 10); }
+
+  function login(msg) {
+    app.innerHTML = '<form class="login"><h1>Statistika</h1><div class="sub">Kirish kalitini kiriting</div>' +
+      (msg ? '<div class="err">' + esc(msg) + '</div>' : '') +
+      '<input type="password" autocomplete="current-password" placeholder="Kalit" required><button>Kirish</button></form>';
+    var f = app.querySelector("form");
+    f.addEventListener("submit", function (e) {
+      e.preventDefault(); key = f.querySelector("input").value.trim();
+      try { localStorage.setItem(KEY, key); } catch (x) {}
+      load();
+    });
+    f.querySelector("input").focus();
+  }
+
+  function load(silent, fresh) {
+    if (!silent) app.innerHTML = '<div class="msg">Yuklanmoqda…</div>';
+    fetch("/api/stats?days=180" + (fresh ? "&fresh=1" : ""), { headers: { "x-stats-key": key } })
+      .then(function (r) {
+        if (r.status === 401) { try { localStorage.removeItem(KEY); } catch (x) {} throw { login: "Kalit noto'g'ri" }; }
+        if (!r.ok) throw new Error("Server javob bermadi (" + r.status + ")");
+        return r.json();
+      })
+      .then(function (j) { data = j; render(); document.dispatchEvent(new Event("zst:ready")); })
+      .catch(function (e) {
+        if (e && e.login) return login(e.login);
+        if (silent) return;
+        app.innerHTML = '<div class="msg err">Xatolik: ' + esc(e.message || e) + '<br><br><button onclick="location.reload()">Qayta urinish</button></div>';
+      });
+  }
+
+  // Sana → {meta..., site...} birlashtirilgan qatorlar
+  function buildRows() {
+    var map = {};
+    var meta = (data.meta && data.meta.days) || [];
+    meta.forEach(function (m) { map[m.date] = { date: m.date, m: m, s: {} }; });
+    data.days.forEach(function (d) {
+      var s = {}, any = false;
+      for (var k in d.counts) if (k.indexOf("c:") === 0) { s[k.slice(2)] = d.counts[k]; any = true; }
+      if (!map[d.date]) { if (!any) return; map[d.date] = { date: d.date, m: null, s: s }; }
+      else map[d.date].s = s;
+    });
+    return Object.keys(map).sort().reverse().map(function (k) { return map[k]; });
+  }
+
+  function inPeriod(date, p) {
+    if (p === "all") return true;
+    if (p === "2") return date === tdate(1);
+    return date >= tdate(Number(p) - 1);
+  }
+
+  function agg(rows) {
+    var t = { spend: 0, impressions: 0, link_clicks: 0, unique_link_clicks: 0, lpv: 0, video3s: 0, thruplay: 0, meta_leads: 0,
+      ses: 0, pv: 0, vp: 0, v25: 0, v50: 0, v75: 0, v95: 0, lead: 0, spendT: 0, lpvT: 0 };
+    for (var z = 10; z <= 100; z += 10) t["s" + z] = 0;
+    rows.forEach(function (r) {
+      if (r.m) ["spend", "impressions", "link_clicks", "unique_link_clicks", "lpv", "video3s", "thruplay", "meta_leads"].forEach(function (k) { t[k] += r.m[k] || 0; });
+      for (var k in r.s) if (k in t) t[k] += r.s[k];
+      // Sayt kuzatuvi boshlangan kunlardagi xarajat — CPL va Lead rate faqat shu bilan hisoblanadi
+      if (r.date >= trackStart && r.m) { t.spendT += r.m.spend || 0; t.lpvT += r.m.lpv || 0; }
+    });
+    return t;
+  }
+
+  var trackStart = "9999";
+
+  function k(t, v, s, main) { return '<div class="k' + (main ? " main" : "") + '"><small>' + t + '</small><b>' + v + '</b><em>' + (s || "&nbsp;") + '</em></div>'; }
+  function bars(rows, base) {
+    var max = Math.max.apply(null, rows.map(function (r) { return r[1]; }).concat([1]));
+    return rows.map(function (r) {
+      return '<div class="row"><span class="t">' + r[0] + '</span><div class="track"><div class="fill" style="width:' + (r[1] / max * 100) + '%"></div></div>' +
+        '<span class="n">' + n0(r[1]) + ' <i>' + rate(r[1], base) + '</i></span></div>';
+    }).join("");
+  }
+
+  function render() {
+    var all = buildRows();
+    trackStart = "9999";
+    all.forEach(function (r) { if ((r.s.ses || r.s.pv) && r.date < trackStart) trackStart = r.date; });
+    var rows = all.filter(function (r) { return inPeriod(r.date, period); });
+    var t = agg(rows);
+    var meta = data.meta || {};
+    var uq = meta.totals && meta.totals[period];
+    var uniqueCtr = uq ? uq.unique_ctr : (t.impressions ? div(t.unique_link_clicks, t.impressions) * 100 : 0);
+    var first = all.length ? all[all.length - 1].date : null;
+
+    var html = '<h1>Stop Autizm — reklama va sayt</h1><div class="sub">Zebo doctor akkaunti · zebo-opa.vercel.app/c-variant · Toshkent vaqti · yangilangan ' +
+      new Date(data.generated).toLocaleTimeString("ru-RU", { hour: "2-digit", minute: "2-digit" }) +
+      (meta.fetched ? ' · Meta ' + new Date(meta.fetched).toLocaleTimeString("ru-RU", { hour: "2-digit", minute: "2-digit" }) : '') + '</div>';
+    html += '<div class="bar">' + PERIODS.map(function (p) { return '<button data-p="' + p[0] + '" class="' + (p[0] === period ? "on" : "") + '">' + p[1] + '</button>'; }).join("") +
+      '<span class="sp"></span><button data-r>↻ Yangilash</button></div>';
+    var since = period === "all" ? first : period === "2" ? tdate(1) : tdate(Number(period) - 1);
+    html += '<div class="range">' + (since ? dd(since) + (period === "1" || period === "2" ? "" : " — " + dd(period === "2" ? tdate(1) : tdate(0))) : "") + '</div>';
+
+    if (meta.error) {
+      var why = meta.error === "not_configured" ? "Meta token hali qo'shilmagan (Vercel → META_ACCESS_TOKEN)." :
+        meta.error === "token_invalid" ? "Meta token eskirgan yoki noto'g'ri — yangisini qo'shish kerak." : "Meta'dan ma'lumot olinmadi: " + esc(meta.message || meta.error);
+      html += '<div class="warn">⚠️ ' + why + ' Reklama raqamlari ko\'rinmaydi, sayt raqamlari ishlayapti.</div>';
+    }
+
+    // 1. Reklama
+    html += '<h3>Reklama (Meta)</h3><div class="kpis">' +
+      k("Sarflangan", usd(t.spend), n0(t.impressions) + " ko'rsatish") +
+      k("Link clicks", n0(t.link_clicks), "unikal: " + n0(uq ? uq.unique_link_clicks : t.unique_link_clicks)) +
+      k("CTR (link)", rate(t.link_clicks, t.impressions), "link clicks / ko'rsatish") +
+      k("Unique CTR", uniqueCtr ? uniqueCtr.toFixed(2) + "%" : "—", "Meta hisobi") +
+      k("CPC (link)", usd(div(t.spend, t.link_clicks)), "sarf / link click") +
+      k("Hook rate", rate(t.video3s, t.impressions), "3 s ko'rish / ko'rsatish") +
+      k("Hold rate", rate(t.thruplay, t.video3s), "ThruPlay / 3 s ko'rish") +
+      k("Landing page views", n0(t.lpv), "") +
+      k("Visit rate", rate(t.lpv, t.link_clicks), "LPV / link clicks") +
+      '</div>';
+
+    // 2. Natija
+    html += '<h3>Natija (sayt hisoblagichi bo\'yicha)</h3><div class="kpis">' +
+      k("Lead", n0(t.lead), "Meta ko'rsatgan: " + n0(t.meta_leads), true) +
+      k("Cost per result", t.lead ? usd(div(t.spendT, t.lead)) : "—", "sarf / sayt lead", true) +
+      k("Lead rate", rate(t.lead, t.lpvT), "lead / LPV") +
+      k("Tashrif → Lead", rate(t.lead, t.ses), "lead / tashrif") +
+      k("Tashriflar", n0(t.ses), "PageView: " + n0(t.pv)) +
+      k("Meta CPL", t.meta_leads ? usd(div(t.spend, t.meta_leads)) : "—", "solishtirish uchun") +
+      '</div>';
+    if (period === "all" || (since && since < trackStart && trackStart !== "9999")) {
+      html += '<div class="note">Sayt hisoblagichi ' + (trackStart === "9999" ? "hali ma'lumot yig'madi" : dd(trackStart) + " dan ishlaydi") +
+        '. Cost per result va Lead rate faqat shu kundan keyingi xarajat va LPV bilan hisoblanadi; undan oldingi kunlarda faqat Meta raqamlari bor.</div>';
+    }
+
+    // 3. Video va scroll
+    html += '<h3>Saytdagi xulq</h3><div class="grid"><div class="card"><h2>Sayt videosi: qayergacha ko\'rildi</h2>' +
+      bars([["Bosdi (play)", t.vp], ["Bosmadi", Math.max(t.ses - t.vp, 0)], ["25% ko'rdi", t.v25], ["50% ko'rdi", t.v50], ["75% ko'rdi", t.v75], ["95% ko'rdi", t.v95]], t.ses) +
+      '<div class="note">Foiz — jami tashriflardan</div></div>';
+    var sc = []; for (var z = 10; z <= 100; z += 10) sc.push([z + "% gacha", t["s" + z]]);
+    html += '<div class="card"><h2>Scroll: sahifaning qayerigacha tushdi</h2>' + bars(sc, t.ses) + '<div class="note">Foiz — jami tashriflardan</div></div></div>';
+
+    // 4. Kunlik jadval
+    var cols = ["Sana", "Sarf", "Ko'rsatish", "Link clicks", "CTR", "Unique CTR", "CPC", "Hook", "Hold", "LPV", "Visit rate", "Tashrif", "Video bosdi", "Scroll 50%", "Lead", "Lead rate", "Cost/result", "Meta lead"];
+    function line(label, m, s, cls, uctr) {
+      m = m || {}; var sp = m.spend || 0;
+      return '<tr' + (cls ? ' class="' + cls + '"' : '') + '><td>' + label + '</td><td>' + usd(sp) + '</td><td>' + n0(m.impressions || 0) + '</td><td>' + n0(m.link_clicks || 0) +
+        '</td><td>' + rate(m.link_clicks || 0, m.impressions) + '</td><td>' + (uctr ? uctr.toFixed(2) + "%" : "—") + '</td><td>' + usd(div(sp, m.link_clicks)) +
+        '</td><td>' + rate(m.video3s || 0, m.impressions) + '</td><td>' + rate(m.thruplay || 0, m.video3s) + '</td><td>' + n0(m.lpv || 0) + '</td><td>' + rate(m.lpv || 0, m.link_clicks) +
+        '</td><td>' + n0(s.ses || 0) + '</td><td>' + n0(s.vp || 0) + '</td><td>' + n0(s.s50 || 0) + '</td><td><b>' + n0(s.lead || 0) + '</b></td><td>' + rate(s.lead || 0, s.lpvT != null ? s.lpvT : m.lpv) +
+        '</td><td>' + (s.lead ? usd(div(s.spendT != null ? s.spendT : sp, s.lead)) : "—") + '</td><td>' + n0(m.meta_leads || 0) + '</td></tr>';
+    }
+    html += '<h3>Kunlar bo\'yicha</h3><div class="card"><div class="tw"><table><thead><tr>' + cols.map(function (c) { return "<th>" + c + "</th>"; }).join("") + '</tr></thead><tbody>';
+    if (!rows.length) html += '<tr><td colspan="' + cols.length + '" style="text-align:center;color:var(--muted)">Bu davrda ma\'lumot yo\'q</td></tr>';
+    rows.forEach(function (r) { html += line(dd(r.date), r.m, r.s, "", r.m && r.m.unique_ctr); });
+    if (rows.length > 1) html += line("Jami", t, { ses: t.ses, vp: t.vp, s50: t.s50, lead: t.lead, spendT: t.spendT, lpvT: t.lpvT }, "tot", uniqueCtr);
+    html += '</tbody></table></div><div class="note">' +
+      '<b>Hook rate</b> — videoni 3 soniya ko\'rganlar / ko\'rsatishlar. <b>Hold rate</b> — ThruPlay (15 s yoki oxirigacha) / 3 soniya ko\'rganlar. ' +
+      '<b>Visit rate</b> — sayt yuklanguncha kutganlar (LPV) / link clicks. <b>Lead rate</b> — sayt lidlari / LPV. <b>Cost per result</b> — sarf / sayt lidlari (Meta lidlari emas). ' +
+      'Xarajat butun Zebo doctor akkaunti bo\'yicha; agar boshqa sahifaga yoki lid-formaga yurgan kampaniya ham yoqilsa, Cost per result yuqori ko\'rinadi. ' +
+      'Tashrif — bitta brauzer vkladkasidagi sessiya, har bosqich sessiyada 1 marta sanaladi. Meta raqamlari 10 daqiqada yangilanadi.</div></div>';
+
+    app.innerHTML = html;
+    app.querySelectorAll("[data-p]").forEach(function (b) {
+      b.addEventListener("click", function () { period = b.getAttribute("data-p"); try { localStorage.setItem("zst_p", period); } catch (x) {} render(); });
+    });
+    app.querySelector("[data-r]").addEventListener("click", function () { load(false, true); });
+  }
+
+  if (key) load(); else login();
+  setInterval(function () { if (key && data && document.visibilityState === "visible") load(true); }, 5 * 60 * 1000);
+})();
+</script>
+<script>
+/* ===== Issiqlik xaritasi: saytdagi bosishlar, bo'lim ko'rilishi va vaqt ===== */
+(function () {
+  var box = document.getElementById("hm");
+  var period = "7", inited = false, frameReady = false, hm = null;
+  var PERIODS = [["1", "Bugun"], ["2", "Kecha"], ["7", "7 kun"], ["14", "14 kun"], ["30", "30 kun"], ["all", "Hammasi"]];
+  var PAL = ["#fde7d4", "#f8c49e", "#f29b68", "#e4683a", "#b8401f"];
+  function key() { try { return localStorage.getItem("zst_key") || ""; } catch (e) { return ""; } }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function n0(x) { return Math.round(x).toLocaleString("ru-RU"); }
+
+  function shell() {
+    box.hidden = false;
+    box.innerHTML =
+      '<h3>Issiqlik xaritasi — saytda qayer ko\'p bosilyapti</h3>' +
+      '<div class="hm__bar"><span class="hm__tag">Landing: /c-variant</span><span class="hm__tag">📱 Mobil</span><span class="sp"></span>' +
+      PERIODS.map(function (p) { return '<button data-hp="' + p[0] + '">' + p[1] + '</button>'; }).join("") +
+      '<button data-hr>↻</button></div>' +
+      '<div class="hm__grid"><div class="hm__stage"><div class="hm__head"><span data-hh>Yuklanmoqda…</span>' +
+      '<span class="hm__leg">Kam ' + PAL.map(function (c) { return '<i style="background:' + c + '"></i>'; }).join("") + ' Ko\'p bosish</span></div>' +
+      '<div class="hm__scroll" data-hs><div class="hm__phone" data-ph><iframe data-hf title="Sayt ko\'rinishi" src="/c-variant?hm=1" scrolling="no"></iframe><canvas data-hc></canvas><div class="hm__hl" data-hl></div></div></div></div>' +
+      '<div class="hm__side" data-side><div class="hm__empty">Yuklanmoqda…</div></div></div>';
+    box.querySelectorAll("[data-hp]").forEach(function (b) { b.addEventListener("click", function () { period = b.getAttribute("data-hp"); load(); }); });
+    box.querySelector("[data-hr]").addEventListener("click", load);
+    var f = box.querySelector("[data-hf]");
+    f.addEventListener("load", function () {
+      frameReady = true; fit(); side();
+      // rasmlar yuklangach balandlik o'zgaradi — qayta o'lchaymiz
+      var d = f.contentDocument;
+      try { new ResizeObserver(function () { fit(); }).observe(d.body); } catch (e) {}
+      var k = 0, iv = setInterval(function () { fit(); if (++k > 15) clearInterval(iv); }, 2000);
+    });
+  }
+
+  function regionsEls() {
+    var d = box.querySelector("[data-hf]").contentDocument;
+    return d ? [].slice.call(d.querySelectorAll(".timer, section")) : [];
+  }
+  function regionName(el, i) {
+    if (el.classList.contains("timer")) return "Taymer (yuqori)";
+    var h = el.querySelector("h1, h2, h3, .H, .btn, summary, b, strong");
+    var t = h ? (h.innerText || h.textContent || "").replace(/\s+/g, " ").trim() : "";
+    if (!t) t = (el.innerText || "").replace(/\s+/g, " ").trim();
+    return t ? (t.length > 52 ? t.slice(0, 50) + "…" : t) : "Bo'lim " + (i + 1);
+  }
+
+  var fitTimer;
+  function fit() {
+    clearTimeout(fitTimer);
+    fitTimer = setTimeout(function () {
+      var f = box.querySelector("[data-hf]"); if (!f || !f.contentDocument) return;
+      var d = f.contentDocument, h = Math.max(d.documentElement.scrollHeight, d.body ? d.body.scrollHeight : 0);
+      if (h && Math.abs(f.offsetHeight - h) > 4) f.style.height = h + "px";
+      draw();
+    }, 120);
+  }
+
+  function load() {
+    box.querySelectorAll("[data-hp]").forEach(function (b) { b.classList.toggle("on", b.getAttribute("data-hp") === period); });
+    fetch("/api/hm?p=" + period, { headers: { "x-stats-key": key() } })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (j) { hm = j; draw(); side(); })
+      .catch(function (e) { box.querySelector("[data-side]").innerHTML = '<div class="hm__empty">Xatolik: ' + esc(e.message) + '</div>'; });
+  }
+
+  function draw() {
+    if (!hm || !frameReady) return;
+    var f = box.querySelector("[data-hf]"), cv = box.querySelector("[data-hc]");
+    var W = 390, H = f.offsetHeight; if (!H) return;
+    var els = regionsEls();
+    cv.width = W; cv.height = H; cv.style.width = W + "px"; cv.style.height = H + "px";
+    var ctx = cv.getContext("2d"); ctx.clearRect(0, 0, W, H);
+    var head = box.querySelector("[data-hh]");
+    head.innerHTML = '<b>' + n0(hm.total) + '</b> ta bosish · <b>' + n0(hm.sessions) + '</b> ta ko\'rish';
+    if (!hm.points.length) return;
+    var max = 0; hm.points.forEach(function (p) { if (p[3] > max) max = p[3]; });
+    // 1) intensivlik (alfa) qatlami
+    var R = 22;
+    hm.points.forEach(function (p) {
+      var el = els[p[0]]; if (!el) return;
+      var rc = el.getBoundingClientRect();
+      var x = rc.left + (p[1] + 0.5) / 50 * rc.width, y = rc.top + (p[2] + 0.5) / 100 * rc.height;
+      var a = Math.min(1, 0.25 + 0.75 * Math.sqrt(p[3] / max));
+      var g = ctx.createRadialGradient(x, y, 0, x, y, R);
+      g.addColorStop(0, "rgba(0,0,0," + a + ")"); g.addColorStop(1, "rgba(0,0,0,0)");
+      ctx.fillStyle = g; ctx.fillRect(x - R, y - R, R * 2, R * 2);
+    });
+    // 2) alfani rang palitrasiga aylantiramiz (Kam → Ko'p)
+    var lut = document.createElement("canvas"); lut.width = 256; lut.height = 1;
+    var lc = lut.getContext("2d"), lg = lc.createLinearGradient(0, 0, 256, 0);
+    PAL.forEach(function (c, i) { lg.addColorStop(i / (PAL.length - 1), c); });
+    lc.fillStyle = lg; lc.fillRect(0, 0, 256, 1);
+    var pal = lc.getImageData(0, 0, 256, 1).data;
+    var img = ctx.getImageData(0, 0, W, H), px = img.data;
+    for (var i = 0; i < px.length; i += 4) {
+      var al = px[i + 3]; if (!al) continue;
+      var o = al * 4;
+      px[i] = pal[o]; px[i + 1] = pal[o + 1]; px[i + 2] = pal[o + 2]; px[i + 3] = Math.min(235, 60 + al);
+    }
+    ctx.putImageData(img, 0, 0);
+  }
+
+  function side() {
+    var el = box.querySelector("[data-side]"), els = regionsEls();
+    if (!hm) return;
+    if (!hm.sessions && !hm.total) {
+      el.innerHTML = '<h2>E\'tibor</h2><div class="hm__empty">Bu davrda hali ma\'lumot yo\'q. Reklama trafigi kelgach bosishlar shu yerda ko\'rinadi.</div>';
+      return;
+    }
+    var rows = Object.keys(hm.regions).map(function (r) {
+      var x = hm.regions[r]; r = Number(r);
+      return { r: r, name: els[r] ? regionName(els[r], r) : "Bo'lim " + (r + 1), reach: hm.sessions ? Math.min(100, x.v / hm.sessions * 100) : 0, sec: x.v ? x.ms / x.v / 1000 : 0, c: x.c || 0 };
+    }).sort(function (a, b) { return a.r - b.r; });
+    var html = '<h2>E\'tibor</h2><div class="note">' + n0(hm.sessions) + ' ko\'rish · ' + n0(hm.total) + ' bosish. Foiz — bo\'limga yetib kelganlar ulushi; soniya — bo\'limda o\'rtacha turgan vaqt. Bosing — saytda ko\'rsatadi.</div>';
+    html += rows.map(function (x) {
+      var c = PAL[Math.min(4, Math.floor(x.reach / 20.01))];
+      return '<div class="hm__sec" data-r="' + x.r + '"><div class="hm__sec-t"><span class="dot" style="background:' + c + '"></span><span class="nm" title="' + esc(x.name) + '">' + esc(x.name) + '</span><span class="pc">' + Math.round(x.reach) + '%</span></div>' +
+        '<div class="hm__sec-m"><span>' + x.sec.toFixed(0) + ' s</span><span>' + n0(x.c) + ' bosish</span></div><div class="track"><div class="fill" style="width:' + x.reach + '%;background:' + c + '"></div></div></div>';
+    }).join("");
+    if (hm.elements.length) {
+      html += '<div class="hm__els"><h2>Eng ko\'p bosilgan elementlar</h2><ul>' + hm.elements.slice(0, 15).map(function (e) {
+        return '<li><span title="' + esc(e[0]) + '">' + esc(e[0]) + '</span><b>' + n0(e[1]) + '</b></li>';
+      }).join("") + '</ul></div>';
+    }
+    el.innerHTML = html;
+    el.querySelectorAll("[data-r]").forEach(function (row) {
+      row.addEventListener("click", function () {
+        var reg = regionsEls()[Number(row.getAttribute("data-r"))]; if (!reg) return;
+        var rc = reg.getBoundingClientRect(), hl = box.querySelector("[data-hl]"), sc = box.querySelector("[data-hs]");
+        hl.style.display = "block"; hl.style.top = rc.top + "px"; hl.style.height = rc.height + "px";
+        var ph = box.querySelector("[data-ph]").getBoundingClientRect();
+        window.scrollTo({ top: Math.max(0, scrollY + ph.top + rc.top - 60), behavior: "smooth" });
+      });
+    });
+  }
+
+  function init() { if (inited || !key()) return; inited = true; shell(); load(); }
+  document.addEventListener("zst:ready", init);
+})();
+</script>
+</body>
+</html>

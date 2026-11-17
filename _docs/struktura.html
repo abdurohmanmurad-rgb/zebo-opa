@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr. Zebo sayti — struktura</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --indigo:oklch(0.32 0.115 282); --indigo-deep:oklch(0.26 0.10 282);
+  --pink:oklch(0.60 0.225 2); --red:oklch(0.62 0.225 25); --green:oklch(0.62 0.17 150);
+  --amber:oklch(0.80 0.15 80); --lilac:oklch(0.94 0.025 275); --ink:oklch(0.22 0.02 280);
+  --muted:oklch(0.50 0.02 280); --line:oklch(0.86 0.02 280); --bg:oklch(0.975 0.008 280); --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Montserrat,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.45}
+.h{font-family:"Barlow Condensed",sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.3px;line-height:1.05}
+header{background:var(--indigo);color:#fff;padding:36px 20px 30px;text-align:center}
+header h1{font-size:44px}
+header p{opacity:.85;margin-top:8px;font-size:15px}
+.legend{display:flex;flex-wrap:wrap;gap:10px 18px;justify-content:center;margin-top:16px;font-size:13px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.dot{width:12px;height:12px;border-radius:3px;display:inline-block}
+main{max-width:1180px;margin:0 auto;padding:30px 16px 60px}
+section{margin-bottom:46px}
+.sec-title{font-size:30px;color:var(--indigo);margin-bottom:6px}
+.sec-sub{color:var(--muted);font-size:14.5px;margin-bottom:18px}
+
+/* ===== Funnel ===== */
+.funnel{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;align-items:stretch}
+.fstep{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:14px 12px;position:relative;text-align:center}
+.fstep:not(:last-child)::after{content:"→";position:absolute;right:-12px;top:50%;transform:translateY(-50%);font-weight:700;color:var(--indigo);font-size:18px;z-index:1}
+.fstep b{display:block;font-size:14.5px}
+.fstep small{display:block;color:var(--muted);font-size:12px;margin-top:4px}
+.fstep .ev{display:inline-block;margin-top:8px;font-size:11px;font-weight:700;padding:3px 7px;border-radius:6px;background:var(--lilac);color:var(--indigo)}
+.fstep.lead{border:2px solid var(--green)}
+.fstep.lead .ev{background:oklch(0.93 0.06 150);color:oklch(0.40 0.12 150)}
+.fstep.off{background:oklch(0.97 0.02 80);border-style:dashed}
+
+/* ===== Sitemap tree ===== */
+.tree{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:26px 18px}
+.root{margin:0 auto 26px;max-width:340px}
+.node{border-radius:12px;padding:12px 14px;background:var(--white);border:2px solid var(--line);font-size:14px}
+.node .url{font-family:ui-monospace,Menlo,monospace;font-size:13px;font-weight:700}
+.node p{color:var(--muted);font-size:12.5px;margin-top:3px}
+.node .tag{float:right;font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:5px;text-transform:uppercase;margin-left:6px}
+.n-root{border-color:var(--indigo);background:var(--indigo);color:#fff;text-align:center}
+.n-root p{color:oklch(1 0 0 / .8)}
+.n-main{border-color:var(--red);box-shadow:0 6px 18px oklch(0.62 0.225 25 / .18)}
+.n-main .tag{background:var(--red);color:#fff}
+.n-now{border-color:var(--amber);background:oklch(0.98 0.03 85)}
+.n-now .tag{background:var(--amber);color:var(--ink)}
+.n-ty{border-color:var(--green)}
+.n-ty .tag{background:var(--green);color:#fff}
+.n-dis{border-color:oklch(0.62 0.13 250)}
+.n-dis .tag{background:oklch(0.62 0.13 250);color:#fff}
+.n-arch{border-style:dashed;opacity:.8}
+.branches{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:18px;position:relative}
+.col-title{font-size:12px;font-weight:700;text-transform:uppercase;color:var(--muted);margin-bottom:8px;letter-spacing:.4px}
+.stack{display:grid;gap:10px}
+.arrow-down{text-align:center;color:var(--green);font-weight:700;font-size:20px;line-height:1;margin:4px 0}
+
+/* ===== Wireframes ===== */
+.wires{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.phone{background:var(--white);border:1px solid var(--line);border-radius:28px;padding:14px 12px 16px;box-shadow:0 10px 30px oklch(0.3 0.08 280 / .08)}
+.phone__name{text-align:center;font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:13px;margin-bottom:10px}
+.phone__name small{display:block;font-family:Montserrat,sans-serif;font-weight:500;color:var(--muted);font-size:11.5px}
+.screen{border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+.b{padding:9px 10px;font-size:11.5px;border-bottom:1px solid oklch(0.92 0.01 280);display:grid;grid-template-columns:20px 1fr;gap:6px;align-items:start}
+.b:last-child{border-bottom:0}
+.b i{font-style:normal;font-weight:700;font-size:10.5px;width:18px;height:18px;border-radius:50%;display:grid;place-items:center;background:var(--lilac);color:var(--indigo)}
+.b b{display:block;font-size:12px}
+.b span{color:var(--muted)}
+.b.dark{background:var(--indigo);color:#fff}.b.dark span{color:oklch(1 0 0 / .75)}.b.dark i{background:oklch(1 0 0 / .2);color:#fff}
+.b.cta{background:oklch(0.97 0.03 25)}
+.b.cta b::after{content:"  ▶ tugma";color:var(--red);font-size:10.5px}
+.b.vid .ph{margin-top:6px;height:70px;border-radius:8px;background:linear-gradient(160deg,oklch(0.9 0.04 280),oklch(0.75 0.09 285));display:grid;place-items:center;color:#fff;font-size:22px}
+.b.form{background:oklch(0.96 0.04 150)}
+.b.dark .trig{background:#fff;color:var(--pink)}
+.trig{display:inline-block;margin-top:3px;font-size:10px;font-weight:700;padding:1px 6px;border-radius:4px;background:oklch(0.95 0.05 2);color:var(--pink)}
+
+/* ===== Table ===== */
+.tbl{width:100%;border-collapse:collapse;background:var(--white);border-radius:14px;overflow:hidden;border:1px solid var(--line);font-size:14px}
+.tbl th,.tbl td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl th{background:var(--lilac);font-size:12.5px;text-transform:uppercase;color:var(--indigo)}
+.tbl code{font-size:12.5px;font-weight:700}
+.st{font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:5px;white-space:nowrap}
+.st.ok{background:oklch(0.93 0.06 150);color:oklch(0.40 0.12 150)}
+.st.wait{background:oklch(0.95 0.06 85);color:oklch(0.45 0.10 70)}
+.st.todo{background:var(--lilac);color:var(--indigo)}
+
+.needs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.need{background:var(--white);border:1px solid var(--line);border-left:4px solid var(--red);border-radius:10px;padding:12px;font-size:13.5px}
+.need b{display:block;margin-bottom:3px}
+
+@media (max-width:980px){
+  .funnel{grid-template-columns:repeat(3,1fr)}
+  .fstep:nth-child(3)::after{display:none}
+  .branches{grid-template-columns:1fr}
+  .wires{grid-template-columns:1fr 1fr}
+  .needs{grid-template-columns:1fr 1fr}
+}
+@media (max-width:620px){
+  header h1{font-size:34px}
+  .funnel{grid-template-columns:1fr}
+  .fstep::after{content:"↓"!important;right:50%!important;top:auto!important;bottom:-16px;transform:translateX(50%)!important;display:block!important}
+  .fstep:last-child::after{display:none!important}
+  .wires,.needs{grid-template-columns:1fr}
+  .tbl{font-size:13px}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1 class="h">Dr. Zebo sayti — taxminiy struktura</h1>
+  <p>Lid-magnit video → ishonch → qabulga yozilish · zebo-opa.vercel.app</p>
+  <div class="legend">
+    <span><i class="dot" style="background:var(--red)"></i>Asosiy sahifa</span>
+    <span><i class="dot" style="background:var(--amber)"></i>Hozir ishlayapti</span>
+    <span><i class="dot" style="background:oklch(0.62 0.13 250)"></i>Kasallik sahifalari</span>
+    <span><i class="dot" style="background:var(--green)"></i>Lead (pixel)</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- VORONKA -->
+  <section>
+    <h2 class="h sec-title">1. Voronka: mijoz yo'li</h2>
+    <p class="sec-sub">Har bosqich alohida o'lchanadi. Qaysi bosqichda odam yo'qolayotganini shu orqali ko'ramiz.</p>
+    <div class="funnel">
+      <div class="fstep"><b>Reklama</b><small>Instagram / Facebook, Reels</small><span class="ev">CTR, CPC</span></div>
+      <div class="fstep"><b>/qabul yoki /autizm…</b><small>Sahifa ochildi</small><span class="ev">PageView</span></div>
+      <div class="fstep"><b>Video</b><small>Lid-magnit videoni ko'rdi</small><span class="ev">VideoPlay</span></div>
+      <div class="fstep"><b>Anketa</b><small>Ism, telefon, yosh, muammo</small><span class="ev">InitiateCheckout</span></div>
+      <div class="fstep lead"><b>/rahmat</b><small>Anketa yuborildi</small><span class="ev">Lead ✓</span></div>
+      <div class="fstep off"><b>Administrator</b><small>Qo'ng'iroq → qabul → to'lov</small><span class="ev">Sheets'da</span></div>
+    </div>
+  </section>
+
+  <!-- SAYT XARITASI -->
+  <section>
+    <h2 class="h sec-title">2. Sayt xaritasi</h2>
+    <p class="sec-sub">Har bir reklama o'z og'rig'iga mos sahifaga olib boradi. Hamma sahifalar bitta anketaga va bitta /rahmat sahifasiga tushadi.</p>
+    <div class="tree">
+      <div class="root node n-root"><div class="url">zebo-opa.vercel.app</div><p>keyin o'z domeningizga o'tkaziladi</p></div>
+
+      <div class="branches">
+        <div>
+          <div class="col-title">Kirish sahifalari</div>
+          <div class="stack">
+            <div class="node n-now"><span class="tag">hozir</span><div class="url">/</div><p>18-noyabr masterklassi. Reklama shu yerga ketyapti, 18-noyabrgacha tegilmaydi</p></div>
+            <div class="node n-main"><span class="tag">asosiy</span><div class="url">/qabul</div><p>Video + sotuvchi matn + anketa. 18-noyabrdan keyin "/" ham shu sahifa bo'ladi</p></div>
+            <div class="node n-arch"><div class="url">/masterklass</div><p>Keyingi masterklasslar uchun arxiv</p></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="col-title">Kasalliklar sahifalari (har biriga o'z videosi)</div>
+          <div class="stack">
+            <div class="node n-dis"><span class="tag">1-navbat</span><div class="url">/autizm</div><p>Autizm va RAS belgilari, erta aniqlash</p></div>
+            <div class="node n-dis"><span class="tag">1-navbat</span><div class="url">/nutq-kechikishi</div><p>Bola gapirmaydi yoki kech gapiryapti</p></div>
+            <div class="node n-dis"><span class="tag">2-navbat</span><div class="url">/bosh-ogrigi</div><p>Bolalarda bosh og'rig'i + shoshilinch belgilar</p></div>
+            <div class="node n-dis"><span class="tag">2-navbat</span><div class="url">/enurez</div><p>Kechasi siyib qo'yish</p></div>
+            <div class="node n-dis"><span class="tag">3-navbat</span><div class="url">/giperaktivlik</div><p>Giperaktivlik va diqqat yetishmasligi</p></div>
+            <div class="node n-dis"><span class="tag">3-navbat</span><div class="url">/dtsp</div><p>DTSP, tug'ruqdagi jarohat, gipoksiya oqibatlari</p></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="col-title">Hammasi shu yerga tushadi</div>
+          <div class="stack">
+            <div class="node"><div class="url">Anketa (modal oyna)</div><p>Ism · telefon · bola yoshi · nima bezovta qilyapti</p></div>
+            <div class="arrow-down">↓</div>
+            <div class="node n-ty"><span class="tag">Lead</span><div class="url">/rahmat</div><p>"Administrator qo'ng'iroq qiladi" + 3 ta tayyorgarlik qadami + Telegram @dr_zebo_admin</p></div>
+            <div class="arrow-down">↓</div>
+            <div class="node"><div class="url">Google Sheets</div><p>Lidlar jadvali: administrator qo'ng'iroq qiladi va natijani belgilaydi</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WIREFRAME -->
+  <section>
+    <h2 class="h sec-title">3. Sahifalar ichida nima bor</h2>
+    <p class="sec-sub">Telefon ekranida yuqoridan pastga qarab. Pushti belgi — shu blok qaysi psixologik triggerni ishlatishi.</p>
+    <div class="wires">
+
+      <div class="phone">
+        <div class="phone__name">/qabul<small>asosiy sahifa · 13 blok</small></div>
+        <div class="screen">
+          <div class="b"><i>1</i><div><b>Tepa chiziq</b><span>"Videoni ovozi bilan oxirigacha ko'ring"</span></div></div>
+          <div class="b dark vid"><i>2</i><div><b>Sarlavha + video</b><span>"Gapirmayaptimi… boshi og'riyaptimi? Avval shu videoni ko'ring"</span><div class="ph">▶</div><span class="trig">taniqlilik · obro'</span></div></div>
+          <div class="b cta"><i>3</i><div><b>Qabulga yozilish</b></div></div>
+          <div class="b dark"><i>4</i><div><b>10 ta belgi</b><span>"Shu holatlarni sezyapsizmi?"</span><br><span class="trig">og'riq</span></div></div>
+          <div class="b"><i>5</i><div><b>Shifokordan shifokorga</b><span>"Hech kim tushuntirmaydi"</span><br><span class="trig">avvalgi tajriba</span></div></div>
+          <div class="b"><i>6</i><div><b>Agar e'tibor bermasangiz</b><span>Qaytmaydigan yillar</span><br><span class="trig">yo'qotish qo'rquvi</span></div></div>
+          <div class="b"><i>7</i><div><b>Asoratini emas — sababini</b><span>Zebo opaning farqi</span><br><span class="trig">pozitsiya</span></div></div>
+          <div class="b"><i>8</i><div><b>Qabulda nima bo'ladi</b><span>Suhbat → ko'rik → tekshiruv → reja</span><br><span class="trig">noaniqlikni yo'qotish</span></div></div>
+          <div class="b cta"><i>9</i><div><b>Kimlar uchun</b><span>7 ta yo'nalish</span></div></div>
+          <div class="b"><i>10</i><div><b>Zebiniso Yadgarova</b><span>27 yil · oliy toifa</span><br><span class="trig">obro'</span></div></div>
+          <div class="b"><i>11</i><div><b>Nima olib kelish kerak</b><span>Video · sanalar · tahlillar</span><br><span class="trig">g'amxo'rlik</span></div></div>
+          <div class="b"><i>12</i><div><b>FAQ</b><span>4 savol + 103 ogohlantirishi</span></div></div>
+          <div class="b form"><i>13</i><div><b>Anketa</b><span>Doimiy pastki tugmadan ochiladi</span></div></div>
+        </div>
+      </div>
+
+      <div class="phone">
+        <div class="phone__name">/autizm, /bosh-ogrigi …<small>kasallik sahifasi shabloni · 8 blok</small></div>
+        <div class="screen">
+          <div class="b dark vid"><i>1</i><div><b>Kasallik bo'yicha savol-sarlavha + video</b><span>masalan: "Bolangizning boshi tez-tez og'riyaptimi?"</span><div class="ph">▶</div></div></div>
+          <div class="b cta"><i>2</i><div><b>Qabulga yozilish</b></div></div>
+          <div class="b dark"><i>3</i><div><b>"Bu belgilar tanishmi?"</b><span>6–8 ta belgi</span></div></div>
+          <div class="b" style="background:oklch(0.97 0.03 25)"><i>4</i><div><b>Qachon kutmaslik kerak</b><span>Shoshilinch belgilar → 103</span><br><span class="trig">xavfsizlik · ishonch</span></div></div>
+          <div class="b"><i>5</i><div><b>Sabablar</b><span>Qo'rqitmasdan, oddiy tilda</span></div></div>
+          <div class="b"><i>6</i><div><b>Qabulda nima bo'ladi</b><span>/qabul bilan bir xil</span></div></div>
+          <div class="b"><i>7</i><div><b>Zebo opa + FAQ</b><span>Kasallikka xos savollar</span></div></div>
+          <div class="b form"><i>8</i><div><b>Anketa</b><span>"Nima bezovta qilyapti" oldindan tanlangan</span></div></div>
+        </div>
+      </div>
+
+      <div class="phone">
+        <div class="phone__name">/rahmat<small>anketadan keyin · Lead</small></div>
+        <div class="screen">
+          <div class="b form"><i>1</i><div><b>✓ Anketangiz qabul qilindi</b><span>"Administrator tez orada bog'lanadi"</span></div></div>
+          <div class="b"><i>2</i><div><b>Qo'ng'iroqni kuting</b></div></div>
+          <div class="b"><i>3</i><div><b>Bolaning uydagi videosini oling</b></div></div>
+          <div class="b"><i>4</i><div><b>Hujjatlarni yig'ing</b></div></div>
+          <div class="b cta"><i>5</i><div><b>Telegram: @dr_zebo_admin</b><span>Kutishni istamaganlar uchun</span></div></div>
+        </div>
+        <p style="font-size:12.5px;color:var(--muted);margin-top:12px;text-align:center">Lead pixel faqat shu sahifada ishlaydi. Sahifa yangilansa, qayta hisoblanmaydi.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOLAT -->
+  <section>
+    <h2 class="h sec-title">4. Holat</h2>
+    <table class="tbl">
+      <thead><tr><th>Sahifa</th><th>Holat</th><th>Nima kerak</th></tr></thead>
+      <tbody>
+        <tr><td><code>/</code> masterklass</td><td><span class="st ok">ishlayapti</span></td><td>18-noyabrgacha o'zgarmaydi</td></tr>
+        <tr><td><code>/qabul</code></td><td><span class="st wait">dizayn va matn tayyor</span></td><td>Video, manzil, narx, ish soatlari</td></tr>
+        <tr><td><code>/rahmat</code></td><td><span class="st wait">tayyor</span></td><td>Internetga chiqarish</td></tr>
+        <tr><td><code>/autizm</code>, <code>/nutq-kechikishi</code></td><td><span class="st todo">navbatda</span></td><td>Matn + har biriga video</td></tr>
+        <tr><td><code>/bosh-ogrigi</code>, <code>/enurez</code></td><td><span class="st todo">navbatda</span></td><td>Matn + har biriga video</td></tr>
+        <tr><td><code>/giperaktivlik</code>, <code>/dtsp</code></td><td><span class="st todo">navbatda</span></td><td>Matn + har biriga video</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2 class="h sec-title">5. Zebo opadan kerak</h2>
+    <div class="needs">
+      <div class="need"><b>🎥 Lid-magnit video</b>mp4 fayl yoki YouTube havolasi</div>
+      <div class="need"><b>📍 Manzil va soatlar</b>Klinika, mo'ljal, ish kunlari</div>
+      <div class="need"><b>💰 Qabul narxi</b>Narxga nimalar kirishi</div>
+      <div class="need"><b>⭐ Natijalar</b>2–3 ota-onaning roziligi bilan fikri</div>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>

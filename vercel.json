@@ -1,5 +1,69 @@
 {
   "rewrites": [
-    { "source": "/thankyoupage", "destination": "/thankyoupage.html" }
-  ]
+    {
+      "source": "/thankyoupage",
+      "destination": "/thankyoupage.html"
+    },
+    {
+      "source": "/v2",
+      "destination": "/v2.html"
+    },
+    {
+      "source": "/qabul",
+      "destination": "/qabul.html"
+    },
+    {
+      "source": "/rahmat",
+      "destination": "/rahmat.html"
+    },
+    {
+      "source": "/b-variant",
+      "destination": "/variant-b.html"
+    },
+    {
+      "source": "/c-variant",
+      "destination": "/variant-c.html"
+    },
+    {
+      "source": "/rahmat-c",
+      "destination": "/rahmat-c.html"
+    },
+    {
+      "source": "/d-variant",
+      "destination": "/variant-d.html"
+    },
+    {
+      "source": "/e-variant",
+      "destination": "/variant-e.html"
+    },
+    {
+      "source": "/stats",
+      "destination": "/stats.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/img/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/media/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=86400"
+        }
+      ]
+    }
+  ],
+  "functions": {
+    "api/tg.js": {
+      "maxDuration": 300
+    }
+  }
 }
