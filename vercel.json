@@ -5,6 +5,10 @@
       "destination": "/thankyoupage.html"
     },
     {
+      "source": "/masterklass",
+      "destination": "/v2.html"
+    },
+    {
       "source": "/v2",
       "destination": "/v2.html"
     },
@@ -17,8 +21,16 @@
       "destination": "/rahmat.html"
     },
     {
+      "source": "/autizm-b",
+      "destination": "/variant-b.html"
+    },
+    {
       "source": "/b-variant",
       "destination": "/variant-b.html"
+    },
+    {
+      "source": "/autizm-c",
+      "destination": "/variant-c.html"
     },
     {
       "source": "/c-variant",
@@ -29,8 +41,16 @@
       "destination": "/rahmat-c.html"
     },
     {
+      "source": "/autizm-d",
+      "destination": "/variant-d.html"
+    },
+    {
       "source": "/d-variant",
       "destination": "/variant-d.html"
+    },
+    {
+      "source": "/autizm-e",
+      "destination": "/variant-e.html"
     },
     {
       "source": "/e-variant",
